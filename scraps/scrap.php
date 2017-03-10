@@ -16,12 +16,13 @@ function strip_tags_content($text) {
 
  }
 
-  for ($page = 1; $page <= 3; $page++) {
+  for ($page = 1; $page <= 560; $page++) {
+    fwrite(STDERR, "NOW PAGES ".$page."\n");
     $url = "curl http://www.snopes.com/category/facts";
     if ($page != 1) {
       $url = $url."/page/".$page;
     }
-    //echo $url."\n";
+    fwrite(STDERR, $url."\n");
 
     $ret = shell_exec($url);
     $url_pattern = '/^(http|https|ftp):\/\/([A-Z0-9][A-Z0-9_-]*(?:\.[A-Z0-9][A-Z0-9_-]*)+):?(\d+)?\/?/i';
@@ -30,7 +31,8 @@ function strip_tags_content($text) {
     preg_match_all('/<a href="(.*)">/',$ret,$a);
 
     $count = count($a[1]);
-    //echo "Number of Urls = " .$count."\n";
+    fwrite(STDERR, "Number of Urls = " .$count."\n");
+
     $links = [];
     for ($row = 0; $row < $count ; $row++) {
       $str = $a[1]["$row"];
@@ -67,9 +69,10 @@ function strip_tags_content($text) {
       }
     }
     $links = array_values(array_unique($links));
-    //echo "Valid url = ".sizeof($links)."\n";
+
+    fwrite(STDERR, "Valid url = ".sizeof($links)."\n");
     for ($i = 0; $i < sizeof($links); $i++) {
-      //echo $links[$i]."\n";
+      fwrite(STDERR, $links[$i]."\n");
       $buffer = shell_exec("curl ".$links[$i]);
       $claim = extractString($buffer, "<p itemprop=\"claimReviewed\">", "</p>");
       $rating = trim(extractString($buffer, "<span itemProp=\"alternateName\">", "</span>"));
@@ -77,6 +80,7 @@ function strip_tags_content($text) {
       $claim = trim(strip_tags_content($claim));
       $claim = str_replace("\"", "\"\"", $claim);
       echo "\"".$claim."\";".$rating."\n";
+      fwrite(STDERR, "\"".$claim."\";".$rating."\n");
     }
 
   }
