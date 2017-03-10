@@ -16,12 +16,26 @@ function strip_tags_content($text) {
 
  }
 
-  for ($page = 29; $page <= 560; $page++) {
+  for ($page = $argv[1]; $page <= $argv[2]; $page++) {
     fwrite(STDERR, "NOW PAGES ".$page."\n");
     $url = "curl http://www.snopes.com/category/facts";
     if ($page != 1) {
       $url = $url."/page/".$page;
     }
+/*
+    $url = $url." -H \"Host: www.snopes.com\" \
+    -H \"User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0\" \
+    -H \"Accept: text/html,application/xhtml+xml,application/xml;q=0.9\" \
+    -H \"Accept-Language: en-US,en;q=0.5\" \
+    -H \"Accept-Encoding: gzip, deflate\" \
+    -H \"Cookie: bme=1; advanced_ads_browser_width=1291\" \
+    -H \"DNT: 1\" \
+    -H \"Connection: keep-alive\" \
+    -H \"Upgrade-Insecure-Requests: 1\" \
+    -H \"If-Modified-Since: Fri, 10 Mar 2017 06:42:56 GMT\" \
+    -H \"If-None-Match: 0e39c4d718bac78dc55b71fe7207cd2f\" \
+    -H \"Cache-Control: max-age=0\"";
+*/
     fwrite(STDERR, $url."\n");
 
     $ret = shell_exec($url);
