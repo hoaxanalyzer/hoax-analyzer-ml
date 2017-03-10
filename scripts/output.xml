@@ -1,319 +1,3225 @@
 <text>
 <s>
-<w pos="vbg">According</w>
-<w pos="to">to</w>
-<w pos="dt">a</w>
-<w pos="nn">report</w>
-<w pos="in">from</w>
-<w pos="nn">cnminformativo</w>
-<w pos="wdt">which</w>
-<w pos="vbd">let</w>
-<coref set-id="set_1">
-<w pos="prp">us</w>
-</coref>
-<w pos="vb">know</w>
-<w pos="in">that</w>
-<w pos="dt">the</w>
-<w pos="jj">popular</w>
-<w pos="nn">actor</w>
-<w pos="&quot;">'</w>
 <coref set-id="set_2">
-<w pos="vbd">Jackie</w>
+<w pos="jj">FORMER</w>
+<w pos="nnp">PRESIDENT</w>
+<w pos="nnp">GEORGE</w>
+<w pos="nnp">W.</w>
+<w pos="nnp">BUSH</w>
 </coref>
-<w pos="nn">chan'</w>
+<w pos="nnp">DEAD</w>
+<w pos="nnp">AT</w>
+<w pos="cd">72</w>
+<w pos="-lrb-">(</w>
+<w pos="nnp">10/05/18)</w>
+<w pos="nnp">Policy</w>
+<w pos="nnp">Review</w>
+<w pos=",">,</w>
+<w pos="nnp">October</w>
+<w pos="cd">5</w>
+<w pos=",">,</w>
+<coref set-id="set_2">
+<w pos="nnp">2018_George</w>
+<w pos="nnp">W.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_46">
+<w pos="dt">the</w>
+<w pos="jj">43rd</w>
+<w pos="nn">president</w>
+</coref>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<coref set-id="set_32">
+<w pos="nnp">United</w>
+<w pos="nnps">States</w>
+</coref>
+<w pos=",">,</w>
 <w pos="vbd">died</w>
-<w pos="in">of</w>
-<coref set-id="set_5">
-<coref set-id="set_3">
-<w pos="nn">heart</w>
+<w pos="nn">today</w>
+<w pos="in">at</w>
+<w pos="nnp">Methodist</w>
+<w pos="nnp">Hospital</w>
+<w pos="in">in</w>
+<coref set-id="set_30">
+<w pos="nnp">Houston</w>
 </coref>
-<w pos="nn">attack</w>
+<w pos=",">,</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
 </coref>
-<w pos="in">on</w>
-<w pos="dt">the</w>
-<w pos="nn">17th</w>
-<w pos="in">of</w>
-<w pos="nn">july</w>
-<w pos="nns">2015</w>
 <w pos=".">.</w>
 </s><s>
-<w pos="vb">Cry</w>
-<coref set-id="set_2">
+<coref set-id="set_46">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="cd">72</w>
+<w pos=".">.</w>
+</s><s>
 <w pos="dt">The</w>
-<w pos="jj">historic</w>
-<w pos="nn">actor</w>
+<w pos="nn">cause</w>
+<w pos="in">of</w>
+<coref set-id="set_26">
+<w pos="nn">death</w>
 </coref>
-<w pos=",">,</w>
-<w pos="wp">who</w>
-<w pos="vbd">made</w>
-<w pos="dt">a</w>
-<w pos="nn">name</w>
-<w pos="in">for</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
-<w pos="in">for</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
-<w pos="jj">incredible</w>
-<w pos="nn">performance</w>
-<w pos="in">in</w>
-<w pos="cd">1995</w>
-<w pos="nnp">Rumble</w>
-<w pos="in">in</w>
-<w pos="dt">the</w>
-<w pos="nnp">Bronx</w>
-<w pos=".">.</w>
-</s><s>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
-<w pos="jj">enormous</w>
-<w pos="nn">charisma</w>
-<w pos="rb">always</w>
-<w pos="vbd">gave</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
-<w pos="dt">the</w>
-<w pos="nn">opportunity</w>
-<w pos="to">to</w>
-<w pos="vb">develop</w>
-<coref set-id="set_6">
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
-<w pos="nn">career</w>
-</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">announced</w>
 <w pos="in">as</w>
-<coref set-id="set_2">
+<w pos="nn">heart</w>
+<w pos="nn">failure</w>
+<w pos="nnp">.Mr.</w>
+<w pos="nnp">Bush_s</w>
+<w pos="rb">always</w>
+<w pos="jj">controversial</w>
+<w pos="nn">presidency</w>
+<w pos="vbn">left</w>
+<w pos="in">behind</w>
 <w pos="dt">a</w>
-<w pos="nn">singer</w>
-<w pos=",">,</w>
-<w pos="jj">stuntman</w>
-<w pos=",">,</w>
-<w pos="nn">writer</w>
-</coref>
-<w pos=",">,</w>
-<coref set-id="set_2">
-<w pos="nn">film</w>
-<w pos="nn">director</w>
-</coref>
+<w pos="jj">changed</w>
+<w pos="nn">nation</w>
 <w pos="cc">and</w>
-<coref set-id="set_2">
-<w pos="nn">producer</w>
-</coref>
+<w pos="dt">a</w>
+<w pos="jj">changed</w>
+<w pos="nn">world</w>
 <w pos=".">.</w>
 </s><s>
-<coref set-id="set_6">
-<w pos="nnp">Thebrilliant</w>
-<w pos="nn">career</w>
+<w pos="vbg">Taking</w>
+<coref set-id="set_25">
+<w pos="nn">office</w>
 </coref>
+<w pos="in">in</w>
+<coref set-id="set_31">
+<w pos="cd">2001</w>
+</coref>
+<w pos="in">after</w>
+<w pos="dt">a</w>
+<w pos="vbn">disputed</w>
+<w pos="nn">election</w>
+<w pos="vbn">settled</w>
+<w pos="rb">only</w>
+<w pos="in">by</w>
+<w pos="dt">a</w>
+<w pos="jj">5-4</w>
+<w pos="nn">decision</w>
+<w pos="in">by</w>
+<w pos="dt">a</w>
+<w pos="rb">bitterly</w>
+<w pos="vbn">divided</w>
+<w pos="nnp">Supreme</w>
+<w pos="nnp">Court</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="rb">decisively</w>
+<w pos="vbn">reelected</w>
+<w pos="in">in</w>
+<coref set-id="set_38">
+<w pos="cd">2004</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_2">
+<w pos="nnp">President</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">led</w>
+<w pos="dt">the</w>
+<coref set-id="set_32">
+<w pos="nnp">United</w>
+<w pos="nnps">States</w>
+</coref>
+<w pos="in">into</w>
+<w pos="cd">four</w>
+<w pos="nns">wars</w>
+<w pos=",">,</w>
+<w pos="vbd">oversaw</w>
+<w pos="dt">the</w>
+<w pos="vbg">dismantling</w>
+<w pos="in">of</w>
+<w pos="nnp">Social</w>
+<w pos="nnp">Security</w>
+<w pos="cc">and</w>
+<w pos="nnp">Medicare</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="vbz">enforced</w>
+<w pos="dt">a</w>
+<w pos="jj">drastic</w>
+<w pos="nn">shrinking</w>
+<w pos="in">of</w>
+<w pos="jj">elementary</w>
+<w pos=",">,</w>
+<w pos="jj">secondary</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="jj">collegiate</w>
+<w pos="nn">education</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">spearheaded</w>
+<w pos="dt">the</w>
+<w pos="nn">transformation</w>
+<w pos="in">of</w>
+<coref set-id="set_2">
+<w pos="nnp">President</w>
+<coref set-id="set_2">
+<w pos="nnp">Bill</w>
+<w pos="nnp">Clinton_s</w>
+</coref>
+</coref>
+<w pos="nn">budget</w>
+<w pos="nns">surpluses</w>
+<w pos="in">of</w>
+<w pos="cd">1999</w>
+<w pos="cc">and</w>
+<w pos="cd">2000</w>
+<w pos="in">into</w>
+<w pos="jj">permanent</w>
+<w pos="nns">deficits</w>
+<w pos="in">of</w>
+<w pos="jjr">more</w>
+<w pos="in">than</w>
+<w pos="dt">a</w>
+<w pos="cd">trillion</w>
+<w pos="nns">dollars</w>
+<coref set-id="set_40">
+<w pos="dt">a</w>
+<w pos="nn">year</w>
+</coref>
+<w pos=",">,</w>
+<w pos="rb">thus</w>
+<w pos="rb">profoundly</w>
+<w pos="vbg">reducing</w>
+<w pos="dt">the</w>
+<w pos="nn">amount</w>
+<w pos="in">of</w>
+<w pos="nn">capital</w>
+<w pos="jj">available</w>
+<w pos="to">to</w>
+<w pos="vb">address</w>
+<w pos="dt">the</w>
+<w pos="nns">needs</w>
 <w pos="in">of</w>
 <w pos="dt">the</w>
-<w pos="rbs">most</w>
-<w pos="jj">famous</w>
-<w pos="nnp">Chinese</w>
-<w pos="vbn">ended</w>
-<w pos="dt">this</w>
-<w pos="nn">morning</w>
-<w pos="in">by</w>
-<coref set-id="set_5">
-<w pos="dt">a</w>
-<coref set-id="set_3">
-<w pos="nn">heart</w>
+<w pos="jj">vast</w>
+<w pos="nn">majority</w>
+<w pos="in">of</w>
+<w pos="nns">citizens</w>
+<w pos="cc">and</w>
+<w pos="vbg">inhibiting</w>
+<w pos="dt">the</w>
+<w pos="nn">creation</w>
+<w pos="in">of</w>
+<w pos="jj">new</w>
+<w pos="nns">jobs</w>
+<w pos="in">with</w>
+<w pos="dt">any</w>
+<w pos="nn">promise</w>
+<w pos="in">of</w>
+<w pos="nn">advancement</w>
+<w pos="cc">or</w>
+<w pos="jj">financial</w>
+<w pos="nn">security</w>
+<w pos=",">,</w>
+<w pos="in">while</w>
+<w pos="in">at</w>
+<w pos="dt">the</w>
+<w pos="jj">same</w>
+<w pos="nn">time</w>
+<w pos="vbg">pursuing</w>
+<w pos="nn">tax</w>
+<w pos="nns">reductions</w>
+<w pos="wdt">that</w>
+<w pos="vbd">increased</w>
+<w pos="dt">the</w>
+<w pos="nns">differences</w>
+<w pos="in">between</w>
+<w pos="dt">the</w>
+<w pos="nn">income</w>
+<w pos="cc">and</w>
+<w pos="nns">assets</w>
+<w pos="in">of</w>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
 </coref>
-<w pos="nn">attack</w>
+<w pos="jj">own</w>
+<w pos="nn">terminology</w>
+<w pos=",">,</w>
+<w pos="nns">_owners</w>
+<w pos="sym">_</w>
+<w pos="cc">and</w>
+<w pos="nns">_pre-owners</w>
+<w pos="sym">_</w>
+<w pos="in">of</w>
+<w pos="jj">_the</w>
+<coref set-id="set_11">
+<w pos="jj">American</w>
+</coref>
+<w pos="nn">ownership</w>
+<w pos="nn">society</w>
+<w pos="sym">_</w>
+<w pos="to">to</w>
+<w pos="nns">extremes</w>
+<w pos="rb">almost</w>
+<w pos="in">beyond</w>
+<w pos="nn">measure</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="wrb">When</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">left</w>
+<coref set-id="set_25">
+<w pos="nn">office</w>
+</coref>
+<w pos=",">,</w>
+<w pos="nn">taxation</w>
+<w pos="in">of</w>
+<w pos="jj">personal</w>
+<w pos="cc">and</w>
+<w pos="jj">corporate</w>
+<w pos="nns">incomes</w>
+<w pos=",">,</w>
+<w pos="in">while</w>
+<w pos="rb">still</w>
+<w pos="rb">legally</w>
+<w pos="jj">extant</w>
+<w pos=",">,</w>
+<w pos="vbd">had</w>
+<w pos="vbn">been</w>
+<w pos="rb">effectively</w>
+<w pos="vbn">replaced</w>
+<w pos="in">by</w>
+<w pos="dt">a</w>
+<w pos="jj">new</w>
+<w pos="nn">payroll</w>
+<w pos="nn">tax</w>
+<w pos=",">,</w>
+<w pos="in">so</w>
+<w pos="in">that</w>
+<w pos="rb">almost</w>
+<w pos="dt">all</w>
+<w pos="nn">investment</w>
+<w pos=",">,</w>
+<w pos="nn">inheritance</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="nn">interest</w>
+<w pos="nn">income</w>
+<w pos="vbd">was</w>
+<w pos="vbn">left</w>
+<w pos="jj">tax-free</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">_Those</w>
+<w pos="in">with</w>
+<coref set-id="set_13">
+<w pos="dt">the</w>
+<w pos="jjs">greatest</w>
+<w pos="nn">stake</w>
 </coref>
 <w pos="in">in</w>
-<w pos="dt">a</w>
-<coref set-id="set_8">
-<w pos="nnp">Hong</w>
-<w pos="nnp">Kong</w>
+<coref set-id="set_11">
+<w pos="nnp">America</w>
 </coref>
-<w pos="nnp">Hospital.The</w>
-<w pos="jj">medical</w>
-<w pos="nns">reports</w>
-<w pos="vbp">indicate</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<coref set-id="set_2">
+<w pos="nnp">President</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="rb">often</w>
+<w pos="vbd">said</w>
+<w pos="in">throughout</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">second</w>
+<w pos="nn">term</w>
+<w pos=",">,</w>
+<w pos="vbp">_have</w>
+<coref set-id="set_13">
+<w pos="dt">the</w>
+<w pos="jjs">greatest</w>
+<w pos="nn">stake</w>
+</coref>
+<w pos="in">in</w>
+<w pos="vbg">defending</w>
+<coref set-id="set_11">
+<w pos="nnp">America</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="x">Thus</w>
+<w pos="x">we</w>
+<w pos="x">as</w>
+<w pos="x">a</w>
+<w pos="x">nation</w>
+<w pos="x">must</w>
+<w pos="x">do</w>
+<w pos="x">all</w>
+<w pos="x">that</w>
+<w pos="x">we</w>
+<w pos="x">can</w>
+<w pos="x">to</w>
+<w pos="x">ensure</w>
+<w pos="x">that</w>
+<w pos="x">the</w>
+<w pos="x">commitment</w>
+<w pos="x">of</w>
+<w pos="x">those</w>
+<w pos="x">with</w>
+<w pos="x">the</w>
+<w pos="x">greatest</w>
+<w pos="x">stake</w>
+<w pos="x">to</w>
+<w pos="x">the</w>
+<w pos="x">rest</w>
+<w pos="x">of</w>
+<w pos="x">us</w>
+<w pos="x">,</w>
+<w pos="x">a</w>
+<w pos="x">commitment</w>
+<w pos="x">on</w>
+<w pos="x">which</w>
+<w pos="x">our</w>
+<w pos="x">freedom</w>
+<w pos="x">and</w>
+<w pos="x">security</w>
+<w pos="x">rests</w>
+<w pos="x">,</w>
+<w pos="x">only</w>
+<w pos="x">grows</w>
+<w pos="x">greater</w>
+<w pos="x">._Adding</w>
+<w pos="x">to</w>
+<coref set-id="set_2">
+<w pos="x">Mr.</w>
+<w pos="x">Bush_s</w>
+</coref>
+<w pos="x">statutory</w>
+<w pos="x">and</w>
+<w pos="x">administrative</w>
+<w pos="x">economic</w>
+<w pos="x">policies</w>
+<w pos="x">were</w>
+<w pos="x">a</w>
+<w pos="x">series</w>
+<w pos="x">of</w>
+<w pos="x">decisions</w>
+<w pos="x">by</w>
+<w pos="x">the</w>
+<w pos="x">_Bush</w>
+<w pos="x">Court</w>
+<w pos="x">,</w>
+<w pos="x">_</w>
+<w pos="x">as</w>
+<w pos="x">the</w>
+<coref set-id="set_29">
+<w pos="x">Supreme</w>
+<w pos="x">Court</w>
+</coref>
+<w pos="x">was</w>
+<w pos="x">known</w>
+<w pos="x">after</w>
+<w pos="x">2005</w>
+<w pos="x">,</w>
+<w pos="x">when</w>
+<w pos="x">in</w>
+<w pos="x">that</w>
+<w pos="x">year</w>
+<coref set-id="set_2">
+<w pos="x">Mr.</w>
+<w pos="x">Bush</w>
+</coref>
+<w pos="x">replaced</w>
+<w pos="x">three</w>
+<w pos="x">retiring</w>
+<w pos="x">members</w>
+<w pos="x">with</w>
+<w pos="x">very</w>
+<w pos="x">conservative</w>
+<w pos="x">justices</w>
+<w pos="x">(</w>
+<w pos="x">a</w>
+<w pos="x">fourth</w>
+<w pos="x">was</w>
+<w pos="x">replaced</w>
+<w pos="x">in</w>
+<w pos="x">2006</w>
+<w pos="x">)</w>
+<w pos="x">,</w>
+<w pos="x">depriving</w>
+<w pos="x">government</w>
+<w pos="x">regulation</w>
+<w pos="x">of</w>
+<w pos="x">corporations</w>
+<w pos="x">and</w>
+<w pos="x">the</w>
+<w pos="x">environment</w>
+<w pos="x">of</w>
+<w pos="x">any</w>
+<w pos="x">legal</w>
+<w pos="x">basis_decisions</w>
+<w pos="x">which</w>
+<w pos="x">many</w>
+<w pos="x">analysts</w>
+<w pos="x">considered</w>
+<w pos="x">more</w>
+<w pos="x">significant</w>
+<w pos="x">than</w>
+<w pos="x">the</w>
+<w pos="x">repudiation</w>
+<w pos="x">by</w>
+<w pos="x">the</w>
+<coref set-id="set_2">
+<w pos="x">Bush</w>
+<w pos="x">Court</w>
+</coref>
+<w pos="x">of</w>
+<w pos="x">previous</w>
+<w pos="x">decisions</w>
+<w pos="x">upholding</w>
+<w pos="x">a</w>
+<w pos="x">woman_s</w>
+<w pos="x">right</w>
+<w pos="x">to</w>
+<w pos="x">privacy</w>
+<w pos="x">in</w>
+<w pos="x">the</w>
+<w pos="x">matter</w>
+<w pos="x">of</w>
+<w pos="x">abortion</w>
+<w pos="x">and</w>
+<w pos="x">certain</w>
+<w pos="x">applications</w>
+<w pos="x">of</w>
+<w pos="x">affirmative</w>
+<w pos="x">action</w>
+<w pos="x">.</w>
+</s><s>
+<w pos="rb">Even</w>
+<w pos="in">with</w>
+<w pos="dt">the</w>
+<coref set-id="set_2">
+<w pos="nnp">Bush</w>
+<w pos="nnp">Court</w>
+</coref>
+<w pos="vbn">seated</w>
+<w pos=",">,</w>
+<w pos="rb">however</w>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<w pos="nnp">Republican-controlled</w>
+<w pos="nnp">Congress</w>
 <w pos="in">that</w>
 <coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
 </coref>
-<w pos="vbd">suffered</w>
-<w pos="dt">a</w>
-<w pos="jj">fulminate</w>
-<coref set-id="set_3">
-<w pos="nn">heart</w>
-</coref>
-<w pos="nn">attack</w>
-<w pos=",">,</w>
-<w pos="wdt">which</w>
-<w pos="vbz">paralyzed</w>
+<w pos="vbd">enjoyed</w>
+<w pos="in">throughout</w>
+<coref set-id="set_22">
 <coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
+<w pos="nnp">former President George H. W. Bush</w>
 </coref>
-<w pos="nn">heart</w>
-<w pos="vbg">making</w>
-<coref set-id="set_8">
-<w pos="nnp">Hong Kong</w>
+<w pos="nn">presidency</w>
 </coref>
-<w pos="jj">impossible</w>
-<w pos="in">for</w>
+<w pos="rb">repeatedly</w>
+<w pos="vbd">passed</w>
+<coref set-id="set_39">
+<w pos="nn">legislation</w>
+</coref>
+<w pos="vbg">removing</w>
+<coref set-id="set_47">
+<w pos="nn">issue</w>
+</coref>
+<w pos="in">after</w>
+<coref set-id="set_47">
+<w pos="nn">issue</w>
+</coref>
+<w pos="in">from</w>
 <w pos="dt">the</w>
-<w pos="nn">blood</w>
-<w pos="to">to</w>
-<w pos="vb">reach</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
+<w pos="nn">purview</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="nn">state</w>
+<w pos="cc">and</w>
+<coref set-id="set_49">
+<w pos="jj">federal</w>
+<w pos="nns">courts</w>
 </coref>
-<w pos="nn">brain</w>
+<w pos=",">,</w>
+<w pos="vbg">including</w>
+<w pos="nns">questions</w>
+<w pos="in">of</w>
+<coref set-id="set_37">
+<w pos="nn">freedom</w>
+</coref>
+<w pos="in">of</w>
+<w pos="nn">speech</w>
+<w pos=",">,</w>
+<coref set-id="set_37">
+<w pos="nn">freedom</w>
+</coref>
+<w pos="in">of</w>
+<coref set-id="set_7">
+<w pos="dt">the</w>
+<w pos="nn">press</w>
+</coref>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<coref set-id="set_24">
+<w pos="nn">right</w>
+</coref>
+<w pos="to">to</w>
+<w pos="vb">assemble</w>
 <w pos=",">,</w>
 <w pos="cc">and</w>
-<w pos="jj">other</w>
-<w pos="jj">vital</w>
-<w pos="nns">organs</w>
-<w pos=",">,</w>
-<w pos="wdt">that</w>
-<w pos="vbd">caused</w>
+<coref set-id="set_24">
 <w pos="dt">the</w>
-<w pos="nn">death</w>
-<w pos="in">of</w>
-<coref set-id="set_2">
-<w pos="dt">this</w>
-<w pos="jj">humanitarian</w>
-<w pos="nn">man</w>
+<w pos="nn">right</w>
 </coref>
-<w pos=",">,</w>
-<w pos="wp">who</w>
-<w pos="nns">years</w>
-<w pos="rb">before</w>
-<w pos="vbd">was</w>
-<w pos="vbn">named</w>
-<w pos="vbn">philanthropist</w>
-<w pos="in">of</w>
-<w pos="dt">the</w>
-<w pos="nn">year</w>
-<w pos="in">for</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
-<w pos="nn">country</w>
-<w pos="nnp">.The</w>
-</s><s>
-<w pos="jj">sad</w>
-<w pos="nn">news</w>
-<w pos="in">of</w>
-<w pos="nnp">Chans</w>
-<w pos="pos">'s</w>
-<w pos="nn">death</w>
-<w pos="vbd">was</w>
-<w pos="vbn">given</w>
+<w pos="to">to</w>
+<w pos="nn">trial</w>
 <w pos="in">by</w>
-<coref set-id="set_0">
-<coref set-id="set_2">
-<w pos="nnp">wife Lin Feng-jiao</w>
+<w pos="nn">jury</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">Despite</w>
+<w pos="dt">these</w>
+<w pos="nns">prohibitions</w>
+<w pos="in">of</w>
+<w pos="jj">judicial</w>
+<w pos="nn">review</w>
+<w pos=",">,</w>
+<coref set-id="set_20">
+<w pos="dt">the</w>
+<w pos="nn">government</w>
 </coref>
-<w pos="nn">wife</w>
-<w pos="nnp">Lin</w>
-<w pos="nnp">Feng-jiao</w>
+<w pos=",">,</w>
+<w pos="in">under</w>
+<coref set-id="set_2">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<w pos="vbd">did</w>
+<w pos="rb">not</w>
+<w pos="vb">press</w>
+<w pos="in">for</w>
+<coref set-id="set_39">
+<w pos="dt">any</w>
+<w pos="nn">legislation</w>
+</coref>
+<w pos="vbg">curtailing</w>
+<w pos="wp">what</w>
+<w pos="vbd">had</w>
+<w pos="rb">previously</w>
+<w pos="vbn">been</w>
+<w pos="vbn">referred</w>
+<w pos="to">to</w>
+<w pos="in">as</w>
+<w pos="nnp">_First</w>
+<w pos="nnp">Amendment</w>
+<w pos="nns">freedoms</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<w pos="cc">but</w>
+<w pos="rb">simply</w>
+<w pos="vbn">refrained</w>
+<w pos="in">from</w>
+<w pos="vbg">challenging</w>
+<w pos="jj">such</w>
+<w pos="nn">legislation</w>
+<w pos="vbn">passed</w>
+<w pos="in">by</w>
+<w pos="jj">many</w>
+<w pos="nns">states</w>
+<w pos=",">,</w>
+<w pos="rb">rather</w>
+<w pos="vbg">filing</w>
+<w pos="jj">supportive</w>
+<w pos="nns">briefs</w>
+<w pos="in">before</w>
+<w pos="dt">the</w>
+<coref set-id="set_29">
+<w pos="nnp">Supreme</w>
+<w pos="nnp">Court</w>
+</coref>
+<w pos="wrb">when</w>
+<w pos="jj">such</w>
+<w pos="nns">measures</w>
+<w pos="vbd">were</w>
+<w pos="vbn">contested</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="rb">Ultimately</w>
+<w pos="dt">the</w>
+<w pos="nn">reversal</w>
+<w pos="in">of</w>
+<coref set-id="set_48">
+<w pos="dt">the</w>
+<w pos="nn">series</w>
+</coref>
+<w pos="in">of</w>
+<w pos="jj">20th-century</w>
+<coref set-id="set_29">
+<w pos="nnp">Supreme</w>
+<w pos="nnp">Court</w>
+</coref>
+<w pos="nns">decisions</w>
+<w pos="vbg">subjecting</w>
+<coref set-id="set_4">
+<w pos="dt">the</w>
+<w pos="nns">states</w>
+</coref>
+<w pos="to">to</w>
+<coref set-id="set_2">
+<w pos="dt">the</w>
+<w pos="nnp">Bill</w>
+</coref>
+<w pos="in">of</w>
+<w pos="nnps">Rights</w>
+<w pos=",">,</w>
+<w pos="jj">long-sought</w>
+<w pos="in">by</w>
+<w pos="jj">certain</w>
+<w pos="nns">conservatives</w>
+<w pos=",">,</w>
+<w pos="vbd">was</w>
+<w pos="vbn">achieved</w>
+<w pos="rb">not</w>
+<w pos="in">de</w>
+<w pos="rb">jure</w>
+<w pos="cc">but</w>
+<w pos="fw">de</w>
+<w pos="fw">facto</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">_The</w>
+<coref set-id="set_7">
+<w pos="nn">press</w>
+</coref>
+<w pos="vbz">is</w>
+<w pos="rb">legally</w>
+<w pos="jj">free</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<w pos="dt">the</w>
+<coref set-id="set_42">
+<w pos="jj">former</w>
+<coref set-id="set_57">
+<w pos="nnp">New</w>
+<w pos="nnp">York</w>
+<w pos="nnp">Times</w>
+</coref>
+<w pos="nn">columnist</w>
+<w pos="nnp">Frank</w>
+<w pos="nnp">Rich</w>
+</coref>
+<w pos="vbd">put</w>
+<coref set-id="set_57">
+<w pos="nnp">New York Times</w>
 </coref>
 <w pos="in">in</w>
-<w pos="dt">a</w>
-<w pos="nn">news</w>
-<w pos="nn">conference</w>
+<w pos="cd">2007</w>
 <w pos=",">,</w>
-<w pos="dt">a</w>
-<w pos="nn">couple</w>
+<w pos="vbg">writing</w>
+<w pos="in">in</w>
+<coref set-id="set_42">
+<w pos="nnp">former columnist Frank Rich</w>
+</coref>
+<w pos="nn">online</w>
+<w pos="nn">journal</w>
+<w pos="nnp">Thatsrichbrother.com</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_3">
+<w pos="nnp">_It</w>
+</coref>
+<w pos="rb">merely</w>
+<w pos="vbz">refrains</w>
+<w pos="in">from</w>
+<w pos="vbg">practicing</w>
+<coref set-id="set_37">
+<w pos="nn">freedom</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="sym">_</w>
+<w pos="dt">Some</w>
+<w pos="vbd">said</w>
+<w pos="dt">the</w>
+<w pos="jj">same</w>
 <w pos="in">of</w>
-<w pos="nns">hours</w>
-<w pos="rb">ago</w>
+<w pos="dt">the</w>
+<w pos="nn">nation</w>
+<w pos="in">as</w>
+<w pos="dt">a</w>
+<w pos="nn">whole</w>
+<w pos=":">;</w>
+<w pos="nns">others</w>
+<w pos="vbd">said</w>
+<coref set-id="set_35">
+<w pos="dt">the</w>
+<w pos="nn">country</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="jjr">freer</w>
+<w pos="in">than</w>
+<coref set-id="set_35">
+<w pos="nnp">Islamist</w>
+</coref>
+<w pos="vbd">had</w>
+<w pos="rb">ever</w>
+<w pos="vbn">been.Mr.</w>
+</s><s>
+<coref set-id="set_2">
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">born</w>
+<w pos="in">in</w>
+<w pos="nnp">New</w>
+<w pos="nnp">Haven</w>
+<w pos=",">,</w>
+<w pos="nnp">Connecticut</w>
+<w pos=",">,</w>
+<w pos="in">on</w>
+<w pos="nnp">July</w>
+<w pos="cd">6</w>
+<w pos=",">,</w>
+<w pos="cd">1946</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="vbn">raised</w>
+<w pos="in">in</w>
+<coref set-id="set_30">
+<w pos="nnp">Houston</w>
+</coref>
+<w pos="cc">and</w>
+<w pos="nnp">Midland</w>
+<w pos=",">,</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
+</coref>
 <w pos=",">,</w>
 <w pos="wrb">where</w>
-<coref set-id="set_0">
-<w pos="nnp">wife Lin Feng-jiao</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
 </coref>
-<w pos="vbd">said</w>
-<w pos="to">to</w>
+<w pos="nn">father</w>
+<w pos=",">,</w>
 <w pos="dt">the</w>
-<w pos="nns">media</w>
-<w pos=",">,</w>
-<w pos="&quot;">"</w>
-<coref set-id="set_4">
-<w pos="nnp">wife Lin Feng-jiao</w>
+<coref set-id="set_2">
+<w pos="jj">former</w>
+<w pos="nnp">President</w>
+<w pos="nnp">George</w>
+<w pos="nnp">H.</w>
+<w pos="nnp">W.</w>
+<w pos="nnp">Bush</w>
 </coref>
-<w pos="vbp">hope</w>
-<coref set-id="set_7">
-<w pos="prp">you</w>
-</coref>
-<w pos="md">can</w>
-<w pos="vb">understand</w>
-<w pos="prp$">my</w>
-<w pos="nn">loss</w>
 <w pos=",">,</w>
+<w pos="vbd">began</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nns">careers</w>
+<w pos="in">in</w>
+<coref set-id="set_59">
+<coref set-id="set_19">
+<w pos="nn">oil</w>
+</coref>
 <w pos="cc">and</w>
-<coref set-id="set_4">
-<w pos="nnp">wife Lin Feng-jiao</w>
+<coref set-id="set_51">
+<w pos="nns">politics</w>
 </coref>
-<w pos="md">would</w>
-<w pos="vb">appreciate</w>
-<w pos="in">if</w>
-<coref set-id="set_7">
-<w pos="prp">you</w>
 </coref>
-<w pos="md">can</w>
-<w pos="vb">give</w>
-<coref set-id="set_1">
-<w pos="prp">us</w>
-</coref>
-<w pos="nn">space</w>
-<w pos="in">for</w>
-<coref set-id="set_1">
-<w pos="prp$">our</w>
-</coref>
-<w pos="nn">mourning</w>
-<w pos="&quot;">"</w>
 <w pos=".">.</w>
 </s><s>
-<w pos="in">Until</w>
-<w pos="rb">now</w>
+<coref set-id="set_2">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">attended</w>
+<w pos="nnp">Andover</w>
+<w pos="nnp">Academy</w>
+<w pos="cc">and</w>
+<w pos="vbd">graduated</w>
+<w pos="in">from</w>
+<w pos="nnp">Yale</w>
+<w pos="nnp">University</w>
+<w pos="in">in</w>
+<w pos="cd">1968</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">During</w>
+<w pos="dt">the</w>
+<w pos="nnp">Vietnam</w>
+<w pos="nnp">War</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<coref set-id="set_2">
+<w pos="dt">a</w>
+<w pos="nn">member</w>
+</coref>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="nnp">Texas</w>
+<w pos="nnp">Air</w>
+<w pos="nnp">National</w>
+<w pos="nnp">Guard</w>
 <w pos=",">,</w>
-<w pos="nn">funeral</w>
-<w pos="pos">'s</w>
-<w pos="nns">details</w>
-<w pos="vbp">are</w>
-<w pos="jj">uncertain</w>
+<w pos="vbn">known</w>
+<w pos="in">at</w>
+<coref set-id="set_50">
+<w pos="dt">the</w>
+<w pos="nn">time</w>
+</coref>
+<w pos="in">as</w>
+<w pos="dt">a</w>
+<w pos="jj">safe</w>
+<w pos="vbp">have</w>
+<w pos="vbn">n</w>
+<w pos="in">from</w>
+<w pos="nn">combat</w>
+<w pos="nn">duty</w>
+<w pos=":">;</w>
+<w pos="in">whether</w>
+<coref set-id="set_2">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">did</w>
+<w pos="in">in</w>
+<coref set-id="set_58">
+<w pos="nn">fact</w>
+</coref>
+<w pos="vb">fulfill</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">military</w>
+<w pos="nns">obligations</w>
+<w pos="vbd">became</w>
+<w pos="dt">a</w>
+<w pos="nn">subject</w>
+<w pos="in">of</w>
+<w pos="nn">dispute</w>
+<w pos="in">during</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">second</w>
+<w pos="nn">election</w>
+<w pos="nn">campaign</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">In</w>
+<w pos="cd">1975</w>
+<coref set-id="set_2">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">graduated</w>
+<w pos="in">from</w>
+<w pos="nnp">Harvard</w>
+<w pos="nnp">Business</w>
+<w pos="nnp">School</w>
+<w pos="cc">and</w>
+<w pos="vbd">began</w>
+<w pos="nns">careers</w>
+<w pos="in">in</w>
+<coref set-id="set_59">
+<coref set-id="set_19">
+<w pos="nn">oil</w>
+</coref>
+<w pos="cc">and</w>
+<coref set-id="set_51">
+<w pos="nns">politics</w>
+</coref>
+</coref>
+<w pos="in">in</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
+</coref>
+<w pos=":">;</w>
+<w pos="cc">neither</w>
+<w pos="vbn">flourished</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">Though</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">married</w>
+<w pos="dt">the</w>
+<w pos="jj">former</w>
+<w pos="nnp">Laura</w>
+<w pos="nnp">Welch</w>
+<w pos="in">in</w>
+<w pos="cd">1977</w>
+<w pos="cc">and</w>
+<w pos="vbd">fathered</w>
+<w pos="jj">twin</w>
+<w pos="nns">daughters</w>
+<w pos="nnp">Jenna</w>
+<w pos="-lrb-">(</w>
+<w pos="vbn">named</w>
+<w pos="in">for</w>
+<coref set-id="set_8">
+<w pos="nnp">Mrs.</w>
+<coref set-id="set_41">
+<w pos="nnp">Bush_s</w>
+</coref>
+</coref>
+<w pos="nn">mother</w>
+<w pos="-rrb-">)</w>
+<w pos="cc">and</w>
+<w pos="nnp">Barbara</w>
+<w pos="-lrb-">(</w>
+<w pos="vbn">named</w>
+<w pos="in">for</w>
+<coref set-id="set_8">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush_s</w>
+</coref>
+<w pos="nn">mother</w>
+<w pos="-rrb-">)</w>
+<w pos="in">in</w>
+<w pos="cd">1981</w>
 <w pos=",">,</w>
-<w pos="rb">nevertheless</w>
+<coref set-id="set_2">
+<coref set-id="set_8">
+<w pos="nnp">Mr.</w>
+<coref set-id="set_41">
+<w pos="nnp">Bush_s</w>
+</coref>
+</coref>
+<w pos="nn">life</w>
+</coref>
+<w pos="in">through</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">early</w>
+<w pos="nns">40s</w>
+<w pos="vbd">was</w>
+<w pos="vbn">characterized</w>
+<w pos="in">by</w>
+<w pos="nn">business</w>
+<w pos="nns">failures</w>
 <w pos=",">,</w>
+<w pos="nns">accusations</w>
+<w pos="in">of</w>
+<coref set-id="set_2">
+<w pos="nn">insider</w>
+</coref>
+<w pos="nn">trading</w>
+<w pos=",">,</w>
+<w pos="nns">reports</w>
+<w pos="in">of</w>
+<w pos="jj">silent</w>
+<w pos="nns">bailouts</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="jj">self-confessed</w>
+<w pos="nn">_drinking</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="sym">_</w>
+<w pos="-lrb-">(</w>
+<coref set-id="set_2">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">claimed</w>
+<w pos="to">to</w>
+<w pos="vb">have</w>
+<w pos="jj">renounced</w>
+<w pos="nn">drinking_the</w>
+<w pos="nn">word</w>
+<w pos="nn">alcoholism</w>
+<w pos="vbd">was</w>
+<w pos="rb">never</w>
+<w pos="nn">used_the</w>
+<w pos="nn">day</w>
+<w pos="in">after</w>
+<coref set-id="set_2">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">40th</w>
+<w pos="nn">birthday</w>
+<w pos=",">,</w>
+<w pos="in">as</w>
+<coref set-id="set_27">
+<w pos="dt">the</w>
+<w pos="nn">result</w>
+</coref>
+<w pos="in">of</w>
+<w pos="nn">divine</w>
+<w pos="nn">intervention</w>
+<w pos="cc">and</w>
+<w pos="dt">an</w>
+<w pos="nn">act</w>
+<w pos="in">of</w>
+<w pos="nn">will</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="x">)</w>
+<w pos="x">He</w>
+<w pos="x">became</w>
+<w pos="x">a</w>
+<w pos="x">public</w>
+<w pos="x">figure</w>
+<w pos="x">in</w>
+<w pos="x">1989</w>
+<w pos="x">when</w>
+<w pos="x">,</w>
+<w pos="x">through</w>
+<w pos="x">a</w>
+<w pos="x">questioned</w>
+<w pos="x">investment</w>
+<w pos="x">,</w>
+<w pos="x">he</w>
+<w pos="x">became</w>
+<w pos="x">part</w>
+<w pos="x">of</w>
+<w pos="x">the</w>
+<w pos="x">consortium</w>
+<w pos="x">that</w>
+<w pos="x">bought</w>
+<w pos="x">the</w>
+<w pos="x">Texas</w>
+<w pos="x">Rangers</w>
+<w pos="x">baseball</w>
+<w pos="x">franchise</w>
+<w pos="x">;</w>
+<w pos="x">his</w>
+<w pos="x">title</w>
+<w pos="x">as</w>
+<w pos="x">managing</w>
+<w pos="x">partner</w>
+<w pos="x">produced</w>
+<w pos="x">an</w>
+<w pos="x">impression</w>
+<w pos="x">of</w>
+<w pos="x">competence</w>
+<w pos="x">and</w>
+<w pos="x">good</w>
+<w pos="x">humor</w>
+<w pos="x">.</w>
+</s><s>
+<w pos="in">In</w>
+<w pos="cd">1994</w>
+<coref set-id="set_2">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">ran</w>
+<w pos="in">for</w>
+<coref set-id="set_9">
+<w pos="nn">governor</w>
+</coref>
+<w pos="in">of</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
+</coref>
+<w pos="cc">and</w>
+<w pos="vbd">proved</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<coref set-id="set_9">
+<w pos="dt">a</w>
+<w pos="jj">first-rate</w>
+<w pos="nn">campaigner</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="wrb">When</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">elected</w>
+<w pos=",">,</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="dt">a</w>
+<w pos="jj">bipartisan</w>
+<w pos="nn">state</w>
+<w pos=":">;</w>
+<w pos="in">as</w>
+<coref set-id="set_9">
+<coref set-id="set_9">
+<w pos="nnp">Mr.</w>
+<coref set-id="set_41">
+<w pos="nnp">Bush_s</w>
+</coref>
+</coref>
+<w pos="nn">advisor</w>
+<w pos="nnp">Karl</w>
+<w pos="nnp">Rove</w>
+</coref>
+<w pos="rb">once</w>
+<w pos="vbd">said</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">charmed</w>
+<coref set-id="set_54">
+<w pos="nnps">Democrats</w>
+</coref>
+<w pos="in">into</w>
+<w pos="vbg">riding</w>
+<w pos="in">on</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">strong</w>
+<w pos="nn">back</w>
+<w pos="in">as</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">forded</w>
+<w pos="dt">the</w>
+<w pos="nn">river</w>
+<w pos="in">of</w>
+<w pos="nn">discord</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="sym">_</w>
+<w pos="wrb">When</w>
+<coref set-id="set_9">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">left</w>
+<coref set-id="set_25">
+<w pos="nn">office</w>
+</coref>
+<w pos="in">as</w>
+<coref set-id="set_9">
+<w pos="nn">president</w>
+</coref>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
+</coref>
+<w pos="nn">government</w>
+<w pos="vbd">was</w>
+<w pos="rb">all</w>
+<w pos="jj">Republican.Mr.</w>
+</s><s>
+<coref set-id="set_9">
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<coref set-id="set_0">
+<w pos="dt">a</w>
+<w pos="nn">politician</w>
+</coref>
+<coref set-id="set_28">
+<w pos="nns">opponents</w>
+</coref>
+<w pos="vbd">underestimated</w>
+<w pos="in">at</w>
+<coref set-id="set_28">
+<w pos="prp$">their</w>
+</coref>
+<w pos="nn">peril</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="in">throughout</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="nn">career</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="nns">opponents</w>
+<w pos="vbd">did</w>
+<w pos="rb">just</w>
+<w pos="dt">that</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbn">cultivated</w>
+<w pos="dt">an</w>
+<w pos="nn">aura</w>
+<w pos="in">of</w>
+<w pos="nn">know-nothingness</w>
+<w pos=",">,</w>
+<w pos="in">of</w>
+<w pos="jj">_a</w>
+<w pos="jj">fine</w>
+<w pos="nnp">disregard</w>
+<w pos="nnp">_</w>
+<w pos="in">of</w>
+<w pos="jj">inconvenient</w>
+<w pos="nns">facts</w>
+<w pos="cc">or</w>
+<w pos="nns">opinions</w>
+<w pos=",">,</w>
+<w pos="cc">but</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="jj">devastating</w>
+<w pos="in">on</w>
+<w pos="dt">the</w>
+<w pos="nn">attack</w>
+<w pos=",">,</w>
+<w pos="jj">able</w>
+<w pos="to">to</w>
+<w pos="vb">present</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="in">as</w>
+<coref set-id="set_0">
+<w pos="dt">an</w>
+<w pos="jj">ordinary</w>
+<w pos="nn">man</w>
+</coref>
+<w pos="vbn">outraged</w>
+<w pos="in">by</w>
+<w pos="dt">the</w>
+<w pos="nn">self-superiority</w>
+<w pos="in">of</w>
+<w pos="wp">whoever</w>
+<w pos="md">might</w>
+<w pos="vb">be</w>
+<w pos="vbg">opposing</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="in">at</w>
+<coref set-id="set_50">
+<w pos="dt">any</w>
+<w pos="nn">time</w>
+</coref>
+<w pos="cc">and</w>
+<w pos="in">on</w>
+<coref set-id="set_47">
+<w pos="dt">any</w>
+<w pos="nn">issue</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="rb">Even</w>
+<w pos="in">as</w>
+<coref set-id="set_0">
+<w pos="nn">president</w>
+</coref>
+<w pos=",">,</w>
+<w pos="in">before</w>
+<coref set-id="set_1">
+<w pos="dt">the</w>
+<w pos="jj">al</w>
+<w pos="nnp">Qaeda</w>
+<w pos="jj">terrorist</w>
+<w pos="nns">attacks</w>
+</coref>
+<w pos="in">on</w>
+<w pos="nnp">Washington</w>
+<w pos=",">,</w>
+<w pos="nnp">D.C.</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<coref set-id="set_17">
+<w pos="nnp">New</w>
+<w pos="nnp">York</w>
+<w pos="nnp">City</w>
+</coref>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<coref set-id="set_31">
+<w pos="cd">2001</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="rb">not</w>
+<w pos="rb">always</w>
+<w pos="vbn">taken</w>
+<w pos="rb">seriously</w>
+<w pos="in">by</w>
+<w pos="jj">political</w>
+<w pos="nns">commentators</w>
+<w pos="cc">or</w>
+<w pos="dt">the</w>
+<w pos="nn">public</w>
+<w pos="in">at</w>
+<w pos="jj">large</w>
+<w pos=":">;</w>
+<w pos="in">after</w>
+<w pos="dt">that</w>
+<w pos="nn">event</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbd">became</w>
+<w pos="dt">a</w>
+<w pos="jj">heroic</w>
+<w pos="nn">figure</w>
+<w pos=",">,</w>
+<w pos="vbg">standing</w>
+<w pos="in">in</w>
+<w pos="nn">defense</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<coref set-id="set_32">
+<w pos="nnp">United</w>
+<w pos="nnps">States</w>
+</coref>
+<w pos="in">as</w>
+<w pos="in">if</w>
+<w pos="dt">that</w>
+<w pos="jj">historic</w>
+<w pos="nn">responsibility</w>
+<w pos="vbd">were</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="nn">alone</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbd">launched</w>
+<w pos="dt">an</w>
+<w pos="nn">assault</w>
+<w pos="in">against</w>
+<coref set-id="set_56">
+<w pos="nnp">Afghanistan</w>
+</coref>
+<w pos=",">,</w>
+<w pos="wrb">where</w>
+<coref set-id="set_52">
+<w pos="jj">al</w>
+<w pos="nn">Qaeda</w>
+</coref>
+<w pos="vbd">had</w>
+<coref set-id="set_56">
+<w pos="nnp">Afghanistan</w>
+</coref>
+<w pos="nns">headquarters</w>
+<w pos="cc">and</w>
+<w pos="nn">training</w>
+<w pos="nns">grounds</w>
+<w pos=",">,</w>
+<w pos="nns">weeks</w>
+<w pos="in">after</w>
+<coref set-id="set_1">
+<w pos="dt">the</w>
+<w pos="cd">2001</w>
+<w pos="nns">attacks</w>
+</coref>
+<w pos=",">,</w>
+<w pos="vbg">leading</w>
+<w pos="to">to</w>
+<w pos="dt">the</w>
+<w pos="jj">immediate</w>
+<w pos="nn">fall</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="jj">totalitarian</w>
+<w pos="jj">Islamic</w>
+<w pos="nn">regime</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="nnp">Taliban</w>
+<w pos=",">,</w>
+<w pos="wdt">which</w>
+<w pos="vbd">had</w>
+<w pos="vbn">given</w>
+<coref set-id="set_52">
+<w pos="nn">al</w>
+<w pos="nnp">Qaeda</w>
+</coref>
+<w pos="nn">sanctuary</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">Though</w>
+<coref set-id="set_0">
+<w pos="nnp">Osama</w>
+<w pos="nn">bin</w>
+<w pos="nnp">Laden</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_0">
+<w pos="dt">the</w>
+<w pos="nn">leader</w>
+</coref>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="jj">worldwide</w>
+<coref set-id="set_0">
+<w pos="nnp">Islamist</w>
+</coref>
+<w pos="nn">movement</w>
+<w pos=",">,</w>
+<w pos="vbd">escaped</w>
+<w pos="vb">capture</w>
+<w pos=",">,</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="nns">forces</w>
+<w pos="vbd">were</w>
+<w pos="rb">severely</w>
+<w pos="vbn">weakened</w>
+<w pos="cc">and</w>
+<w pos="vbn">scattered</w>
+<w pos=":">;</w>
+<w pos="in">during</w>
+<coref set-id="set_0">
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<coref set-id="set_41">
+<w pos="nnp">Bush_s</w>
+</coref>
+</coref>
+<w pos="jj">first</w>
+<w pos="nn">term</w>
+</coref>
+<coref set-id="set_18">
+<w pos="ex">there</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos=",">,</w>
+<w pos="in">against</w>
+<w pos="dt">all</w>
+<w pos="nns">expectations</w>
+<w pos="cc">and</w>
+<w pos="nns">predictions</w>
+<w pos=",">,</w>
+<w pos="dt">no</w>
+<w pos="jj">further</w>
+<w pos="jj">terrorist</w>
+<w pos="nn">attack</w>
+<w pos="in">on</w>
+<w pos="jj">American</w>
+<w pos="nn">soil</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="vbg">Arguing</w>
+<w pos="in">that</w>
+<coref set-id="set_0">
+<w pos="nnp">Saddam</w>
+<w pos="nnp">Hussein_s</w>
+</coref>
+<w pos="nn">government</w>
+<w pos="in">in</w>
+<coref set-id="set_15">
+<w pos="nnp">Iraq</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="dt">a</w>
+<w pos="nn">center</w>
+<w pos="in">of</w>
+<w pos="jj">terrorist</w>
+<w pos="nns">plotting</w>
+<w pos="cc">and</w>
+<w pos="dt">a</w>
+<w pos="nn">repository</w>
+<w pos="in">of</w>
+<w pos="jj">terrorist</w>
+<w pos="nn">weaponry</w>
+<w pos=",">,</w>
+<w pos="in">from</w>
+<w pos="wp">what</w>
+<w pos="vbd">turned</w>
+<w pos="rp">out</w>
+<w pos="to">to</w>
+<w pos="vb">be</w>
+<w pos="jj">nonexistent</w>
+<w pos="nn">chemical</w>
+<w pos="cc">and</w>
+<w pos="jj">biological</w>
+<w pos="nns">arms</w>
+<w pos="to">to</w>
+<w pos="rb">equally</w>
+<w pos="jj">chimerical</w>
+<w pos="jj">nuclear</w>
+<w pos="nn">technology</w>
+<w pos=",">,</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="in">in</w>
+<w pos="cd">2003</w>
+<w pos="vbd">led</w>
+<w pos="dt">a</w>
+<w pos="jj">limited</w>
+<w pos="jj">international</w>
+<w pos="nn">coalition</w>
+<w pos="in">into</w>
+<coref set-id="set_15">
+<w pos="nnp">Iraq</w>
+</coref>
+<w pos="cc">and</w>
+<w pos="vbd">replaced</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Hussein</w>
+</coref>
+<w pos="in">with</w>
+<w pos="dt">an</w>
+<w pos="jj">occupying</w>
+<w pos="nn">force</w>
+<w pos=",">,</w>
+<w pos="wdt">which</w>
+<w pos="in">over</w>
+<coref set-id="set_53">
+<w pos="dt">the</w>
+<w pos="jj">next</w>
+<w pos="nn">year</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">pushed</w>
+<w pos="rp">back</w>
+<w pos="in">into</w>
+<w pos="rb">consistently</w>
+<w pos="vbg">shrinking</w>
+<w pos="nns">enclaves</w>
+<w pos="in">in</w>
+<w pos="dt">the</w>
+<w pos="nn">face</w>
+<w pos="in">of</w>
+<coref set-id="set_55">
+<w pos="dt">a</w>
+<w pos="jj">fierce</w>
+<w pos="nn">insurgency</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="vbg">Following</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="nn">reelection</w>
+<w pos="in">in</w>
+<coref set-id="set_38">
+<w pos="cd">2004</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">ordered</w>
+<w pos="dt">the</w>
+<w pos="nn">destruction</w>
+<w pos="in">of</w>
+<coref set-id="set_43">
+<w pos="dt">the</w>
+<w pos="nns">cities</w>
+</coref>
+<w pos="wrb">where</w>
+<w pos="dt">the</w>
+<w pos="nns">insurgents</w>
+<w pos="vbd">were</w>
+<w pos="vbn">thought</w>
+<w pos="to">to</w>
+<w pos="vb">be</w>
+<w pos="vbn">concentrated</w>
+<w pos=":">;</w>
+<w pos="in">though</w>
+<coref set-id="set_43">
+<w pos="dt">the</w>
+<w pos="nns">cities</w>
+</coref>
+<w pos="vbd">were</w>
+<w pos="vbn">destroyed</w>
+<w pos=",">,</w>
+<coref set-id="set_55">
+<w pos="dt">the</w>
+<w pos="nn">insurgency</w>
+</coref>
+<w pos="vbd">continued</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="rb">then</w>
+<w pos="vbd">pressed</w>
+<w pos="rb">on</w>
+<w pos="to">to</w>
+<coref set-id="set_44">
+<w pos="nnp">Iran</w>
+</coref>
+<w pos="cc">and</w>
+<coref set-id="set_34">
+<w pos="nnp">North</w>
+<w pos="nnp">Korea</w>
+</coref>
+<w pos=",">,</w>
+<w pos="wdt">which</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbd">had</w>
+<w pos="vbn">identified</w>
+<w pos="in">as</w>
+<w pos="jj">_rogue</w>
+<w pos="nns">states</w>
+<w pos="nnp">._With</w>
+</s><s>
+<w pos="nnp">U.S.</w>
+<w pos="nnp">Armed</w>
+<w pos="nnps">Forces</w>
+<w pos="vbn">tied</w>
+<w pos="rp">down</w>
+<w pos="in">in</w>
+<coref set-id="set_15">
+<w pos="nnp">Iraq</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">turned</w>
+<w pos="to">to</w>
+<w pos="wp">what</w>
+<w pos="nns">critics</w>
+<w pos="vbd">called</w>
+<w pos="dt">a</w>
+<w pos="jj">_private</w>
+<w pos="nn">army</w>
+<w pos="jj">subject</w>
+<w pos="to">to</w>
+<w pos="dt">no</w>
+<w pos="nn">law</w>
+<w pos="cc">and</w>
+<w pos="vbg">operating</w>
+<w pos="in">at</w>
+<w pos="dt">the</w>
+<w pos="nn">whim</w>
+<w pos="in">of</w>
+<w pos="dt">a</w>
+<w pos="jj">single</w>
+<w pos="nn">individual__that</w>
+<w pos="vbz">is</w>
+<w pos=",">,</w>
+<w pos="to">to</w>
+<w pos="jj">large</w>
+<w pos="nns">numbers</w>
+<w pos="in">of</w>
+<w pos="jj">private</w>
+<w pos="nns">contractors</w>
+<w pos="vbn">employed</w>
+<w pos="in">by</w>
+<w pos="nnp">U.</w>
+<w pos="nnp">S.</w>
+<w pos=",">,</w>
+<w pos="nnp">Serbian</w>
+<w pos=",">,</w>
+<w pos="nnp">Nigerian</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="jj">Saudi</w>
+<w pos="nn">corporations_to</w>
+<w pos="nn">launch</w>
+<w pos="nn">land</w>
+<w pos=",">,</w>
+<w pos="nn">sea</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="nn">air</w>
+<w pos="nns">attacks</w>
+<w pos="vbn">meant</w>
+<w pos="to">to</w>
+<w pos="vb">destroy</w>
+<w pos="jj">nuclear</w>
+<w pos="nns">facilities</w>
+<w pos="in">in</w>
+<w pos="dt">both</w>
+<coref set-id="set_44">
+<w pos="nnp">Iran</w>
+</coref>
+<w pos="cc">and</w>
+<coref set-id="set_34">
+<w pos="nnp">North</w>
+<w pos="nnp">Korea</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">While</w>
+<w pos="dt">the</w>
+<w pos="jj">Afghan</w>
+<w pos="cc">and</w>
+<coref set-id="set_15">
+<w pos="jj">Iraqi</w>
+</coref>
+<w pos="nns">armies</w>
+<w pos="cc">and</w>
+<coref set-id="set_60">
+<w pos="nns">governments</w>
+</coref>
+<w pos="vbd">had</w>
+<w pos="vbn">collapsed</w>
+<w pos="rb">almost</w>
+<w pos="in">at</w>
+<w pos="dt">the</w>
+<w pos="jj">first</w>
+<w pos="nn">sign</w>
+<w pos="in">of</w>
+<coref set-id="set_11">
+<w pos="jj">American</w>
+</coref>
+<w pos="nn">assault</w>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<w pos="jj">Iranian</w>
+<w pos="cc">and</w>
+<coref set-id="set_34">
+<w pos="jj">North</w>
+<w pos="jj">Korean</w>
+</coref>
+<w pos="nns">invasions</w>
+<w pos="vbd">were</w>
+<w pos="vbn">beaten</w>
+<w pos="rp">back</w>
+<w pos="in">by</w>
+<w pos="jj">sustained</w>
+<w pos="nn">resistance</w>
+<w pos="cc">and</w>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<coref set-id="set_34">
+<w pos="nnp">North</w>
+<w pos="nnp">Korea</w>
+</coref>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<w pos="nn">use</w>
+<w pos="in">of</w>
+<w pos="nns">explosives</w>
+<w pos="in">that</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">denounced</w>
+<w pos="in">as</w>
+<w pos="jj">_tactical</w>
+<w pos="jj">nuclear</w>
+<w pos="nns">weapons</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<w pos="in">though</w>
+<w pos="dt">this</w>
+<w pos="vbd">was</w>
+<w pos="rb">later</w>
+<w pos="vbn">proved</w>
+<w pos="rb">not</w>
+<w pos="to">to</w>
+<w pos="vb">be</w>
+<coref set-id="set_12">
+<w pos="dt">the</w>
+<w pos="nn">case</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="rb">Nonetheless</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="rb">then</w>
+<w pos="vbd">ordered</w>
+<w pos="wp">what</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="vbd">described</w>
+<w pos="in">as</w>
+<w pos="jj">_pinpoint</w>
+<coref set-id="set_16">
+<w pos="nn">_</w>
+</coref>
+<w pos="jj">nuclear</w>
+<w pos="nns">attacks</w>
+<w pos="in">on</w>
+<coref set-id="set_33">
+<w pos="dt">the</w>
+<w pos="jj">nuclear</w>
+<w pos="nns">sites</w>
+</coref>
+<w pos="in">in</w>
+<coref set-id="set_44">
+<w pos="nnp">Iran</w>
+</coref>
+<w pos="cc">and</w>
+<coref set-id="set_34">
+<w pos="nnp">North</w>
+<w pos="nnp">Korea</w>
+</coref>
+<w pos=",">,</w>
+<w pos="wdt">which</w>
+<w pos=",">,</w>
+<w pos="in">while</w>
+<w pos="vbg">achieving</w>
+<coref set-id="set_33">
+<w pos="prp$">their</w>
+</coref>
+<w pos="nns">goals</w>
+<w pos=",">,</w>
+<w pos="rb">also</w>
+<w pos="vbd">led</w>
+<w pos="to">to</w>
+<w pos="dt">the</w>
+<w pos="nnp">One-Day</w>
+<w pos="nnp">War</w>
+<w pos=",">,</w>
+<w pos="dt">a</w>
+<w pos="jj">nuclear</w>
+<w pos="nn">exchange</w>
+<w pos="in">between</w>
+<w pos="nnp">India</w>
+<w pos="cc">and</w>
+<w pos="nnp">Pakistan</w>
+<w pos="wdt">that</w>
+<w pos="vbd">left</w>
+<w pos="nnp">Bombay</w>
+<w pos="cc">and</w>
+<w pos="nnp">Karachi</w>
+<w pos="in">in</w>
+<w pos="nns">ruins</w>
+<w pos="cc">and</w>
+<w pos="vbd">led</w>
+<w pos="to">to</w>
+<w pos="dt">the</w>
+<w pos="nn">fall</w>
+<w pos="in">of</w>
+<coref set-id="set_60">
+<w pos="dt">the</w>
+<w pos="nns">governments</w>
+</coref>
+<w pos="in">of</w>
+<w pos="dt">both</w>
+<w pos="nns">countries</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="to">to</w>
+<w pos="dt">the</w>
+<w pos="nn">withdrawal</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="jj">American-led</w>
+<w pos="nn">coalition</w>
+<w pos="nns">forces</w>
+<w pos="in">from</w>
+<coref set-id="set_15">
+<w pos="nnp">Iraq</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_27">
+<w pos="dt">The</w>
+<w pos="nn">result</w>
+</coref>
+<w pos="vbd">was</w>
+<coref set-id="set_48">
+<w pos="dt">the</w>
+<w pos="nn">series</w>
+</coref>
+<w pos="in">of</w>
+<w pos="jj">still-continuing</w>
+<w pos="jj">civil</w>
+<w pos="nns">wars</w>
+<w pos="in">throughout</w>
+<w pos="dt">the</w>
+<w pos="nnp">Middle</w>
+<w pos="nnp">East</w>
+<w pos="cc">and</w>
+<w pos="dt">the</w>
+<w pos="jj">Indian</w>
+<w pos="nn">subcontinent</w>
+<w pos="wdt">that</w>
+<w pos=",">,</w>
+<w pos="in">while</w>
+<w pos="vbg">involving</w>
+<w pos="dt">no</w>
+<w pos="jj">unconventional</w>
+<w pos="nns">weapons</w>
+<w pos="in">since</w>
+<coref set-id="set_10">
+<w pos="cd">2006</w>
+</coref>
+<w pos="vbp">have</w>
+<w pos=",">,</w>
+<w pos="vbg">according</w>
+<w pos="to">to</w>
+<w pos="dt">the</w>
+<w pos="nnp">United</w>
+<w pos="nnps">Nations</w>
+<w pos=",">,</w>
+<w pos="vbd">caused</w>
+<w pos="dt">the</w>
+<w pos="nns">deaths</w>
+<w pos="in">of</w>
+<w pos="cd">12</w>
+<w pos="cd">million</w>
+<w pos="nns">people</w>
+<w pos="cc">and</w>
+<w pos="dt">the</w>
+<w pos="nn">displacement</w>
+<w pos="in">of</w>
+<w pos="nns">millions</w>
+<w pos="rbr">more</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_0">
+<w pos="x">Mr.</w>
+<w pos="x">Bush_s</w>
+</coref>
+<w pos="x">claim</w>
+<w pos="x">in</w>
+<w pos="x">action</w>
+<w pos="x">if</w>
+<w pos="x">not</w>
+<w pos="x">in</w>
+<w pos="x">words</w>
+<w pos="x">that</w>
+<w pos="x">the</w>
+<coref set-id="set_32">
+<w pos="x">United</w>
+<w pos="x">States</w>
+</coref>
+<w pos="x">retained</w>
+<w pos="x">an</w>
+<w pos="x">international</w>
+<w pos="x">monopoly</w>
+<w pos="x">on</w>
+<w pos="x">the</w>
+<w pos="x">legitimate</w>
+<w pos="x">use</w>
+<w pos="x">of</w>
+<w pos="x">force</w>
+<w pos="x">left</w>
+<w pos="x">allies</w>
+<w pos="x">such</w>
+<w pos="x">as</w>
+<w pos="x">Great</w>
+<w pos="x">Britain</w>
+<w pos="x">and</w>
+<w pos="x">alliances</w>
+<w pos="x">such</w>
+<w pos="x">as</w>
+<w pos="x">NATO</w>
+<w pos="x">crippled</w>
+<w pos="x">;</w>
+<w pos="x">it</w>
+<w pos="x">also</w>
+<w pos="x">left</w>
+<w pos="x">the</w>
+<coref set-id="set_32">
+<w pos="x">United</w>
+<w pos="x">States</w>
+</coref>
+<w pos="x">at</w>
+<w pos="x">least</w>
+<w pos="x">formally</w>
+<w pos="x">unchallenged.It</w>
+<w pos="x">was</w>
+<w pos="x">often</w>
+<w pos="x">said</w>
+<w pos="x">,</w>
+<w pos="x">during</w>
+<coref set-id="set_0">
+<w pos="x">Mr.</w>
+<w pos="x">Bush_s</w>
+</coref>
+<w pos="x">first</w>
+<w pos="x">term</w>
+<w pos="x">,</w>
+<w pos="x">that</w>
+<w pos="x">he</w>
+<w pos="x">saw</w>
+<w pos="x">himself</w>
+<w pos="x">as</w>
+<w pos="x">a</w>
+<w pos="x">messianic</w>
+<w pos="x">figure</w>
+<w pos="x">,</w>
+<w pos="x">ordained</w>
+<w pos="x">by</w>
+<w pos="x">God</w>
+<w pos="x">to</w>
+<w pos="x">carry</w>
+<w pos="x">the</w>
+<w pos="x">flag</w>
+<w pos="x">of</w>
+<w pos="x">freedom</w>
+<w pos="x">(</w>
+<w pos="x">_God_s</w>
+<w pos="x">gift</w>
+<w pos="x">,</w>
+<w pos="x">_</w>
+<w pos="x">in</w>
+<coref set-id="set_0">
+<w pos="x">Mr.</w>
+<w pos="x">Bush_s</w>
+</coref>
+<w pos="x">words</w>
+<w pos="x">,</w>
+<w pos="x">_to</w>
+<w pos="x">every</w>
+<w pos="x">individual_</w>
+<w pos="x">)</w>
+<w pos="x">to</w>
+<w pos="x">the</w>
+<w pos="x">corners</w>
+<w pos="x">of</w>
+<w pos="x">the</w>
+<w pos="x">earth</w>
+<w pos="x">,</w>
+<w pos="x">and</w>
+<w pos="x">that</w>
+<w pos="x">the</w>
+<w pos="x">wars</w>
+<w pos="x">in</w>
+<coref set-id="set_56">
+<w pos="x">Afghanistan</w>
+</coref>
+<w pos="x">and</w>
+<coref set-id="set_15">
+<w pos="x">Iraq</w>
+</coref>
+<w pos="x">,</w>
+<w pos="x">at</w>
+<w pos="x">least</w>
+<w pos="x">,</w>
+<w pos="x">were</w>
+<w pos="x">part</w>
+<w pos="x">of</w>
+<w pos="x">a</w>
+<w pos="x">crusade</w>
+<w pos="x">of</w>
+<w pos="x">transcendent</w>
+<w pos="x">significance</w>
+<w pos="x">.</w>
+</s><s>
+<w pos="in">After</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush_s</w>
+</coref>
+<w pos="vbp">reelection</w>
+<w pos=",">,</w>
+<coref set-id="set_35">
+<w pos="nnp">Islamist</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="rb">increasingly</w>
+<w pos="vbn">argued</w>
+<w pos="in">that</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr. Hussein</w>
+</coref>
+<w pos="nns">wars</w>
+<w pos="vbd">were</w>
+<w pos="dt">a</w>
+<w pos="jj">diversionary</w>
+<w pos="cc">and</w>
+<w pos="jj">obfuscatory</w>
+<w pos="nn">tactic</w>
+<w pos="vbn">meant</w>
+<w pos="to">to</w>
+<w pos="vb">raise</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush_s</w>
+</coref>
+<w pos="nn">standing</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="dt">the</w>
+<w pos="nn">power</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<coref set-id="set_36">
+<w pos="nnp">Republican</w>
+<w pos="nnp">Party</w>
+</coref>
+<w pos="cc">both</w>
+<w pos="in">in</w>
+<w pos="nnp">Congress</w>
+<w pos="cc">and</w>
+<w pos="in">in</w>
+<coref set-id="set_4">
+<w pos="dt">the</w>
+<w pos="nns">states</w>
+</coref>
+<w pos=",">,</w>
+<w pos="rb">solely</w>
+<w pos="in">for</w>
+<w pos="dt">the</w>
+<w pos="nn">benefit</w>
+<w pos="in">of</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush_s</w>
+</coref>
+<w pos="jj">domestic</w>
+<w pos="nn">agenda</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="in">that</w>
+<w pos=",">,</w>
+<w pos="in">as</w>
+<coref set-id="set_0">
+<w pos="dt">the</w>
+<w pos="nn">poet</w>
+</coref>
+<coref set-id="set_0">
+<w pos="nnp">Donald</w>
+<w pos="nnp">Hall</w>
+</coref>
+<w pos="vbd">wrote</w>
+<w pos=",">,</w>
+<coref set-id="set_3">
+<w pos="nn">_it</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="dt">the</w>
+<coref set-id="set_32">
+<w pos="nnp">United</w>
+<w pos="nnps">States</w>
+</coref>
+<coref set-id="set_32">
+<w pos="nnp">U.S.</w>
+</coref>
+<w pos="wdt">that</w>
+<w pos="vbd">was</w>
+<w pos="dt">the</w>
+<w pos="jj">true</w>
+<w pos="nn">object</w>
+<w pos="in">of</w>
+<w pos="nn">conquest</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="x">_</w>
+<w pos="x">While</w>
+<w pos="x">that</w>
+<w pos="x">is</w>
+<w pos="x">a</w>
+<w pos="x">matter</w>
+<w pos="x">for</w>
+<w pos="x">history</w>
+<w pos="x">to</w>
+<w pos="x">settle</w>
+<w pos="x">(</w>
+<w pos="x">when</w>
+<w pos="x">,</w>
+<w pos="x">as</w>
+<coref set-id="set_0">
+<w pos="x">Mr.</w>
+<w pos="x">Bush</w>
+</coref>
+<w pos="x">himself</w>
+<w pos="x">once</w>
+<w pos="x">put</w>
+<w pos="x">it</w>
+<w pos="x">,</w>
+<w pos="x">_we_ll</w>
+<w pos="x">all</w>
+<w pos="x">be</w>
+<w pos="x">dead_</w>
+<w pos="x">)</w>
+<w pos="x">,</w>
+<w pos="x">few</w>
+<w pos="x">would</w>
+<w pos="x">dispute</w>
+<w pos="x">that</w>
+<coref set-id="set_0">
+<w pos="x">Mr.</w>
+<w pos="x">Bush</w>
+</coref>
+<w pos="x">left</w>
+<w pos="x">the</w>
+<coref set-id="set_32">
+<w pos="x">United</w>
+<w pos="x">States</w>
+</coref>
+<w pos="x">if</w>
+<w pos="x">not</w>
+<w pos="x">conquered</w>
+<w pos="x">then</w>
+<w pos="x">irrevocably</w>
+<w pos="x">changed_and</w>
+<w pos="x">,</w>
+<w pos="x">according</w>
+<w pos="x">to</w>
+<w pos="x">the</w>
+<coref set-id="set_11">
+<w pos="x">American</w>
+</coref>
+<w pos="x">novelist</w>
+<coref set-id="set_0">
+<w pos="x">Philip</w>
+<w pos="x">Roth</w>
+</coref>
+<w pos="x">,</w>
+<w pos="x">who</w>
+<w pos="x">in</w>
+<w pos="x">2008</w>
+<w pos="x">,</w>
+<w pos="x">cited</w>
+<w pos="x">by</w>
+<w pos="x">the</w>
+<w pos="x">Swedish</w>
+<w pos="x">Academy</w>
+<w pos="x">as</w>
+<w pos="x">_the</w>
+<w pos="x">voice</w>
+<w pos="x">of</w>
+<w pos="x">a</w>
+<w pos="x">lost</w>
+<w pos="x">republic</w>
+<w pos="x">,</w>
+<w pos="x">_</w>
+<w pos="x">was</w>
+<w pos="x">awarded</w>
+<w pos="x">the</w>
+<w pos="x">Nobel</w>
+<w pos="x">Prize</w>
+<w pos="x">for</w>
+<w pos="x">literature</w>
+<w pos="x">,</w>
+<w pos="x">_less</w>
+<w pos="x">a</w>
+<w pos="x">nation</w>
+<w pos="x">governed</w>
+<w pos="x">by</w>
+<w pos="x">its</w>
+<w pos="x">citizenry</w>
+<w pos="x">,</w>
+<w pos="x">where</w>
+<w pos="x">each</w>
+<w pos="x">of</w>
+<w pos="x">us</w>
+<w pos="x">has</w>
+<w pos="x">one</w>
+<w pos="x">vote</w>
+<w pos="x">,</w>
+<w pos="x">than</w>
+<w pos="x">a</w>
+<w pos="x">stock</w>
+<w pos="x">exchange</w>
+<w pos="x">owned</w>
+<w pos="x">by</w>
+<w pos="x">its</w>
+<w pos="x">shareholders</w>
+<w pos="x">,</w>
+<w pos="x">according</w>
+<w pos="x">to</w>
+<w pos="x">the</w>
+<w pos="x">number</w>
+<w pos="x">of</w>
+<w pos="x">their</w>
+<w pos="x">shares</w>
+<w pos="x">._Mr.</w>
+<w pos="x">Bush_s</w>
+<coref set-id="set_36">
+<w pos="x">Republican</w>
+<w pos="x">Party</w>
+</coref>
+<w pos="x">had</w>
+<w pos="x">,</w>
+<w pos="x">during</w>
+<w pos="x">his</w>
+<w pos="x">time</w>
+<w pos="x">in</w>
+<w pos="x">office</w>
+<w pos="x">,</w>
+<w pos="x">so</w>
+<w pos="x">effectively</w>
+<w pos="x">marginalized</w>
+<w pos="x">the</w>
+<w pos="x">opposition</w>
+<w pos="x">Democratic</w>
+<w pos="x">Party</w>
+<w pos="x">that</w>
+<w pos="x">it</w>
+<w pos="x">all</w>
+<w pos="x">but</w>
+<w pos="x">ceased</w>
+<w pos="x">to</w>
+<w pos="x">function</w>
+<w pos="x">in</w>
+<w pos="x">many</w>
+<w pos="x">states</w>
+<w pos="x">.</w>
+</s><s>
+<w pos="in">After</w>
+<w pos="dt">the</w>
+<w pos="nn">suspension</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="nn">filibuster</w>
+<w pos="nn">rule</w>
+<w pos="in">in</w>
+<w pos="dt">the</w>
+<coref set-id="set_32">
+<w pos="nnp">U.S.</w>
+</coref>
+<w pos="nnp">Senate</w>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<w pos="vbg">remaining</w>
+<w pos="cd">45</w>
+<w pos="jj">Democratic</w>
+<w pos="nns">senators</w>
+<w pos="vbd">were</w>
+<w pos="jj">unable</w>
+<w pos="to">to</w>
+<w pos="vb">block</w>
+<w pos="dt">any</w>
+<w pos="in">of</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<coref set-id="set_41">
+<w pos="nnp">Bush_s</w>
+</coref>
+</coref>
+<w pos="nns">appointments</w>
+<w pos="to">to</w>
+<coref set-id="set_49">
+<w pos="dt">the</w>
+<w pos="jj">federal</w>
+<w pos="nns">courts</w>
+</coref>
+<w pos="cc">or</w>
+<w pos="dt">the</w>
+<w pos="jj">executive</w>
+<w pos="nn">branch</w>
+<w pos="in">of</w>
+<coref set-id="set_20">
+<w pos="nn">government</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_21">
+<w pos="dt">The</w>
+<w pos="nnps">Republicans</w>
+</coref>
+<w pos="vbd">had</w>
+<w pos="rb">so</w>
+<w pos="rb">successfully</w>
+<w pos="vbn">supported</w>
+<coref set-id="set_0">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="in">as</w>
+<coref set-id="set_6">
+<w pos="dt">an</w>
+<w pos="jj">infallible</w>
+<w pos="cc">and</w>
+<w pos="jj">irreplaceable</w>
+<w pos="nn">leader</w>
+</coref>
+<w pos="in">that</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">came</w>
+<w pos="to">to</w>
+<w pos="vb">seem</w>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<coref set-id="set_58">
+<w pos="nn">fact</w>
+</coref>
+<w pos=",">,</w>
+<w pos="jj">irreplaceable</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_18">
+<w pos="ex">There</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="dt">no</w>
+<w pos="nn">figure</w>
+<w pos="in">in</w>
+<w pos="dt">the</w>
+<w pos="nn">party</w>
+<w pos="wp">who</w>
+<w pos="vbd">did</w>
+<w pos="rb">not</w>
+<w pos="vb">appear</w>
+<w pos="vbn">diminished</w>
+<w pos="rb">as</w>
+<w pos="rb">soon</w>
+<w pos="in">as</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="cc">or</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">name</w>
+<w pos="vbd">was</w>
+<w pos="vbn">mentioned</w>
+<w pos="in">alongside</w>
+<w pos="in">of</w>
+<w pos="prp$">his</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="dt">the</w>
+<w pos="nn">notion</w>
+<w pos="in">of</w>
+<w pos="dt">any</w>
+<w pos="jj">ordinary</w>
+<coref set-id="set_36">
+<w pos="jj">Republican</w>
+</coref>
+<w pos="rb">actually</w>
+<w pos="vbg">succeeding</w>
+<coref set-id="set_6">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">became</w>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<w pos="dt">the</w>
+<w pos="nns">words</w>
+<w pos="in">of</w>
+<coref set-id="set_6">
+<w pos="nnp">William</w>
+<w pos="nnp">Kristol</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_6">
+<w pos="nn">editor</w>
+</coref>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="jj">conservative</w>
+<w pos="nn">journal</w>
+<w pos="dt">the</w>
+<w pos="nnp">Daily</w>
+<w pos="nnp">Standard</w>
+<w pos=",">,</w>
+<w pos="nn">_unthinkable</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_16">
+<w pos="nns">_</w>
+</coref>
+<w pos="rb">Thus</w>
+<w pos="vbd">was</w>
+<w pos="dt">the</w>
+<w pos="nn">strategy</w>
+<w pos="vbn">devised</w>
+<w pos="to">to</w>
+<w pos="vb">introduce</w>
+<coref set-id="set_5">
+<w pos="dt">a</w>
+<w pos="jj">constitutional</w>
+<w pos="nn">amendment</w>
+</coref>
+<w pos="to">to</w>
+<w pos="vb">remove</w>
+<w pos="dt">the</w>
+<w pos="nn">requirement</w>
+<w pos="in">in</w>
+<w pos="nnp">Article</w>
+<w pos="cd">1</w>
+<w pos="in">that</w>
+<w pos="dt">no</w>
+<w pos="cd">one</w>
+<w pos="md">could</w>
+<w pos="vb">be</w>
+<w pos="vbn">elected</w>
+<coref set-id="set_6">
+<w pos="nn">president</w>
+</coref>
+<w pos="vbd">were</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="cc">or</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="rb">not</w>
+<w pos="jj">native</w>
+<w pos="vbn">born</w>
+<w pos=",">,</w>
+<w pos="rb">supposedly</w>
+<w pos="to">to</w>
+<w pos="vb">permit</w>
+<w pos="dt">the</w>
+<w pos="jj">presidential</w>
+<w pos="nn">candidacy</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<coref set-id="set_6">
+<w pos="jj">native-born</w>
+<w pos="jj">Austrian</w>
+<w pos="nnp">Arnold</w>
+<w pos="nnp">Schwarzenegger</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_6">
+<w pos="dt">the</w>
+<w pos="rb">enormously</w>
+<w pos="jj">popular</w>
+<w pos="cc">and</w>
+<w pos="jj">skillful</w>
+<w pos="nn">governor</w>
+</coref>
+<w pos="in">of</w>
+<w pos="nnp">California</w>
+<w pos="cc">and</w>
+<coref set-id="set_6">
+<w pos="dt">the</w>
+<w pos="cd">one</w>
+<w pos="nnp">Republican</w>
+</coref>
+<w pos="jj">other</w>
+<w pos="in">than</w>
+<coref set-id="set_6">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="wp">who</w>
+<w pos="vbd">did</w>
+<w pos="rb">sometimes</w>
+<w pos="vb">appear</w>
+<w pos="jjr">larger</w>
+<w pos="in">than</w>
+<w pos="nn">life</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_35">
+<w pos="nnp">Islamist</w>
+</coref>
+<w pos="rb">later</w>
+<w pos="vbd">transpired</w>
+<w pos="in">that</w>
+<coref set-id="set_5">
+<w pos="dt">the</w>
+<w pos="nn">amendment</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="dt">a</w>
+<w pos="nn">ruse</w>
+<w pos=":">:</w>
+<w pos="wrb">When</w>
+<coref set-id="set_54">
+<w pos="nnps">Democrats</w>
+</coref>
+<w pos="vbd">attempted</w>
+<w pos="to">to</w>
+<w pos="vb">_poison</w>
+<coref set-id="set_16">
+<w pos="sym">_</w>
+</coref>
+<coref set-id="set_5">
+<w pos="dt">the</w>
+<w pos="nn">amendment</w>
+</coref>
+<w pos="in">by</w>
+<w pos="vbg">proposing</w>
+<w pos="in">that</w>
+<w pos="dt">all</w>
+<w pos="nns">restrictions</w>
+<w pos="in">on</w>
+<w pos="wp">who</w>
+<w pos="md">might</w>
+<w pos="vb">become</w>
+<coref set-id="set_6">
+<w pos="nn">president</w>
+</coref>
+<w pos="vb">be</w>
+<w pos="vbn">removed</w>
+<w pos="-lrb-">(</w>
+<w pos="dt">the</w>
+<w pos="nn">requirement</w>
+<w pos="in">that</w>
+<coref set-id="set_6">
+<w pos="dt">a</w>
+<w pos="nn">president</w>
+</coref>
+<w pos="vb">be</w>
+<w pos="in">at</w>
+<w pos="jjs">least</w>
+<w pos="cd">35</w>
+<w pos="nns">years</w>
+<w pos="jj">old</w>
+<w pos=",">,</w>
+<w pos="dt">the</w>
+<w pos="jj">two-term</w>
+<w pos="nn">limit</w>
+<w pos="-rrb-">)</w>
+<w pos=",">,</w>
+<coref set-id="set_21">
+<w pos="dt">the</w>
+<w pos="nnps">Republicans</w>
+</coref>
+<w pos="rb">immediately</w>
+<w pos="vbd">acquiesced</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="in">as</w>
+<coref set-id="set_27">
+<w pos="dt">a</w>
+<w pos="nn">result</w>
+</coref>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="nn">passage</w>
+<w pos="in">of</w>
+<coref set-id="set_5">
+<w pos="dt">the</w>
+<w pos="jj">28th</w>
+<w pos="nnp">Amendment</w>
+</coref>
+<w pos="in">in</w>
+<coref set-id="set_10">
+<w pos="cd">2006</w>
+</coref>
+<w pos="cc">and</w>
+<coref set-id="set_35">
+<w pos="nnp">Islamist</w>
+</coref>
+<w pos="nn">ratification</w>
+<w pos="in">by</w>
+<coref set-id="set_4">
+<w pos="dt">the</w>
+<w pos="nns">states</w>
+</coref>
+<coref set-id="set_53">
+<w pos="dt">the</w>
+<w pos="jj">next</w>
+<w pos="nn">year</w>
+</coref>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<w pos="cd">2008</w>
+<coref set-id="set_6">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">announced</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">candidacy</w>
+<w pos="in">for</w>
+<w pos="dt">a</w>
+<w pos="jj">third</w>
+<w pos="nn">term</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="rb">overwhelmingly</w>
+<w pos="vbn">defeated</w>
+<w pos="dt">that</w>
+<w pos="nnp">November</w>
+<w pos="in">by</w>
+<coref set-id="set_6">
+<w pos="jj">former</w>
+<w pos="nnp">President</w>
+<w pos="nnp">Bill</w>
+<w pos="nnp">Clinton.Mr.</w>
+</coref>
+</s><s>
+<coref set-id="set_41">
+<w pos="nnp">Bush_s</w>
+</coref>
+<w pos="nn">life</w>
+<w pos="in">after</w>
+<coref set-id="set_22">
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">presidency</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">marked</w>
+<w pos="in">by</w>
+<w pos="nn">misfortune</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="rb">soon</w>
+<w pos="vbd">lost</w>
+<w pos="nn">interest</w>
+<w pos="in">in</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">status</w>
+<w pos="in">as</w>
+<coref set-id="set_6">
+<w pos="dt">the</w>
+<w pos="nn">standard-bearer</w>
+</coref>
+<w pos="in">of</w>
+<coref set-id="set_23">
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">party</w>
+</coref>
+<w pos="cc">and</w>
+<coref set-id="set_6">
+<coref set-id="set_23">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<coref set-id="set_6">
+<w pos="nn">chief</w>
+</coref>
+<w pos="nn">fundraiser</w>
+</coref>
+<w pos=":">;</w>
+<w pos="jj">many</w>
+<w pos="vbd">believed</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">had</w>
+<w pos="rb">again</w>
+<w pos="vbn">begun</w>
+<w pos="vbg">drinking</w>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<w pos="in">in</w>
+<coref set-id="set_12">
+<w pos="dt">any</w>
+<w pos="nn">case</w>
+</coref>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">seemed</w>
+<w pos="to">to</w>
+<w pos="vb">spend</w>
+<w pos="jjs">most</w>
+<w pos="in">of</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">time</w>
+<w pos="in">at</w>
+<w pos="jj">private</w>
+<w pos="nns">clubs</w>
+<w pos="in">in</w>
+<coref set-id="set_30">
+<w pos="nnp">Houston</w>
+</coref>
+<w pos=",">,</w>
+<w pos="wrb">where</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">established</w>
+<w pos="nn">residence</w>
+<w pos="in">in</w>
+<w pos="cd">2010</w>
+<w pos="in">after</w>
+<w pos="vbg">selling</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">property</w>
+<w pos="in">in</w>
+<w pos="nnp">Crawford</w>
+<w pos=",">,</w>
+<coref set-id="set_14">
+<w pos="nnp">Texas</w>
+</coref>
+<w pos=".">.</w>
+</s><s>
+<w pos="-lrb-">(</w>
+<w pos="in">_At</w>
+<w pos="jjs">least</w>
+<w pos="prp">I</w>
+<w pos="rb">won_t</w>
+<w pos="vbp">have</w>
+<w pos="to">to</w>
+<w pos="vb">cut</w>
+<w pos="dt">that</w>
+<w pos="jj">f_</w>
+<w pos="nn">brush</w>
+<w pos="rb">again</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<coref set-id="set_6">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">heard</w>
+<w pos="to">to</w>
+<w pos="vb">say</w>
+<w pos="in">after</w>
+<coref set-id="set_6">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="jj">last</w>
+<w pos="nn">election</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="x">)</w>
+<w pos="x">Then</w>
+<w pos="x">on</w>
+<w pos="x">May</w>
+<w pos="x">1</w>
+<w pos="x">,</w>
+<w pos="x">2011</w>
+<w pos="x">,</w>
+<w pos="x">Jenna</w>
+<w pos="x">and</w>
+<coref set-id="set_9">
+<w pos="x">Barbara</w>
+<w pos="x">Bush</w>
+</coref>
+<w pos="x">were</w>
+<w pos="x">killed</w>
+<w pos="x">in</w>
+<w pos="x">a</w>
+<w pos="x">drunken</w>
+<w pos="x">driving</w>
+<w pos="x">accident</w>
+<w pos="x">in</w>
+<coref set-id="set_17">
+<w pos="x">New</w>
+<w pos="x">York</w>
+<w pos="x">City</w>
+</coref>
+<w pos="x">,</w>
+<w pos="x">an</w>
+<w pos="x">incident</w>
+<w pos="x">that</w>
+<w pos="x">also</w>
+<w pos="x">took</w>
+<w pos="x">the</w>
+<w pos="x">lives</w>
+<w pos="x">of</w>
+<w pos="x">seven</w>
+<w pos="x">other</w>
+<w pos="x">people</w>
+<w pos="x">,</w>
+<w pos="x">four</w>
+<w pos="x">of</w>
+<w pos="x">them</w>
+<w pos="x">friends</w>
+<w pos="x">of</w>
+<w pos="x">the</w>
+<coref set-id="set_9">
+<w pos="x">Bush</w>
+</coref>
+<w pos="x">daughters</w>
+<w pos="x">.</w>
+</s><s>
+<w pos="nns">Rumors</w>
+<w pos="in">that</w>
+<w pos="dt">a</w>
+<coref set-id="set_9">
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="nn">family</w>
+<w pos="nn">friend</w>
+<w pos="vbd">attempted</w>
+<w pos="to">to</w>
+<w pos="vb">bribe</w>
+<w pos="dt">the</w>
+<w pos="nn">police</w>
+<w pos="to">to</w>
+<w pos="vb">report</w>
+<w pos="in">that</w>
+<w pos="dt">a</w>
+<w pos="nn">person</w>
+<w pos="jj">other</w>
+<w pos="in">than</w>
+<w pos="nnp">Jenna</w>
+<w pos="cc">or</w>
+<coref set-id="set_9">
+<w pos="nnp">Barbara</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbg">driving</w>
+<w pos="-lrb-">(</w>
 <w pos="dt">the</w>
 <w pos="nn">body</w>
 <w pos="in">of</w>
-<coref set-id="set_0">
-<w pos="nnp">Jackie</w>
-<w pos="nnp">Chan</w>
+<coref set-id="set_9">
+<w pos="nnp">Barbara</w>
+<w pos="nnp">Bush</w>
 </coref>
-<w pos="md">will</w>
-<w pos="vb">be</w>
-<w pos="vbn">buried</w>
-<w pos="jj">next</w>
-<w pos="to">to</w>
-<w pos="nns">hisparents</w>
-<w pos=",">,</w>
-<w pos="wp">who</w>
-<w pos="vbd">taught</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
-</coref>
+<w pos="vbd">was</w>
+<w pos="in">in</w>
 <w pos="dt">the</w>
-<w pos="nn">meaning</w>
-<w pos="in">of</w>
-<w pos="nn">love</w>
-<w pos="in">for</w>
-<coref set-id="set_2">
-<w pos="nnp">Jackie Chan</w>
+<w pos="nns">driver_s</w>
+<w pos="nn">seat</w>
+<w pos="-rrb-">)</w>
+<w pos="vbd">were</w>
+<w pos="rb">never</w>
+<w pos="vbn">confirmed</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="cd">Four</w>
+<w pos="nns">years</w>
+<w pos="rb">later</w>
+<w pos=",">,</w>
+<w pos="in">in</w>
+<w pos="cd">2015</w>
+<w pos=",">,</w>
+<coref set-id="set_9">
+<w pos="nnp">Laura</w>
+<w pos="nnp">Bush</w>
 </coref>
-<w pos="nn">family</w>
+<w pos=",">,</w>
+<w pos="in">like</w>
+<coref set-id="set_45">
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">father</w>
+</coref>
+<w pos=",">,</w>
+<w pos="vbd">died</w>
+<w pos="in">of</w>
+<w pos="nnp">Parkinson_s</w>
+<w pos="nn">disease</w>
+<w pos=":">;</w>
+<coref set-id="set_45">
+<w pos="prp">she</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="cd">68</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="in">After</w>
+<w pos="dt">a</w>
+<w pos="nn">period</w>
+<w pos="in">of</w>
+<w pos="vbg">mourning</w>
+<w pos=",">,</w>
+<coref set-id="set_9">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">announced</w>
+<w pos="in">that</w>
+<w pos=",">,</w>
+<w pos="to">to</w>
+<w pos="vb">find</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">way</w>
+<w pos="rb">back</w>
+<w pos="in">into</w>
+<w pos="nn">_productive</w>
+<w pos="nn">service</w>
+<coref set-id="set_16">
+<w pos="sym">_</w>
+</coref>
+<w pos="cc">and</w>
+<w pos="nn">_do</w>
+<w pos="nns">God_s</w>
+<w pos="md">will</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="md">would</w>
+<w pos="vb">welcome</w>
+<w pos="dt">the</w>
+<w pos="nn">opportunity</w>
+<w pos="to">to</w>
+<w pos="vb">act</w>
+<w pos="in">as</w>
+<coref set-id="set_9">
+<w pos="nn">commissioner</w>
+</coref>
+<w pos="in">of</w>
+<w pos="nn">baseball</w>
+<w pos=".">.</w>
+</s><s>
+<w pos="cc">But</w>
+<w pos="in">while</w>
+<coref set-id="set_9">
+<w pos="nnp">Commissioner</w>
+<w pos="nnp">Bud</w>
+<w pos="nnp">Selig</w>
+</coref>
+<w pos="vbd">said</w>
+<w pos="in">that</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="md">would</w>
+<w pos="vb">be</w>
+<w pos="vbn">honored</w>
+<w pos="to">to</w>
+<w pos="vb">yield</w>
+<w pos="dt">the</w>
+<w pos="nn">position</w>
+<w pos="to">to</w>
+<coref set-id="set_9">
+<w pos="nnp">Mr.</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbd">cautioned</w>
+<w pos="in">that</w>
+<w pos="dt">the</w>
+<w pos="nns">exigencies</w>
+<w pos="in">of</w>
+<w pos="dt">the</w>
+<w pos="nn">job</w>
+<w pos="md">would</w>
+<w pos="rb">probably</w>
+<w pos="vb">require</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="to">to</w>
+<w pos="vb">remain</w>
+<w pos="in">in</w>
+<coref set-id="set_25">
+<w pos="nn">office</w>
+</coref>
+<w pos="vb">_for</w>
+<coref set-id="set_40">
+<w pos="dt">another</w>
+<w pos="nn">year</w>
+</coref>
+<w pos=",">,</w>
+<w pos="cc">or</w>
+<w pos="rb">maybe</w>
+<w pos="cd">two</w>
+<w pos=",">,</w>
+<w pos="sym">_</w>
+<w pos="cc">and</w>
+<w pos="dt">the</w>
+<w pos="nn">question</w>
+<w pos="vbd">was</w>
+<w pos="rb">not</w>
+<w pos="vbn">raised</w>
+<w pos="rb">again.Mr.</w>
+</s><s>
+<coref set-id="set_9">
+<w pos="nnp">Bush</w>
+</coref>
+<w pos="vbd">was</w>
+<w pos="vbn">preceded</w>
+<w pos="in">in</w>
+<coref set-id="set_26">
+<w pos="nn">death</w>
+</coref>
+<w pos="in">by</w>
+<coref set-id="set_9">
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">sister</w>
+</coref>
+<coref set-id="set_9">
+<w pos="nnp">Robin</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_9">
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nns">brothers</w>
+<w pos="nnp">John</w>
+<w pos="nnp">_Jeb_</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<coref set-id="set_9">
+<w pos="dt">the</w>
+<w pos="jj">former</w>
+<w pos="nn">governor</w>
+</coref>
+<w pos="in">of</w>
+<w pos="nnp">Florida</w>
+<w pos=",">,</w>
+<coref set-id="set_9">
+<w pos="nnp">Neil</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<coref set-id="set_9">
+<w pos="nnp">Marvin</w>
+<w pos="nnp">Bush</w>
+</coref>
+<w pos=",">,</w>
+<w pos="cc">and</w>
+<coref set-id="set_9">
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nn">sister</w>
+</coref>
+<w pos="nnp">Dorothy</w>
+<w pos="nnp">Bush</w>
+<w pos="nnp">Koch</w>
+<w pos=".">.</w>
+</s><s>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="vbz">is</w>
+<w pos="vbn">survived</w>
+<w pos="in">by</w>
+<coref set-id="set_9">
+<w pos="nnp">former President George H. W. Bush</w>
+</coref>
+<w pos="nns">parents</w>
 <w pos=".">.</w>
 </s>
 </text>

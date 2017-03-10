@@ -2,11 +2,13 @@
 ANAPHORA RESOLUTION
 
 Change personal pronouns to their real entity
+Usage python anaphora-res.py test/jackie.txt
 
 """
 
 from collections import Counter
 from nltk.corpus import stopwords
+from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.tokenize import RegexpTokenizer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -16,26 +18,11 @@ import nltk
 import re
 import requests
 import string
+import sys
 import xml.etree.ElementTree as ET
 
 BART_SERVER = 'http://localhost:8125'
 d = enchant.Dict("en_US")
-
-ex_text = "Long before he was a contender for the US presidency, Donald Trump was America's most famous and colourful billionaire.\
-Once considered a long shot, Trump is now president of the United States.\
-Scepticism over Trump's candidacy stemmed not only from his controversial platform on immigration and outrageous campaign style, but from his celebrity past.\
-But the 70-year-old businessman had the last laugh when he defied all predictions to beat much more seasoned politicians in the Republican primary race.\
-And he has now gone a step further by winning the presidential election, after one of the most divisive and controversial contests in living memory against Democratic rival Hillary Clinton."
-
-ex_text2 = "According to a report from cnminformativo which let us know that the popular actor 'Jackie chan' died of heart attack on the 17th of july 2015. Cry\
-The historic actor, who made a name for himself for his incredible performance in 1995 Rumble in the Bronx. His enormous charisma always gave him the opportunity to develop his career as a singer, stuntman, writer, film director and producer. The\
-brilliant career of the most famous Chinese ended this morning by a heart attack in a Hong Kong Hospital.\
-\
-The medical reports indicate that he suffered a fulminate heart attack, which paralyzed his heart making it impossible for the blood to reach his brain, and other vital organs, that caused the death of this humanitarian man, who years before was named philanthropist of the year for his country.\
-\
-The sad news of Chans's death was given by his wife Lin Feng-jiao in a news conference, a couple of hours ago, where she said to the media, \"I hope you can understand my loss, and I would appreciate if you can give us space for our mourning\" .\
-Until now, funeral's details are uncertain, nevertheless, the body of Jackie Chan will be buried next to his\
-parents, who taught him the meaning of love for his family."
 
 def bart_coref(text):
     response = requests.post(BART_SERVER + '/BARTDemo/ShowText/process/', data=text)
@@ -53,35 +40,14 @@ def extract_entity_names(t):
                 
     return entity_names
 
-def anaphora_resolution_la(s):
-    tree = ET.parse('jackie.xml')
-    root = tree.getroot()
-
-    i = 1
-    for coref in root.iter('coref'):
-        cur_coref = int(string.replace(coref.attrib.get('set-id'), 'set_', ''))
-        print "cur_coref: ", cur_coref
-        for child in coref:
-            pos = child.attrib.get('pos')
-            phrase = ''
-            if pos is not None:
-                if phrase == '':
-                    phrase = child.text
-                else:
-                    phrase = phrase + ' ' + child.text
-                print pos, phrase
-            else:
-                print "HAHA"
-
 def anaphora_resolution(s):
-    # root = ET.fromstring(s)
-    tree = ET.parse('jackie.xml')
-    root = tree.getroot()
+    root = ET.fromstring(s)
+    # tree = ET.parse('jackie.xml')
+    # root = tree.getroot()
 
     coref_matrix = {}
     i = 0
     for coref in root.iter('coref'):
-        print coref.attrib
         cur_coref = int(string.replace(coref.attrib.get('set-id'), 'set_', ''))
         cur_array = []
         if cur_coref in coref_matrix:
@@ -103,7 +69,6 @@ def anaphora_resolution(s):
                         else:
                             phrase = phrase + ' ' + child.text
         cur_array.append([pos, phrase])
-        print pos, phrase
         coref_matrix[cur_coref] = cur_array
 
     sp_change = ['he', 'she', 'it', 'i', 'you', 'we', 'they']
@@ -112,18 +77,8 @@ def anaphora_resolution(s):
     pos_change = ['prp', 'prp$']
     pattern = r'^[A-Z][a-z]*(?:_[A-Z][a-z]*)*$'
 
-    # sentences = nltk.sent_tokenize(ex_text2)
-    # tokenized_sentences = [nltk.word_tokenize(sentence) for sentence in sentences]
-    # tagged_sentences = [nltk.pos_tag(sentence) for sentence in tokenized_sentences]
-    # chunked_sentences = nltk.ne_chunk_sents(tagged_sentences, binary=True)
-    # entity_names = []
-    # for tree in chunked_sentences:
-    #     entity_names.extend(extract_entity_names(tree))
-    #     print set(entity_names)
-
     cur_nnp = {}
     for idx, coref in coref_matrix.iteritems():
-        print idx, coref
         key = ''
         value = ''
         for coref_content in coref:
@@ -150,8 +105,18 @@ def anaphora_resolution(s):
                             w.text = str(value)
                             w.set('pos', key)
                         i = i + 1
-        tree.write("output.xml")
-    result = ''.join(root.itertext()).replace('\n', ' ').replace('  ', ' ').replace(' ,', ',').replace(" 's", "'s")
+        with open('output.xml','w') as f: ## Write document to file
+            f.write(ET.tostring(root))
+
+    # result = ''.join(root.itertext()).replace('\n', ' ').replace('  ', ' ').replace(' ,', ',').replace(" 's", "'s")
+    result = {}
+    result['word'] = []
+    result['pos'] = []
+
+    for w in root.iter('w'):
+            result['word'].append(w.text)
+            result['pos'].append(w.get('pos'))
+    
     return result
 
 def parse(s):
@@ -165,32 +130,153 @@ def parse(s):
             sentences.pop(idx)
     return sentences
 
-def main():
-    res = (anaphora_resolution("la"))
-    print "res"
-    print res
-    # corpus = []
-    # corpus.append(res)
-    # toker = RegexpTokenizer(r'((?<=[^\w\s])\w(?=[^\w\s])|(\W))+', gaps=True)
-    # word_list = toker.tokenize(res)
+def extract_event():
 
-    word_list = nltk.word_tokenize(res)
+    return
+
+def get_tdm(word_list):
     punctuations = list(string.punctuation)
-    filtered_word_list = word_list[:] #make a copy of the word_list
-    for word in word_list: # iterate over word_list
-      if word in stopwords.words('english') or word in punctuations: 
-        filtered_word_list.remove(word) # remove word from filtered_word_list if it is a stopword
-    print "HAHAHAAHAH\n\n\n"
+    
+    # make a copy of the word_list
+    filtered_word_list = {}
+    filtered_word_list['word'] = word_list['word'][:]
+    filtered_word_list['pos'] = word_list['pos'][:]
+
+    # iterate over word_list, remove stopwords and punctuations
+    i = 0
+    for word in word_list['word']:
+        if word in stopwords.words('english') or word in punctuations:
+            del filtered_word_list['word'][i]
+            del filtered_word_list['pos'][i]
+        else:
+            i+=1
 
     tf = Counter()
-    for word in filtered_word_list:
-        tf[word] +=1
+    tf_pos = {}
+    for idx, word in enumerate(filtered_word_list['word']):
+        tf[word] += 1
+        tf_pos[word] = filtered_word_list['pos'][idx]
+
     sorted(tf, key=tf.get, reverse=True)
-    most =  tf.most_common(8)
+    tdm = {}
+    tdm['word'] = tf
+    tdm['pos'] = tf_pos
+    return tdm
+
+def get_most_common(word_list, n):
+    most =  word_list.most_common(n)
     query = ''
-    for key, word in enumerate(most):
-        query = query + str(word[0]) + ' '
-    print "query: ", query
+    for word in most:
+        query += str(word[0]) + ' '
+    return query
+
+def check_all_tdm(tdm):
+    result = ''
+    word_list = tdm['word'].most_common()
+    for word in word_list:
+        result += str(word[0]) + ' (' + tdm['pos'][str(word[0])] + ')\n'
+    return result
+
+def create_query(tdm, sentences, n):
+    # find top 10 nnp in tdm, if not found, get the most nnp only
+    top_nnp = []
+    i = 0
+    word_list = tdm['word'].most_common()
+    pos_list = tdm['pos']
+    for word in word_list:
+        if pos_list[str(word[0])] == 'nnp':
+            top_nnp.append(word)
+        if i >= 10:
+            break
+        else:
+            i += 1
+    
+    # if cannot found in big 10
+    if len(top_nnp) == 0:
+        for word in word_list:
+            if pos_list[str(word[0])] == 'nnp':
+                top_nnp.append(word)
+                break
+
+    # if still can't find nnp
+    if len(top_nnp) == 0:
+        return get_most_common(word_list, 7)
+
+    print "top_nnp: ", top_nnp
+
+    # eliminate nnp
+    n_top_nnp = top_nnp[0][1]
+    if len(top_nnp) > 1:
+        remove = False
+        i = 0
+        for idx, nnp in enumerate(top_nnp[1:]):
+            if remove:
+                top_nnp.remove(nnp)
+            elif n_top_nnp/2 > nnp[1]:
+                remove = True
+                top_nnp.remove(nnp)
+
+    print "eliminated_nnp: ", top_nnp, "\m"
+
+    # get all matching sentences with nnp
+    matching = ''
+    for nnp in top_nnp:
+        matching += " ".join(extract_sentences_with_phrase(str(nnp[0]), sentences))
+    print "matching:", matching, "\n"
+
+    # count all word
+    word_counter = Counter()
+    for word in word_list:
+        word_counter[word[0]] = matching.count(word[0])
+        if i >= 10:
+            break
+        else:
+            i += 1
+
+    # sorting
+    query = get_most_common(word_counter, n)
+    return query
+
+def extract_sentences_with_phrase(nnp, sentences):
+    print nnp
+    r = r"([^.]*?" + nnp + "[^.]*\.)"
+    matching = re.findall(r, sentences)  
+    return matching
+
+def result_to_string(word_list):
+    result = " ".join(word_list['word'][:])
+    return result
+
+def main():
+    filename = sys.argv[1]
+    with open(filename, 'r') as myfile:
+        data = myfile.read().replace('\n', '')
+
+    data = data.decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'") 
+        # .encode('utf-8').strip()
+
+    coref_res = bart_coref(data)
+    result = (anaphora_resolution(coref_res))
+
+    tdm = get_tdm(result)
+    string_result = result_to_string(result)
+
+    # get all tdm result
+    # print "tdm:\n"
+    # print check_all_tdm(tdm)
+
+    # build query for matching
+
+    # get most common word in the article
+
+    query_2 = create_query(tdm, string_result, 5)
+    print "\n\n\n"
+    print "========================================================="
+    print "query_2: ", query_2
+    query_1 = get_most_common(tdm['word'], 6)
+    print "query_1: ", query_1
+
+
 
 if __name__ == "__main__":
     main()
