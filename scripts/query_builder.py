@@ -17,7 +17,7 @@ def query_builder(text):
     ent_res = count_entity(ent, " ".join(tokens))
     selected_entities = select_entity(ent_res)
 
-    tf = term_frequencies(tokens)
+    tf = term_frequencies(tokens, selected_entities)
     selected_words = select_words(tf)
 
     query = build_query(selected_entities, selected_words)

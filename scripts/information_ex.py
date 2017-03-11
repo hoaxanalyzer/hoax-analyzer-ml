@@ -5,6 +5,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tag.stanford import StanfordNERTagger
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
+import enchant
 import nltk
 import operator
 import pattern.en as en
@@ -19,6 +20,8 @@ n_term_max = 6
 n_term_min = 2
 change_threshold = 1.0
 
+dictionary = enchant.Dict("en_US")
+
 with open('stopwords_en.txt', 'r') as myfile:
     hoax_stopwords = myfile.read()
     hoax_stopwords = word_tokenize(hoax_stopwords)
@@ -28,11 +31,26 @@ with open('stopwords_en.txt', 'r') as myfile:
 ##################
 
 def preprocess(text):
-	text = text.decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'").replace("'s", " ").replace("``", " ").replace("''", " ")
-	return text
+	text = text.decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'").replace("'s", " ").replace("``", " ").replace("''", " ").replace("_", " ")
+	tokens = text.split(" ")
+	result = ""
+	for token in tokens:
+		word = token.split(" ")[0]
+		if word.isupper():
+			if dictionary.check(word.lower()):
+				found = True
+				result += token.lower() + " "
+			else:
+				found = False
+				result += token.upper() + " "
+		else:
+			result += token + " "
+	return result
 
 def tokenize(text):
-	return word_tokenize(text)
+	tokens = word_tokenize(text)
+	return tokens
+
 
 def chunk_words(tokens):
     return ne_chunk(pos_tag(tokens))
@@ -88,11 +106,11 @@ def count_entity(entities, text):
 		for pars in parsed_entity:
 			n_match = 0
 			for idx, sentence in enumerate(sentences):
-				matching = re.findall('\w*' + pars +  '\w*', sentence)
+				matching = re.findall('\w*' + pars.lower() +  '\w*', sentence.lower())
 				if len(matching) > 0 and (first_appear == 0 or first_appear > (idx+1)):
 					first_appear = idx + 1
 					break
-			matching = re.findall(r"([^.]*?" + pars + "[^.]*\.)", text)
+			matching = re.findall(r"([^.]*?" + pars.lower() + "[^.]*\.)", text.lower())
 			n_match = len(matching)
 			try:
 				tf[entity]['count'] += n_match/(len(parsed_entity)* 1.0)
@@ -117,10 +135,14 @@ def select_entity(entities):
 ### EXTRACT MOST COMMON WORD ###
 ################################
 
-def term_frequencies(tokens):
+def term_frequencies(tokens, selected_entities):
 	# lmtzr = WordNetLemmatizer()
 	# stemmer = SnowballStemmer("english")
 	punctuations = list(string.punctuation)
+	entities = ""
+	for entity in selected_entities:
+		entities += str(entity[0]) + ' '
+	entities = tokenize(entities.lower())
 
 	tf = {}
 	i = 0
@@ -128,15 +150,23 @@ def term_frequencies(tokens):
 	for token in tokens:
 		# token = stemmer.stem(token)
 		# token = lmtzr.lemmatize(token)
-		token = en.lemma(token)
-		if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
-			# print token, 1.0 * (len_token - i) / (len_token * 1.0)
-			try:
-				tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
-			except KeyError:
-				tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
-		elif token == ".":
-			i += 1
+		if token.lower() not in entities:
+			if dictionary.check(token.lower()):
+				token = en.lemma(token)
+			if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
+				# print token, 1.0 * (len_token - i) / (len_token * 1.0)
+				if i == 0:
+					try:
+						tf[token] += 2.0 * (len_token - i) / (len_token * 1.0)
+					except KeyError:
+						tf[token] = 2.0 * (len_token - i) / (len_token * 1.0)
+				else:
+					try:
+						tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
+					except KeyError:
+						tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
+			elif token == ".":
+				i += 1
 	tf = sorted(tf.items(), key=operator.itemgetter(1), reverse=True)
 	return tf
 
@@ -161,11 +191,11 @@ def build_query(selected_entities, selected_words):
 	for word in selected_words:
 		term = str(word[0])
 		cur_count = word[1]
-		if prev_count != 0:
-			if (prev_count - cur_count) > change_threshold and i > n_term_min:
-				# query += " [[ "
-				# found = True
-				break
+		# if prev_count != 0:
+		# 	if (prev_count - cur_count) > change_threshold and i > n_term_min:
+		# 		# query += " [[ "
+		# 		# found = True
+		# 		break
 		if term.lower() not in query.lower().split(' '):
 			query += term + ' '
 		prev_count = cur_count
@@ -200,7 +230,7 @@ def main():
     print "\n\n"
 
     print "# TERM FREQUENCY #"
-    tf = term_frequencies(tokens)
+    tf = term_frequencies(tokens, selected_entities)
     print tf
     selected_words = select_words(tf)
     print selected_words
