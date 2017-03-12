@@ -79,6 +79,7 @@ def entity_recognition(chunked):
                             current_chunk = []
             else:
                     continue
+
     # entities = []
     # for entity in continuous_chunk:
     # 	ent = ''
@@ -121,14 +122,17 @@ def count_entity(entities, text):
 	return tf
 
 def select_entity(entities):
-	sorted_ent = sorted(entities.items(), key=operator.itemgetter(1), reverse=True)
-	if len(sorted_ent) >= n_entities:
+	if len(entities) >= n_entities:
+		sorted_ent = sorted(entities.items(), key=operator.itemgetter(1), reverse=True)
 		return sorted_ent[:n_entities]
 	else:
 		i = 1
-		while len(sorted_ent) < n_entities:
-			sorted_ent["null_" + i] = 0
+		while len(entities) < n_entities:
+			entities["null_" + str(i)] = {}
+			entities["null_" + str(i)]['count'] = 0
+			entities["null_" + str(i)]['first_appear'] = 0
 			i += 1
+		sorted_ent = sorted(entities.items(), key=operator.itemgetter(1), reverse=True)
 		return sorted_ent
 
 ################################
@@ -206,11 +210,22 @@ def build_query(selected_entities, selected_words):
 	# 	query += " [[ ]]"
 	return query
 
-############
-### MAIN ###
-############
+def generate_query():
+    filename = sys.argv[1]
+    with open(filename, 'r') as myfile:
+        text = myfile.read().replace('\n', '')
 
-def main():
+    tokens = tokenize(preprocess(text))
+    ne_chunk = chunk_words(tokens)
+    ent = entity_recognition(ne_chunk)
+    ent_res = count_entity(ent, " ".join(tokens))
+    selected_entities = select_entity(ent_res)
+    tf = term_frequencies(tokens, selected_entities)
+    selected_words = select_words(tf)
+    query = build_query(selected_entities, selected_words)
+    return query
+
+def test():
     filename = sys.argv[1]
     with open(filename, 'r') as myfile:
         text = myfile.read().replace('\n', '')
@@ -222,7 +237,7 @@ def main():
     tokens = tokenize(preprocess(text))
     ne_chunk = chunk_words(tokens)
     ent = entity_recognition(ne_chunk)
-    print ent
+    # print ent
     ent_res = count_entity(ent, " ".join(tokens))
     selected_entities = select_entity(ent_res)
     print "# ENTITY RECOGNITION #"
@@ -239,6 +254,13 @@ def main():
     print "# QUERY RESULT #"
     query = build_query(selected_entities, selected_words)
     print query
+
+############
+### MAIN ###
+############
+
+def main():
+	generate_query()
 
 
 if __name__ == "__main__":
