@@ -1,4 +1,5 @@
 from collections import Counter
+from key_phrase import *
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -6,6 +7,7 @@ from nltk.tag.stanford import StanfordNERTagger
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
 import enchant
+import json
 import nltk
 import operator
 import pattern.en as en
@@ -42,7 +44,7 @@ def preprocess(text):
 				result += token.lower() + " "
 			else:
 				found = False
-				result += token.upper() + " "
+				result += token.title() + " "
 		else:
 			result += token + " "
 	return result
@@ -98,9 +100,10 @@ def entity_recognition(chunked):
     # return entities
     return continuous_chunk
 
-def count_entity(entities, text):
+def count_entity(entities, text, key_phrase_tokens):
 	tf = {}
 	sentences = text.split('.')
+	key_phrase_result = " ".join(key_phrase_tokens)
 	for entity in entities:
 		parsed_entity = entity.split(' ')
 		first_appear = 0
@@ -114,10 +117,18 @@ def count_entity(entities, text):
 			matching = re.findall(r"([^.]*?" + pars.lower() + "[^.]*\.)", text.lower())
 			n_match = len(matching)
 			try:
-				tf[entity]['count'] += n_match/(len(parsed_entity)* 1.0)
+				tf[entity]['count'] += n_match/(len(parsed_entity) * 1.0)
 			except KeyError:
 				tf[entity] = {}
-				tf[entity]['count'] = n_match/(len(parsed_entity)* 1.0)
+				tf[entity]['count'] = n_match/(len(parsed_entity) * 1.0)
+
+			matching = re.findall('\w*' + pars.lower() +  '\w*', key_phrase_result.lower())
+			n_match = len(matching)
+			try:
+				tf[entity]['count'] += 2.0 * n_match/(len(parsed_entity) * 1.0)
+			except KeyError:
+				tf[entity] = {}
+				tf[entity]['count'] = 2.0 * n_match/(len(parsed_entity) * 1.0)
 		tf[entity]['first_appear'] = first_appear
 	return tf
 
@@ -139,7 +150,7 @@ def select_entity(entities):
 ### EXTRACT MOST COMMON WORD ###
 ################################
 
-def term_frequencies(tokens, selected_entities):
+def term_frequencies(tokens, selected_entities, key_phrase_tokens):
 	# lmtzr = WordNetLemmatizer()
 	# stemmer = SnowballStemmer("english")
 	punctuations = list(string.punctuation)
@@ -171,6 +182,28 @@ def term_frequencies(tokens, selected_entities):
 						tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
 			elif token == ".":
 				i += 1
+
+	for token in key_phrase_tokens:
+		# token = stemmer.stem(token)
+		# token = lmtzr.lemmatize(token)
+		if token.lower() not in entities:
+			if dictionary.check(token.lower()):
+				token = en.lemma(token)
+			if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
+				# print token, 1.0 * (len_token - i) / (len_token * 1.0)
+				if i == 0:
+					try:
+						tf[token] += 2.0 * (len_token - i) / (len_token * 1.0)
+					except KeyError:
+						tf[token] = 2.0 * (len_token - i) / (len_token * 1.0)
+				else:
+					try:
+						tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
+					except KeyError:
+						tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
+			elif token == ".":
+				i += 1
+
 	tf = sorted(tf.items(), key=operator.itemgetter(1), reverse=True)
 	return tf
 
@@ -210,18 +243,35 @@ def build_query(selected_entities, selected_words):
 	# 	query += " [[ ]]"
 	return query
 
-def generate_query():
-    filename = sys.argv[1]
-    with open(filename, 'r') as myfile:
-        text = myfile.read().replace('\n', '')
+def generate_query(text):
+    # filename = sys.argv[1]
+    # with open(filename, 'r') as myfile:
+    #     text = myfile.read().replace('\n', '')
+    text = preprocess(text)
+    
+    json_data = {}
+    json_doc = []
+    json_text = {}
+    json_text["id"] = "1"
+    json_text["text"] = text
+    json_doc.append(json_text)
+    json_data["documents"] = json_doc
+    json_data = json.dumps(json_data)
+    key_phrase_analysis = detect_key_phrases(json_data)
+    key_phrase_result = ""
+    for key in key_phrase_analysis:
+        key_phrase_result += " ".join(map(str,key['keyPhrases']))
+    key_phrase_tokens = tokenize(key_phrase_result)
 
-    tokens = tokenize(preprocess(text))
+    tokens = tokenize(text)
     ne_chunk = chunk_words(tokens)
     ent = entity_recognition(ne_chunk)
-    ent_res = count_entity(ent, " ".join(tokens))
+    ent_res = count_entity(ent, " ".join(tokens), key_phrase_tokens)
     selected_entities = select_entity(ent_res)
-    tf = term_frequencies(tokens, selected_entities)
+
+    tf = term_frequencies(tokens, selected_entities, key_phrase_tokens)
     selected_words = select_words(tf)
+
     query = build_query(selected_entities, selected_words)
     return query
 
@@ -229,38 +279,55 @@ def test():
     filename = sys.argv[1]
     with open(filename, 'r') as myfile:
         text = myfile.read().replace('\n', '')
+    print generate_query(text)
+	# text = preprocess(text)    
+	# print text, "\n\n"
 
-    
-	print text, "\n\n"
+	# print "# DETECT KEY PHRASE #"
+	# json_data = {}
+	# json_doc = []
+	# json_text = {}
+	# json_text["id"] = "1"
+	# json_text["text"] = text
+	# json_doc.append(json_text)
+	# json_data["documents"] = json_doc
+	# json_data = json.dumps(json_data)
+	# key_phrase_analysis = detect_key_phrases(json_data)
+	# key_phrase_result = ""
+	# for key in key_phrase_analysis:
+	# 	key_phrase_result += " ".join(map(str,key['keyPhrases']))
+	# key_phrase_tokens = tokenize(key_phrase_result)
+	# print key_phrase_tokens
+	# print "\n\n"
 
-    # entity_recognition_stanford(text)
-    tokens = tokenize(preprocess(text))
-    ne_chunk = chunk_words(tokens)
-    ent = entity_recognition(ne_chunk)
-    # print ent
-    ent_res = count_entity(ent, " ".join(tokens))
-    selected_entities = select_entity(ent_res)
-    print "# ENTITY RECOGNITION #"
-    print selected_entities
-    print "\n\n"
 
-    print "# TERM FREQUENCY #"
-    tf = term_frequencies(tokens, selected_entities)
-    print tf
-    selected_words = select_words(tf)
-    print selected_words
-    print "\n\n"
+	# print "# ENTITY RECOGNITION #"
+ #    tokens = tokenize(text)
+ #    ne_chunk = chunk_words(tokens)
+ #    ent = entity_recognition(ne_chunk)
+ #    print "All entity:", ent
+ #    ent_res = count_entity(ent, " ".join(tokens), key_phrase_tokens)
+ #    selected_entities = select_entity(ent_res)
+ #    print "Selected entity:", selected_entities
+ #    print "\n\n"
 
-    print "# QUERY RESULT #"
-    query = build_query(selected_entities, selected_words)
-    print query
+ #    print "# TERM FREQUENCY #"
+ #    tf = term_frequencies(tokens, selected_entities, key_phrase_tokens)
+ #    print tf
+ #    selected_words = select_words(tf)
+ #    print selected_words
+ #    print "\n\n"
+
+ #    print "# QUERY RESULT #"
+ #    query = build_query(selected_entities, selected_words)
+ #    print query
 
 ############
 ### MAIN ###
 ############
 
 def main():
-	generate_query()
+	test()
 
 
 if __name__ == "__main__":
