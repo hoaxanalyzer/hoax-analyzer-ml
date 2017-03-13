@@ -165,44 +165,42 @@ def term_frequencies(tokens, selected_entities, key_phrase_tokens):
 	for token in tokens:
 		# token = stemmer.stem(token)
 		# token = lmtzr.lemmatize(token)
-		if token.lower() not in entities:
-			if dictionary.check(token.lower()):
-				token = en.lemma(token)
-			if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
-				# print token, 1.0 * (len_token - i) / (len_token * 1.0)
-				if i == 0:
-					try:
-						tf[token] += 2.0 * (len_token - i) / (len_token * 1.0)
-					except KeyError:
-						tf[token] = 2.0 * (len_token - i) / (len_token * 1.0)
-				else:
-					try:
-						tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
-					except KeyError:
-						tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
-			elif token == ".":
-				i += 1
+		if dictionary.check(token.lower()):
+			token = en.lemma(token)
+		if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
+			# print token, 1.0 * (len_token - i) / (len_token * 1.0)
+			if i == 0:
+				try:
+					tf[token] += 2.0 * (len_token - i) / (len_token * 1.0)
+				except KeyError:
+					tf[token] = 2.0 * (len_token - i) / (len_token * 1.0)
+			else:
+				try:
+					tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
+				except KeyError:
+					tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
+		elif token == ".":
+			i += 1
 
 	for token in key_phrase_tokens:
 		# token = stemmer.stem(token)
 		# token = lmtzr.lemmatize(token)
-		if token.lower() not in entities:
-			if dictionary.check(token.lower()):
-				token = en.lemma(token)
-			if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
-				# print token, 1.0 * (len_token - i) / (len_token * 1.0)
-				if i == 0:
-					try:
-						tf[token] += 2.0 * (len_token - i) / (len_token * 1.0)
-					except KeyError:
-						tf[token] = 2.0 * (len_token - i) / (len_token * 1.0)
-				else:
-					try:
-						tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
-					except KeyError:
-						tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
-			elif token == ".":
-				i += 1
+		if dictionary.check(token.lower()):
+			token = en.lemma(token)
+		if token not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords and len(token) > 1 and token != "''" and token != "``":
+			# print token, 1.0 * (len_token - i) / (len_token * 1.0)
+			if i == 0:
+				try:
+					tf[token] += 2.0 * (len_token - i) / (len_token * 1.0)
+				except KeyError:
+					tf[token] = 2.0 * (len_token - i) / (len_token * 1.0)
+			else:
+				try:
+					tf[token] += 1.0 * (len_token - i) / (len_token * 1.0)
+				except KeyError:
+					tf[token] = 1.0 * (len_token - i) / (len_token * 1.0)
+		elif token == ".":
+			i += 1
 
 	tf = sorted(tf.items(), key=operator.itemgetter(1), reverse=True)
 	return tf
