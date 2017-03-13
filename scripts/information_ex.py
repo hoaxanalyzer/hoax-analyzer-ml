@@ -103,7 +103,7 @@ def entity_recognition(chunked):
 def count_entity(entities, text, key_phrase_tokens):
 	tf = {}
 	sentences = text.split('.')
-	key_phrase_result = " ".join(key_phrase_tokens)
+	# key_phrase_result = " ".join(key_phrase_tokens)
 	for entity in entities:
 		parsed_entity = entity.split(' ')
 		first_appear = 0
@@ -122,13 +122,13 @@ def count_entity(entities, text, key_phrase_tokens):
 				tf[entity] = {}
 				tf[entity]['count'] = n_match/(len(parsed_entity) * 1.0)
 
-			matching = re.findall('\w*' + pars.lower() +  '\w*', key_phrase_result.lower())
-			n_match = len(matching)
-			try:
-				tf[entity]['count'] += 2.0 * n_match/(len(parsed_entity) * 1.0)
-			except KeyError:
-				tf[entity] = {}
-				tf[entity]['count'] = 2.0 * n_match/(len(parsed_entity) * 1.0)
+			# matching = re.findall('\w*' + pars.lower() +  '\w*', key_phrase_result.lower())
+			# n_match = len(matching)
+			# try:
+			# 	tf[entity]['count'] += 2.0 * n_match/(len(parsed_entity) * 1.0)
+			# except KeyError:
+			# 	tf[entity] = {}
+			# 	tf[entity]['count'] = 2.0 * n_match/(len(parsed_entity) * 1.0)
 		tf[entity]['first_appear'] = first_appear
 	return tf
 
