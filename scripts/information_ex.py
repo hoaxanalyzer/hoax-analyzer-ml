@@ -74,6 +74,7 @@ def entity_recognition(chunked):
     for i in chunked:
             if type(i) == Tree:
                     current_chunk.append(" ".join([token for token, pos in i.leaves()]))
+                    print i.leaves()
             elif current_chunk:
                     named_entity = " ".join(current_chunk)
                     if named_entity not in continuous_chunk:
@@ -265,6 +266,7 @@ def generate_query(text):
     ne_chunk = chunk_words(tokens)
     ent = entity_recognition(ne_chunk)
     ent_res = count_entity(ent, " ".join(tokens), key_phrase_tokens)
+    print ent_res
     selected_entities = select_entity(ent_res)
 
     tf = term_frequencies(tokens, selected_entities, key_phrase_tokens)
