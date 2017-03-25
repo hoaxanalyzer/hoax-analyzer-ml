@@ -1,5 +1,9 @@
 # Dataset #
 /dataset
+/scripts/test
+
+# Output #
+/output
 
 # Lib #
 /libs
