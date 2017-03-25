@@ -1,9 +1,7 @@
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -14,7 +12,7 @@ public class HoaxAnalyzer {
 
     public static void createModel() throws IOException {
         String factOrHoax = "fact";
-        String dir = "E:\\GitHub\\hoax-analyzer-ml\\scripts\\idn-" + factOrHoax;
+        String dir = "E:\\GitHub\\hoax-analyzer-ml\\dataset\\idn-" + factOrHoax;
         File folder = new File(dir);
         File[] listOfFiles = folder.listFiles();
 
@@ -76,12 +74,25 @@ public class HoaxAnalyzer {
     }
 
     public static void main (String[] args) throws IOException {
+        // Avoid printing anything :(
+        PrintStream originalStream = System.out;
+        PrintStream dummyStream    = new PrintStream(new OutputStream(){
+            public void write(int b) {
+                //NO-OP
+            }
+        });
+        System.setOut(dummyStream);
+
         // HoaxAnalyzer.createModel();
-        // String filename = "E:\\GitHub\\hoax-analyzer-ml\\scripts\\idn-hoax\\1.txt";
-        String filename = args[0];
+        String filename = "E:\\GitHub\\hoax-analyzer-ml\\dataset\\idn-hoax\\1.txt";
+        // String filename = args[0];
 
         String text = HoaxUtil.loadFile(filename);
         HashMap<String, HashMap<String, WordFeature>> wordTag = FeatureExtractor.extractTag(text);
+
+
+        System.setOut(originalStream);
         System.out.println(createJSON(wordTag).toJSONString());
+        System.setOut(dummyStream);
     }
 }

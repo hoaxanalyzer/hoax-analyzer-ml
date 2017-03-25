@@ -1,9 +1,7 @@
 import IndonesianNLP.*;
-import com.sun.deploy.util.StringUtils;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -67,7 +65,7 @@ public class Preprocessor {
         }
         // System.out.println();
 
-        String processedText = StringUtils.join(tokens, " ");
+        String processedText = String.join(" ", tokens);
         // System.out.println(processedText);
         formalizer.initStopword();
         processedText = formalizer.deleteStopword(processedText);
@@ -93,7 +91,7 @@ public class Preprocessor {
     }
 
     public static ArrayList<String[]> tagging(String text) {
-        // Avoid printing something from pos tag :(
+        // Avoid printing anything from pos tag :(
         PrintStream originalStream = System.out;
         PrintStream dummyStream    = new PrintStream(new OutputStream(){
             public void write(int b) {

@@ -5,5 +5,8 @@
 # Output #
 /output
 
+# Resource #
+/lib/resource
+
 # Lib #
 /libs
