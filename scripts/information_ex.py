@@ -3,7 +3,6 @@ from key_phrase import *
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
-from nltk.tag.stanford import StanfordNERTagger
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
 import enchant
