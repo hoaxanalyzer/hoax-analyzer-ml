@@ -1,0 +1,138 @@
+"""
+WEKA CLASSIFIER
+
+Weka Classifier
+Usage: -
+Example: - 
+
+TW (2017)
+
+"""
+
+from weka.classifiers import Classifier, Evaluation
+from weka.core.dataset import Attribute
+from weka.core.dataset import Instance
+from weka.core.dataset import Instances
+from weka.filters import Filter
+from weka.core.classes import Random
+import json
+import weka.core.converters as converters
+import weka.core.jvm as jvm
+import weka.core.serialization as serialization
+
+IDN_ARFF_NNP = "../output/id-notoken-nnp-full.arff"
+IDN_ARFF_NN = "../output/id-notoken-nn-full.arff"
+IDN_ARFF_CDP = "../output/id-notoken-cdp-full.arff"
+
+IDN_MODEL_NNP = "../model/id-randf.nnp.model"
+IDN_MODEL_NN = "../model/id-randf.nn.model"
+IDN_MODEL_CDP ="../model/id-randf.cdp.model"
+
+IDN_TAG = ['nnp', 'nn', 'cdp']
+IDN_TAG_FEATURE = ['prob', 'wcount', 'wpos', 'spos']
+IDN_N_FEATURE = 8
+
+def print_title(title):
+    print("\n" + title)
+    print("=" * len(title))
+
+def create_idn_model(input_file, output_file):
+    # Load data
+    data = converters.load_any_file(input_file)
+    data.class_is_last()   # set class attribute
+    
+    # filter data 
+    print_title("Filtering Data")
+    discretize = Filter(classname="weka.filters.unsupervised.attribute.Discretize", options=["-B", "10", "-M", "-1.0", "-R", "first-last"])
+    discretize.inputformat(data)    # let the filter know about the type of data to filter
+    filtered_data = discretize.filter(data)
+    print("Done! (believe it or not)")
+
+
+    print_title("Build Classifier")
+    classifier = Classifier(classname="weka.classifiers.trees.RandomForest", options=["-I", "100", "-K", "0", "-S", "1"])
+    classifier.build_classifier(filtered_data)
+    print("Done! (believe it or not)")
+    serialization.write_all(output_file, [classifier, discretize])
+    print("Model and filter saved to ", output_file)
+
+    evaluation = Evaluation(data)   # initialize with priors
+    evaluation.crossvalidate_model(classifier, filtered_data, 10, Random(42))   # 10-fold CV
+    print(evaluation.summary())
+    print("pctCorrect: " + str(evaluation.percent_correct))
+    print("incorrect: " + str(evaluation.incorrect))
+
+
+def classify_new_instance(model, dataset):
+    pred = "?"
+    try:
+        filtered_dataset = model['filter'].filter(dataset)
+        pred = model['classifier'].classify_instance(filtered_dataset.get_instance(0))
+        pred = (filtered_dataset.class_attribute.value(int(pred)))
+    except KeyError:
+        i
+    return pred
+
+def load_idn_classifier(tag):
+    idn_classifier = {}
+
+    if tag == "nnp":
+        objects = serialization.read_all(IDN_MODEL_NNP)
+    elif tag == "nn":
+        objects = serialization.read_all(IDN_MODEL_NN)
+    elif tag == "cdp":
+        objects = serialization.read_all(IDN_MODEL_CDP)
+
+    idn_classifier['classifier'] = Classifier(jobject=objects[0])
+    idn_classifier['filter'] = Filter(jobject=objects[1])
+    return idn_classifier
+
+def create_idn_attributes(tag):
+    attr = []
+
+    for i in range(0,IDN_N_FEATURE):
+        for tag in IDN_TAG:
+            for ftr in IDN_TAG_FEATURE:
+                attr.append(Attribute.create_numeric(tag + str(i+1) + "_" + ftr))
+    attr.append(Attribute.create_nominal(tag + "_class", []))            
+    return attr
+
+def classify_json_object(tag, json_data):
+    model = load_idn_classifier(tag)
+
+    # create dataset
+    attr = create_idn_attributes(tag)
+    dataset = Instances.create_instances("idn_dataset", attr, 0)
+
+    # create an instance
+    val = []
+    for i in range(0,IDN_N_FEATURE):
+        for tag in IDN_TAG:
+            for ftr in IDN_TAG_FEATURE:
+                cur_key = tag + str(i + 1)
+                val.append(json_data[cur_key][cur_key + "_" + ftr])
+    val.append(0)
+    inst = Instance.create_instance(val)
+    dataset.add_instance(inst)
+    dataset.class_is_last()
+    
+    pred = classify_new_instance(model, dataset)
+    
+    return pred
+
+
+def main():
+    # Create Model
+    create_idn_model(IDN_ARFF_NNP, IDN_MODEL_NNP)
+    create_idn_model(IDN_ARFF_NN, IDN_MODEL_NN)
+    create_idn_model(IDN_ARFF_CDP, IDN_MODEL_CDP)
+    
+
+if __name__ == "__main__":
+    try:
+        jvm.start()
+        main()
+    except Exception as e:
+        print(traceback.format_exc())
+    finally:
+        jvm.stop()

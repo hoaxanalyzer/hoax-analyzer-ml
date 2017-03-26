@@ -18,3 +18,4 @@
 # Cache #
 /scripts/__pycache__/
 /scripts/*.log
+/scripts/*.pyc
