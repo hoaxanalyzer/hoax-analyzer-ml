@@ -1,6 +1,9 @@
 import IndonesianNLP.*;
 
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,18 +16,18 @@ public class Preprocessor {
 
     private static ArrayList<String> initStopwords() {
         ArrayList<String> idnStopwords = new ArrayList<>();
-        String filePath = System.getProperty("user.dir") + "/resource/formalization/stopword.txt";
-        fileToArray(idnStopwords, filePath);
-        filePath = System.getProperty("user.dir") + "/resource/formalization/hoax-stopwords.txt";
-        fileToArray(idnStopwords, filePath);
+        InputStream is = HoaxAnalyzer.class.getResourceAsStream("/formalization/stopword.txt");
+        fileToArray(idnStopwords, is);
+        is = HoaxAnalyzer.class.getResourceAsStream("/formalization/hoax-stopwords.txt");
+        fileToArray(idnStopwords, is);
         return idnStopwords;
     }
 
-    private static void fileToArray(ArrayList<String> idnStopwords, String filePath) {
+    private static void fileToArray(ArrayList<String> idnStopwords, InputStream is) {
         BufferedReader in = null;
         try {
-            in = new BufferedReader(new FileReader(filePath));
-        } catch (FileNotFoundException e) {
+            in = new BufferedReader(new InputStreamReader(is));
+        } catch (Exception e) {
             e.printStackTrace();
         }
         String str;

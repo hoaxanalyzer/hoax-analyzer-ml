@@ -7,9 +7,9 @@ public class WordFeature implements Comparable<WordFeature> {
     public static final String NULL = "null";
     public static final String TOKEN = "token";
     public static final String PROB = "prob";
-    public static final String WORD_COUNT = "word_count";
-    public static final String WORD_POS = "word_pos";
-    public static final String SENTENCE_POS = "sentence_pos";
+    public static final String WORD_COUNT = "wcount";
+    public static final String WORD_POS = "wpos";
+    public static final String SENTENCE_POS = "spos";
 
     private String token;
     private double prob;
@@ -82,13 +82,13 @@ public class WordFeature implements Comparable<WordFeature> {
         return token + ": " + prob + " | " + wordCount + " | " + wordPos + " | " + sentencePos;
     }
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject(String tag) {
         JSONObject object = new JSONObject();
-        object.put(TOKEN, token);
-        object.put(PROB, prob);
-        object.put(WORD_COUNT, wordCount);
-        object.put(WORD_POS, wordPos);
-        object.put(SENTENCE_POS, sentencePos);
+        object.put(tag + "_" + TOKEN, token);
+        object.put(tag + "_" + PROB, prob);
+        object.put(tag + "_" + WORD_COUNT, wordCount);
+        object.put(tag + "_" + WORD_POS, wordPos);
+        object.put(tag + "_" + SENTENCE_POS, sentencePos);
 
         return object;
     }
