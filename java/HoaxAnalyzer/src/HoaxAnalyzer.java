@@ -54,25 +54,27 @@ public class HoaxAnalyzer {
     }
 
     public static JSONObject createJSON(HashMap<String, HashMap<String, WordFeature>> wordTag) {
-        JSONObject object = new JSONObject();
+        JSONObject features = new JSONObject();
         Iterator<Map.Entry<String, HashMap<String, WordFeature>>> it = wordTag.entrySet().iterator();
+
         while (it.hasNext()) {
             Map.Entry<String, HashMap<String, WordFeature>> pair = it.next();
             HashMap<String, WordFeature> key = pair.getValue();
             Iterator<Map.Entry<String, WordFeature>> itKey = key.entrySet().iterator();
 
-            JSONArray feature = new JSONArray();
+            String tag = pair.getKey().toLowerCase();
+            int i = 1;
             while (itKey.hasNext()) {
                 Map.Entry<String, WordFeature> pairKey = itKey.next();
-                feature.add(pairKey.getValue().toJSONObject());
+                features.put(tag + i, pairKey.getValue().toJSONObject(tag + i));
+                i++;
                 itKey.remove();
             }
 
-            object.put(pair.getKey(), feature);
             it.remove(); // avoids a ConcurrentModificationException
         }
 
-        return object;
+        return features;
     }
 
     public static void main (String[] args) throws IOException {
