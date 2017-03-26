@@ -9,6 +9,8 @@ import java.util.*;
  */
 public class HoaxAnalyzer {
     public static final String FEATURE = "feature";
+    private static final String COMMAND_PREPROCESS = "preprocess";
+    private static final String COMMAND_EXTRACT = "extract";
 
     public static void createModel() throws IOException {
         String factOrHoax = "fact";
@@ -74,25 +76,23 @@ public class HoaxAnalyzer {
     }
 
     public static void main (String[] args) throws IOException {
-        // Avoid printing anything :(
-        PrintStream originalStream = System.out;
-        PrintStream dummyStream    = new PrintStream(new OutputStream(){
-            public void write(int b) {
-                //NO-OP
-            }
-        });
-        System.setOut(dummyStream);
-
         // HoaxAnalyzer.createModel();
-        String filename = "E:\\GitHub\\hoax-analyzer-ml\\dataset\\idn-hoax\\1.txt";
-        // String filename = args[0];
+        // String command = COMMAND_EXTRACT;
+        // String filename = "E:\\GitHub\\hoax-analyzer-ml\\dataset\\idn-hoax\\1.txt";
+        String command = args[0];
+        String text = args[1];
 
-        String text = HoaxUtil.loadFile(filename);
-        HashMap<String, HashMap<String, WordFeature>> wordTag = FeatureExtractor.extractTag(text);
-
-
-        System.setOut(originalStream);
-        System.out.println(createJSON(wordTag).toJSONString());
-        System.setOut(dummyStream);
+        switch (command) {
+            case COMMAND_PREPROCESS:
+                text = Preprocessor.preprocess(text);
+                System.out.println(text);
+                break;
+            case COMMAND_EXTRACT:
+                HashMap<String, HashMap<String, WordFeature>> wordTag = FeatureExtractor.extractTag(text);
+                System.out.println(createJSON(wordTag).toJSONString());
+                break;
+            default:
+                System.out.println("Unknown command");
+        }
     }
 }
