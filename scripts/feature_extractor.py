@@ -5,6 +5,9 @@ Module for extracting tag features from text
 Usage: python feature_extractor.py [file] or python feature_extractor.py [dir] [output_file]
 Example: python feature_extractor.py jackie.txt or python feature_extractor.py test output.csv
 
+feature_extractor.py
+TW (2017)
+
 """
 
 from key_phrase import detect_key_phrases

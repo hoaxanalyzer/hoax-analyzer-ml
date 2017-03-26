@@ -5,23 +5,26 @@ Module for preprocessing text
 Usage: python preprocessor.py [file]
 Example: python preprocessor.py jackie.txt
 
+(C) TW
+
 """
 
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 import enchant
-import pattern.en as en
 import string
 import sys
 
+lemmatizer = WordNetLemmatizer()
 dictionary = enchant.Dict("en_US")
 punctuations = list(string.punctuation)
-with open('stopwords_en.txt', 'r') as myfile:
+with open('resource/stopwords_en.txt', 'r') as myfile:
     hoax_stopwords = myfile.read()
     hoax_stopwords = word_tokenize(hoax_stopwords)
 
 def preprocess(text):
-    text = text.decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'").replace("'s", " ").replace("``", " ").replace("''", " ").replace("_", " ").replace("'"," ").replace("`"," ")
+    text = text.encode('utf-8').decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'").replace("'s", " ").replace("``", " ").replace("''", " ").replace("_", " ").replace("'"," ").replace("`"," ")
     tokens = text.split(" ")
     result = ""
     for token in tokens:
@@ -29,11 +32,17 @@ def preprocess(text):
         if word not in stopwords.words('english') and token not in punctuations and token not in hoax_stopwords:
             if len(word) > 0:
                 if word.isupper() and dictionary.check(word.lower()):
-                    result += en.lemma(token.lower()) + " "
+                    new_token = lemmatizer.lemmatize(token.lower())
+                    if new_token == token.lower():
+                        new_token = lemmatizer.lemmatize(token.lower(), pos='v')
+                    result += new_token + " "
                 elif word.isupper():
                     result += token.title() + " "
                 elif dictionary.check(word.lower()):
-                    result += en.lemma(token) + " "
+                    new_token = lemmatizer.lemmatize(token.lower())
+                    if new_token == token.lower():
+                        new_token = lemmatizer.lemmatize(token.lower(), pos='v')
+                    result += new_token + " "
                 else:
                     result += token + " "
             else:
@@ -52,8 +61,8 @@ def main():
     with open(filename, 'r') as myfile:
         text = myfile.read().replace('\n', '')
     processed_text = preprocess(text)
-    print "Preprocess: ", processed_text, "\n"
-    print "Tokenize: ", tokenize(processed_text), "\n"
+    print("Preprocess: ", processed_text, "\n")
+    print("Tokenize: ", tokenize(processed_text), "\n")
 
 if __name__ == "__main__":
     main()

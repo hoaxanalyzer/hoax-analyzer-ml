@@ -1,3 +1,13 @@
+"""
+WORD FEATURE
+
+Class for word feature for English
+
+word_feature.py
+TW (2017)
+
+"""
+
 class WordFeature:
     null = "null"
 
