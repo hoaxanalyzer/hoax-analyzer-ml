@@ -1,8 +1,8 @@
 # Hoax Analyzer
 Machine Learning Section
 
-# How to Start
-##### Python
+## How to Start
+### Python
 1. First, you have to make sure that Python3 has already installed in your computer. You can get Python3 by typing:
     ```sh
     $ sudo apt-get update && sudo apt-get install -y build-essential git libjpeg-dev
