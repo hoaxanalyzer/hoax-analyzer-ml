@@ -10,7 +10,7 @@ TW (2017)
 
 """
 
-from key_phrase import detect_key_phrases
+from ms_text_analytics import detect_key_phrases
 from nltk import word_tokenize
 from tagger import tagging
 from word_feature import WordFeature
@@ -72,7 +72,7 @@ def extract_tag(text):
         w += 1
 
     # Count using Microsoft's Text Analytics
-    key_phrase = extract_key_phrases(text.decode("ascii", "replace"))
+    key_phrase = extract_key_phrases(text.encode('utf-8').decode("ascii", "replace"))
     kp_tag = tagging(key_phrase)
     for kp in kp_tag:
         token = kp[0]
@@ -99,7 +99,6 @@ def extract_tag(text):
             tag_dict[key] = []
         while len(tag_dict[key]) < n_word:
                 tag_dict[key].append(WordFeature(WordFeature.null, 0, 0, 0))
-        print_tag_dict_key(tag_dict, key)
     return tag_dict
 
 def extract_tag_to_csv(directory, file_output):
@@ -136,20 +135,20 @@ def extract_tag_to_csv(directory, file_output):
 
             wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL, lineterminator='\n')
             wr.writerow(result)
-            print filename, "done!"
+            print(filename, "done!")
 
 def print_tag_dict(tag_dict):
     for key in tag_dict:
-        print key
+        print(key)
         for gkey in tag_dict[key]:
-            print gkey, tag_dict[key][gkey].token, tag_dict[key][gkey].prob, tag_dict[key][gkey].w_count, tag_dict[key][gkey].word_pos, tag_dict[key][gkey].sentence_pos
-        print "\n"
+            print(gkey, tag_dict[key][gkey].token, tag_dict[key][gkey].prob, tag_dict[key][gkey].w_count, tag_dict[key][gkey].word_pos, tag_dict[key][gkey].sentence_pos)
+        print("\n")
 
 def print_tag_dict_key(tag_dict, key):
-    print key
+    print(key)
     for gkey in tag_dict[key]:
-        print gkey.token, gkey.prob, gkey.w_count, gkey.kp_count, gkey.word_pos, gkey.sentence_pos
-    print "\n"
+        print(gkey.token, gkey.prob, gkey.w_count, gkey.kp_count, gkey.word_pos, gkey.sentence_pos)
+    print("\n")
 
 def main():
     if (len(sys.argv) >= 3):

@@ -8,10 +8,11 @@ Example:
 """
 
 from config import microsoft_text_analytics_account_key as account_key
-import urllib.request, urllib.parse, urllib.error
-import sys
 import base64
+import codecs
 import json
+import sys
+import urllib.request, urllib.parse, urllib.error
 
 # Azure portal URL.
 base_url = 'https://westus.api.cognitive.microsoft.com/'
@@ -40,7 +41,7 @@ def detect_key_phrases(input_texts):
     req = urllib.request.Request(batch_keyphrase_url, data, headers) 
     response = urllib.request.urlopen(req)
     result = response.read()
-    obj = json.loads(result)
+    obj = json.loads(result.decode("utf-8"))
     # for keyphrase_analysis in obj['documents']:
     #   print('Key phrases ' + str(keyphrase_analysis['id']) + ': ' + ', '.join(map(str,keyphrase_analysis['keyPhrases'])))
     return obj['documents']

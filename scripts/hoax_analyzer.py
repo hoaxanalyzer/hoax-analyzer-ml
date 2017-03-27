@@ -10,10 +10,11 @@ TW (2017)
 
 """
 
+from feature_extractor import extract_tag, acceptible_tags
 from preprocessor import preprocess as en_preprocess
 from ms_text_analytics import detect_language
 from subprocess import Popen, PIPE, STDOUT
-from weka_classifier import classify_json_object
+from weka_classifier import classify_json_object, LANG_ID, LANG_ENG
 import weka.core.jvm as jvm
 import json
 import sys
@@ -29,25 +30,49 @@ def is_query(text):
 
 def generate_idn_query(json_data):
     query = []
-    nnp_pred = classify_json_object("nnp", json_data)
+    nnp_pred = classify_json_object(LANG_ID, "nnp", json_data)
     nnp_pred = int(nnp_pred[len(nnp_pred)-1:])
     for i in range(0, nnp_pred):
         token = json_data["nnp" + str(i + 1)]["nnp" + str(i + 1) + "_token"]
         if token not in query:
             query.append(token)
 
-    nn_pred = classify_json_object("nn", json_data)
+    nn_pred = classify_json_object(LANG_ID, "nn", json_data)
     nn_pred = int(nn_pred[len(nn_pred)-1:])
     token = json_data["nn" + str(i + 1)]["nn" + str(i + 1) + "_token"]
     if token not in query:
         query.append(token)
 
-    cdp_pred = classify_json_object("cdp", json_data)
+    cdp_pred = classify_json_object(LANG_ID, "cdp", json_data)
     cdp_pred = int(cdp_pred[len(cdp_pred)-1:])
     token = json_data["cdp" + str(i + 1)]["cdp" + str(i + 1) + "_token"]
     if token not in query:
         query.append(token)
     return " ".join(query).replace("\"", " ")
+
+def generate_en_query(text):
+    print("Generate English Query")
+    tag_feature = extract_tag(text)
+    json_tag = {}
+    for tag in acceptible_tags:
+        i = 1
+        for val in tag_feature[tag]:
+            json_tag[tag.lower() + str(i) + "_prob"] = val.prob
+            json_tag[tag.lower() + str(i) + "_wcount"] = val.w_count
+            json_tag[tag.lower() + str(i) + "_kpcount"] = val.kp_count
+            json_tag[tag.lower() + str(i) + "_wseq"] = val.word_pos
+            json_tag[tag.lower() + str(i) + "_sseq"] = val.sentence_pos
+            i += 1
+    
+    query = []
+    nnp_pred = classify_json_object(LANG_ENG, "nnp", json_tag)
+    nnp_pred = int(nnp_pred[len(nnp_pred)-1:])
+    for i in range(0, nnp_pred):
+        token = json_data["nnp" + str(i + 1)]["nnp" + str(i + 1) + "_token"]
+        if token not in query:
+            query.append(token)
+    print(query)
+    return query
 
 def build_query(text):
     lang = detect_language(text)
@@ -69,6 +94,13 @@ def build_query(text):
 
     # English Text
     elif not is_query(text) and lang == "English":
+        try:
+            jvm.start()
+            query = generate_en_query(text)
+        except Exception as e:
+            print(traceback.format_exc())
+        finally:
+            jvm.stop()
         query = "kulelah ngemodelin yg bhs indo"
 
     # Indonesian Text

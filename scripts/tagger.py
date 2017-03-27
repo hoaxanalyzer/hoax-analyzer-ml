@@ -18,7 +18,7 @@ def main():
     filename = sys.argv[1]
     with open(filename, 'r') as myfile:
         text = myfile.read().replace('\n', '')
-    print "Pos tag:", tagging(text)
+    print("Pos tag:", tagging(text))
 
 if __name__ == "__main__":
     main()

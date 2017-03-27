@@ -20,6 +20,9 @@ import weka.core.converters as converters
 import weka.core.jvm as jvm
 import weka.core.serialization as serialization
 
+LANG_ID = "id"
+LANG_ENG = "eng"
+
 IDN_ARFF_NNP = "../output/id-notoken-nnp-full.arff"
 IDN_ARFF_NN = "../output/id-notoken-nn-full.arff"
 IDN_ARFF_CDP = "../output/id-notoken-cdp-full.arff"
@@ -91,42 +94,79 @@ def classify_new_instance(model, dataset):
         i
     return pred
 
-def load_idn_classifier(tag):
-    idn_classifier = {}
+def load_classifier(lang, tag):
+    classifier = {}
 
-    if tag == "nnp":
+    if lang == LANG_ID and tag == "nnp":
         objects = serialization.read_all(IDN_MODEL_NNP)
-    elif tag == "nn":
+    elif lang == LANG_ID and tag == "nn":
         objects = serialization.read_all(IDN_MODEL_NN)
-    elif tag == "cdp":
+    elif lang == LANG_ID and tag == "cdp":
         objects = serialization.read_all(IDN_MODEL_CDP)
 
-    idn_classifier['classifier'] = Classifier(jobject=objects[0])
-    idn_classifier['filter'] = Filter(jobject=objects[1])
-    return idn_classifier
+    elif lang == LANG_ENG and tag == "nnp":
+        objects = serialization.read_all(EN_MODEL_NNP)
+    elif lang == LANG_ENG and tag == "jj":
+        objects = serialization.read_all(EN_MODEL_JJ)
+    elif lang == LANG_ENG and tag == "nn":
+        objects = serialization.read_all(EN_MODEL_NN)
+    elif lang == LANG_ENG and tag == "vbp":
+        objects = serialization.read_all(EN_MODEL_VBP)
+    elif lang == LANG_ENG and tag == "cd":
+        objects = serialization.read_all(EN_MODEL_CD)
+    elif lang == LANG_ENG and tag == "vb":
+        objects = serialization.read_all(EN_MODEL_VB)
 
-def create_idn_attributes(tag):
+    classifier['classifier'] = Classifier(jobject=objects[0])
+    classifier['filter'] = Filter(jobject=objects[1])
+    return classifier
+
+def create_attributes(lang, tag):
     attr = []
+    n_feature = 0
+    tag_list = ""
+    tag_feature = ""
 
-    for i in range(0,IDN_N_FEATURE):
-        for tag in IDN_TAG:
-            for ftr in IDN_TAG_FEATURE:
+    if lang == LANG_ID:
+        n_feature = IDN_N_FEATURE
+        tag_list = IDN_TAG
+        tag_feature = IDN_TAG_FEATURE
+    elif lang == LANG_ENG:
+        n_feature = EN_N_FEATURE
+        tag_list = EN_TAG
+        tag_feature = EN_TAG_FEATURE
+    for i in range(0,n_feature):
+        for tag in tag_list:
+            for ftr in tag_feature:
                 attr.append(Attribute.create_numeric(tag + str(i+1) + "_" + ftr))
     attr.append(Attribute.create_nominal(tag + "_class", []))            
     return attr
 
-def classify_json_object(tag, json_data):
-    model = load_idn_classifier(tag)
+def classify_json_object(lang, tag, json_data):
+    model = load_classifier(lang, tag)
 
     # create dataset
-    attr = create_idn_attributes(tag)
+    attr = create_attributes(lang, tag)
     dataset = Instances.create_instances("idn_dataset", attr, 0)
 
     # create an instance
+    n_feature = 0
+    tag_list = ""
+    tag_feature = ""
+
+    if lang == LANG_ID:
+        n_feature = IDN_N_FEATURE
+        tag_list = IDN_TAG
+        tag_feature = IDN_TAG_FEATURE
+    elif lang == LANG_ENG:
+        n_feature = EN_N_FEATURE
+        tag_list = EN_TAG
+        tag_feature = EN_TAG_FEATURE
+
     val = []
-    for i in range(0,IDN_N_FEATURE):
-        for tag in IDN_TAG:
-            for ftr in IDN_TAG_FEATURE:
+    for i in range(0,n_feature):
+        for tag in tag_list:
+            for ftr in tag_feature:
                 cur_key = tag + str(i + 1)
                 val.append(json_data[cur_key][cur_key + "_" + ftr])
     val.append(0)
