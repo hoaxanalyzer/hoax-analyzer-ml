@@ -32,11 +32,29 @@ IDN_TAG = ['nnp', 'nn', 'cdp']
 IDN_TAG_FEATURE = ['prob', 'wcount', 'wpos', 'spos']
 IDN_N_FEATURE = 8
 
+EN_ARFF_NNP = "../output/en-notoken-nnp-full.arff"
+EN_ARFF_JJ = "../output/en-notoken-jj-full.arff"
+EN_ARFF_NN = "../output/en-notoken-nn-full.arff"
+EN_ARFF_VBP = "../output/en-notoken-vbp-full.arff"
+EN_ARFF_CD = "../output/en-notoken-cd-full.arff"
+EN_ARFF_VB = "../output/en-notoken-vb-full.arff"
+
+EN_MODEL_NNP = "../model/en-randf.nnp.model"
+EN_MODEL_JJ = "../model/en-randf.jj.model"
+EN_MODEL_NN ="../model/en-randf.nn.model"
+EN_MODEL_VBP = "../model/en-randf.vbp.model"
+EN_MODEL_CD = "../model/en-randf.cd.model"
+EN_MODEL_VB ="../model/en-randf.vb.model"
+
+EN_TAG = ['nnp', 'nnp', 'jj', 'nn', 'vbp', 'cd', 'vb']
+EN_TAG_FEATURE = ['prob', 'wcount', 'kpcount' 'wseq', 'sseq']
+EN_N_FEATURE = 5
+
 def print_title(title):
     print("\n" + title)
     print("=" * len(title))
 
-def create_idn_model(input_file, output_file):
+def create_model(input_file, output_file):
     # Load data
     data = converters.load_any_file(input_file)
     data.class_is_last()   # set class attribute
@@ -123,9 +141,25 @@ def classify_json_object(tag, json_data):
 
 def main():
     # Create Model
-    create_idn_model(IDN_ARFF_NNP, IDN_MODEL_NNP)
-    create_idn_model(IDN_ARFF_NN, IDN_MODEL_NN)
-    create_idn_model(IDN_ARFF_CDP, IDN_MODEL_CDP)
+    print_title("IDN_MODEL_NNP")
+    create_model(IDN_ARFF_NNP, IDN_MODEL_NNP)
+    print_title("IDN_MODEL_NN")
+    create_model(IDN_ARFF_NN, IDN_MODEL_NN)
+    print_title("IDN_MODEL_CDP")
+    create_model(IDN_ARFF_CDP, IDN_MODEL_CDP)
+
+    print_title("EN_MODEL_NNP")
+    create_model(EN_ARFF_NNP, EN_MODEL_NNP)
+    print_title("EN_MODEL_JJ")
+    create_model(EN_ARFF_JJ, EN_MODEL_JJ)
+    print_title("EN_MODEL_NN")
+    create_model(EN_ARFF_NN, EN_MODEL_NN)
+    print_title("EN_MODEL_VBP")
+    create_model(EN_ARFF_VBP, EN_MODEL_VBP)
+    print_title("EN_MODEL_CD")
+    create_model(EN_ARFF_CD, EN_MODEL_CD)
+    print_title("EN_MODEL_VB")
+    create_model(EN_ARFF_VB, EN_MODEL_VB)
     
 
 if __name__ == "__main__":
