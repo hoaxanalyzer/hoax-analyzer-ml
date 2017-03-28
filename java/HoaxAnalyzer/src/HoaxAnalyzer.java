@@ -1,3 +1,4 @@
+import IndonesianNLP.IndonesianPOSTagger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -79,8 +80,21 @@ public class HoaxAnalyzer {
 
     public static void main (String[] args) throws IOException {
         // HoaxAnalyzer.createModel();
-        // String command = COMMAND_EXTRACT;
-        // String filename = "E:\\GitHub\\hoax-analyzer-ml\\dataset\\idn-hoax\\1.txt";
+//        String command = COMMAND_EXTRACT;
+//        String filename = "E:\\GitHub\\hoax-analyzer-ml\\dataset\\idn-hoax\\bandung.txt";
+//        String text = HoaxUtil.loadFile(filename);
+
+//        IndonesianPOSTagger tagger = new IndonesianPOSTagger();
+//        ArrayList<String[]> posTag = tagger.doPOSTag(text);
+//
+//        System.out.println("TAG!");
+//        for(int i = 0; i < posTag.size(); i++) {
+//            System.out.println("(" + posTag.get(i)[0] + "," + posTag.get(i)[1] + ") ");
+//        }
+//        System.out.println("\n=======\n\n");
+
+
+        // System.out.println(text);
         String command = args[0];
         String text = args[1];
 

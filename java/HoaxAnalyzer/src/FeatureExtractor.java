@@ -9,6 +9,7 @@ public class FeatureExtractor {
     private static final int NUM_WORD = 8;
     private static final int NUM_SEN = 2;
     private static final int AVG_WORD = 7;
+    private static final ArrayList<String> PUNCTUATIONS = new ArrayList<>(Arrays.asList(".", ",", ":", ";", "!", "?"));
     public static ArrayList<String> acceptibleTag = new ArrayList<>(Arrays.asList("NNP", "NN", "CDP"));
 
     public static HashMap<String, HashMap<String, WordFeature>> extractTag(String text) {
@@ -24,8 +25,6 @@ public class FeatureExtractor {
         for(int i = 0; i < tags.size(); i++) {
             String token = tags.get(i)[0];
             String tag = tags.get(i)[1];
-            // System.out.print("(" + tag + "," + token + ") ");
-
             if (tag.equals("VBI") || tag.equals("VBT")) {
                 token = stemmer.stem(token);
                 tag = "VB";
@@ -33,19 +32,23 @@ public class FeatureExtractor {
                 s++;
             }
             if (acceptibleTag.contains(tag)) {
-                token = token.toLowerCase();
-                double n = 1 + 2.0 * (tokenLength - w) / (tokenLength * 1.0);
-                if (w < NUM_SEN * AVG_WORD) {
-                    n += 2;
-                }
-                try {
-                    wordTag.get(tag).get(token).incrementCount(n);
-                } catch (Exception ex1) {
+                if(!token.equals("") && !token.toLowerCase().equals("_url_") && !PUNCTUATIONS.contains(token) && !Preprocessor.STOPWORDS.contains(token)) {
+                    // System.out.println("(" + tag + "," + token + ") ");
+
+                    token = token.toLowerCase();
+                    double n = 1 + 2.0 * (tokenLength - w) / (tokenLength * 1.0);
+                    if (w < NUM_SEN * AVG_WORD) {
+                        n += 2;
+                    }
                     try {
-                        wordTag.get(tag).put(token, new WordFeature(token, w, s, n));
-                    } catch (Exception ex2) {
-                        wordTag.put(tag, new HashMap<>());
-                        wordTag.get(tag).put(token, new WordFeature(token, w, s, n));
+                        wordTag.get(tag).get(token).incrementCount(n);
+                    } catch (Exception ex1) {
+                        try {
+                            wordTag.get(tag).put(token, new WordFeature(token, w, s, n));
+                        } catch (Exception ex2) {
+                            wordTag.put(tag, new HashMap<>());
+                            wordTag.get(tag).put(token, new WordFeature(token, w, s, n));
+                        }
                     }
                 }
             }

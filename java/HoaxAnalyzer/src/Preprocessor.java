@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * Created by Tifani on 3/12/2017.
  */
 public class Preprocessor {
-    private static final ArrayList<String> STOPWORDS = initStopwords();
+    public static final ArrayList<String> STOPWORDS = initStopwords();
 
     private static ArrayList<String> initStopwords() {
         ArrayList<String> idnStopwords = new ArrayList<>();
@@ -43,6 +43,9 @@ public class Preprocessor {
 
     public static String preprocess(String text) {
         text = preprocessMoney(text);
+        text.replaceAll("[^0-9a-zA-Z !\\\"/:;<=>?.,!@#$%^&-_|()']+", " ");
+
+        System.out.println(text);
 
         IndonesianSentenceTokenizer tokenizer = new IndonesianSentenceTokenizer();
         ArrayList<String> tokens = new ArrayList<>();
@@ -61,10 +64,10 @@ public class Preprocessor {
             if (tokens.get(i).length() > 1) {
                 tokens.set(i, tokens.get(i).replace(".", ""));
             }
-            // System.out.print(tokens.get(i) + "|");
-            if(STOPWORDS.contains(tokens.get(i).toLowerCase())) {
-                tokens.set(i, "");
-            }
+//            // System.out.print(tokens.get(i) + "|");
+//            if(STOPWORDS.contains(tokens.get(i).toLowerCase())) {
+//                tokens.set(i, "");
+//            }
         }
         // System.out.println();
 
@@ -103,7 +106,9 @@ public class Preprocessor {
         });
 
         System.setOut(dummyStream);
+        System.out.println(text);
         String processedText = preprocess(text);
+        System.out.println(processedText);
         IndonesianPOSTagger tagger = new IndonesianPOSTagger();
         ArrayList<String[]> posTag = tagger.doPOSTag(processedText);
         System.setOut(originalStream);
