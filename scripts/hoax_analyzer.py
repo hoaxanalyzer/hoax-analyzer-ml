@@ -19,7 +19,9 @@ from weka_classifier import classify_json_object, LANG_ID, LANG_ENG
 import weka.core.jvm as jvm
 import json
 import re
+import string
 import sys
+
 
 query_len = 14
 lang_not_supported = "LANGUAGE NOT SUPPORTED"
@@ -47,7 +49,7 @@ def generate_query(lang, json_tag):
         pred = int(pred[len(pred)-1:])
         for i in range(0, pred):
             token = json_tag[tag + str(i + 1)][tag + str(i + 1) + "_token"]
-            if token not in query and token != "null" and token != "u":
+            if token not in query and token != "null" and token != "u" and token != "_url_" and token not in string.punctuation:
                 query.append(token)
 
     return " ".join(query).replace("\"", " ")
@@ -105,7 +107,9 @@ def build_query(text):
         result = ""
         for line in p.stdout:
             result += line.decode("ascii", "replace") + " "
+
         json_res = json.loads(result)
+        print(result)
         try:
             jvm.start()
             query = generate_query(LANG_ID, json_res)
