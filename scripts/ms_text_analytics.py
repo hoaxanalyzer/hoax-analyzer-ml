@@ -14,6 +14,11 @@ import json
 import sys
 import urllib.request, urllib.parse, urllib.error
 
+# Language constant
+LANG_ID = "id"
+LANG_EN = "en"
+LANG_UNKNOWN = "unknown"
+
 # Azure portal URL.
 base_url = 'https://westus.api.cognitive.microsoft.com/'
 
@@ -54,8 +59,15 @@ def detect_language(input_texts):
     response = urllib.request.urlopen(req)
     result = response.read().decode("utf-8")
     obj = json.loads(result)
+    lang = ""
     for language in obj['documents']:
-        return(language['detectedLanguages'][0]['name'])
+        lang = (language['detectedLanguages'][0]['name'])
+    if lang == "Indonesian":
+        return LANG_ID
+    elif lang == "English":
+        return LANG_EN
+    else:
+        return LANG_UNKNOWN
 
 # Detect sentiment.
 def detect_sentiment(input_texts):

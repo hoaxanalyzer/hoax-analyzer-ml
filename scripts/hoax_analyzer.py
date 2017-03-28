@@ -13,9 +13,9 @@ TW (2017)
 from feature_extractor import extract_tag
 from feature_extractor import acceptible_tags as en_acceptible_tags
 from preprocessor import preprocess as en_preprocess
-from ms_text_analytics import detect_language
+from ms_text_analytics import detect_language, LANG_ID, LANG_EN, LANG_UNKNOWN
 from subprocess import Popen, PIPE, STDOUT
-from weka_classifier import classify_json_object, LANG_ID, LANG_ENG
+from weka_classifier import classify_json_object
 import weka.core.jvm as jvm
 import json
 import re
@@ -24,7 +24,6 @@ import sys
 
 
 query_len = 14
-lang_not_supported = "LANGUAGE NOT SUPPORTED"
 id_acceptible_tags = ["nnp", "nn", "cdp"]
 
 def is_query(text):
@@ -40,7 +39,7 @@ def generate_query(lang, json_tag):
 
     if lang == LANG_ID:
         acceptible_tags = id_acceptible_tags
-    elif lang == LANG_ENG:
+    elif lang == LANG_EN:
         acceptible_tags = en_acceptible_tags
 
     for tag in acceptible_tags:
@@ -73,14 +72,15 @@ def generate_json(text):
 
 def build_query(text):
     lang = detect_language(text)
-    query = lang_not_supported
+    query = LANG_UNKNOWN
+    print(lang)
 
     # English Query
-    if is_query(text) and lang == "English":
+    if is_query(text) and lang == LANG_EN:
         query = en_preprocess(text)
 
     # Indonesian Query
-    elif is_query(text) and lang == "Indonesian":
+    elif is_query(text) and lang == LANG_ID:
         p = Popen(['java', '-jar', '../lib/HoaxAnalyzer.jar', 'preprocess', text], stdout=PIPE, stderr=STDOUT)
         result = []
         for line in p.stdout:
@@ -91,25 +91,25 @@ def build_query(text):
         query = " ".join(result)
 
     # English Text
-    elif not is_query(text) and lang == "English":
+    elif not is_query(text) and lang == LANG_EN:
         try:
             jvm.start()
             json_data = generate_json(text)
-            query = generate_query(LANG_ENG, json_data)
+            query = generate_query(LANG_EN, json_data)
         except Exception as e:
             print(traceback.format_exc())
         finally:
             jvm.stop()
 
     # Indonesian Text
-    elif not is_query(text) and lang == "Indonesian":
+    elif not is_query(text) and lang == LANG_ID:
         p = Popen(['java', '-jar', '../lib/HoaxAnalyzer.jar', 'extract', text], stdout=PIPE, stderr=STDOUT)
         result = ""
         for line in p.stdout:
             result += line.decode("ascii", "replace") + " "
 
         json_res = json.loads(result)
-        
+
         try:
             jvm.start()
             query = generate_query(LANG_ID, json_res)
@@ -119,8 +119,11 @@ def build_query(text):
             jvm.stop()
 
     # Not supported
+    data = {}
+    data["language"] = lang
+    data["query"] = query
     
-    return query
+    return json.dumps(data)
 
 def main():
     filename = sys.argv[1]
