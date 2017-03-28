@@ -13,6 +13,7 @@ from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import enchant
+import re
 import string
 import sys
 
@@ -25,6 +26,7 @@ with open('resource/stopwords_en.txt', 'r') as myfile:
 
 def preprocess(text):
     text = text.encode('utf-8').decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'").replace("'s", " ").replace("``", " ").replace("''", " ").replace("_", " ").replace("'"," ").replace("`"," ")
+    text = re.sub('[^0-9a-zA-Z]+', ' ', text)
     tokens = text.split(" ")
     result = ""
     for token in tokens:

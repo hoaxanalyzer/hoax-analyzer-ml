@@ -49,8 +49,8 @@ EN_MODEL_VBP = "../model/en-randf.vbp.model"
 EN_MODEL_CD = "../model/en-randf.cd.model"
 EN_MODEL_VB ="../model/en-randf.vb.model"
 
-EN_TAG = ['nnp', 'nnp', 'jj', 'nn', 'vbp', 'cd', 'vb']
-EN_TAG_FEATURE = ['prob', 'wcount', 'kpcount' 'wseq', 'sseq']
+EN_TAG = ['nnp', 'jj', 'nn', 'vbp', 'cd', 'vb']
+EN_TAG_FEATURE = ['prob', 'wcount', 'kpcount', 'wseq', 'sseq']
 EN_N_FEATURE = 5
 
 def print_title(title):
@@ -139,7 +139,7 @@ def create_attributes(lang, tag):
         for tag in tag_list:
             for ftr in tag_feature:
                 attr.append(Attribute.create_numeric(tag + str(i+1) + "_" + ftr))
-    attr.append(Attribute.create_nominal(tag + "_class", []))            
+    attr.append(Attribute.create_nominal(tag + "_class", []))
     return attr
 
 def classify_json_object(lang, tag, json_data):
@@ -147,7 +147,7 @@ def classify_json_object(lang, tag, json_data):
 
     # create dataset
     attr = create_attributes(lang, tag)
-    dataset = Instances.create_instances("idn_dataset", attr, 0)
+    dataset = Instances.create_instances(lang + "_dataset", attr, 0)
 
     # create an instance
     n_feature = 0
