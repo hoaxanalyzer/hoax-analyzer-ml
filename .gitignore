@@ -7,8 +7,15 @@
 
 # Resource #
 /lib/resource
+/scripts/resource
 
 # Lib #
 /scripts/lib/
 
 # Credentials #
+/scripts/config.py
+
+# Cache #
+/scripts/__pycache__/
+/scripts/*.log
+/scripts/*.pyc

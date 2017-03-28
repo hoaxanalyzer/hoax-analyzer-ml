@@ -5,6 +5,9 @@ Module for recognizing entities within text
 Usage: python entity_recognizer.py [file]
 Example: python entity_recognizer.py jackie.txt
 
+entity_recognizer.py
+TW (2017)
+
 """
 
 from nltk.tag.stanford import StanfordNERTagger
