@@ -9,6 +9,7 @@ TW (2017)
 
 """
 
+from ms_text_analytics import LANG_ID, LANG_EN
 from weka.classifiers import Classifier, Evaluation
 from weka.core.dataset import Attribute
 from weka.core.dataset import Instance
@@ -20,20 +21,17 @@ import weka.core.converters as converters
 import weka.core.jvm as jvm
 import weka.core.serialization as serialization
 
-LANG_ID = "id"
-LANG_ENG = "eng"
+ID_ARFF_NNP = "../output/id-notoken-nnp-full.arff"
+ID_ARFF_NN = "../output/id-notoken-nn-full.arff"
+ID_ARFF_CDP = "../output/id-notoken-cdp-full.arff"
 
-IDN_ARFF_NNP = "../output/id-notoken-nnp-full.arff"
-IDN_ARFF_NN = "../output/id-notoken-nn-full.arff"
-IDN_ARFF_CDP = "../output/id-notoken-cdp-full.arff"
+ID_MODEL_NNP = "../model/id-randf.nnp.model"
+ID_MODEL_NN = "../model/id-randf.nn.model"
+ID_MODEL_CDP ="../model/id-randf.cdp.model"
 
-IDN_MODEL_NNP = "../model/id-randf.nnp.model"
-IDN_MODEL_NN = "../model/id-randf.nn.model"
-IDN_MODEL_CDP ="../model/id-randf.cdp.model"
-
-IDN_TAG = ['nnp', 'nn', 'cdp']
-IDN_TAG_FEATURE = ['prob', 'wcount', 'wpos', 'spos']
-IDN_N_FEATURE = 8
+ID_TAG = ['nnp', 'nn', 'cdp']
+ID_TAG_FEATURE = ['prob', 'wcount', 'wpos', 'spos']
+ID_N_FEATURE = 8
 
 EN_ARFF_NNP = "../output/en-notoken-nnp-full.arff"
 EN_ARFF_JJ = "../output/en-notoken-jj-full.arff"
@@ -98,23 +96,23 @@ def load_classifier(lang, tag):
     classifier = {}
 
     if lang == LANG_ID and tag == "nnp":
-        objects = serialization.read_all(IDN_MODEL_NNP)
+        objects = serialization.read_all(ID_MODEL_NNP)
     elif lang == LANG_ID and tag == "nn":
-        objects = serialization.read_all(IDN_MODEL_NN)
+        objects = serialization.read_all(ID_MODEL_NN)
     elif lang == LANG_ID and tag == "cdp":
-        objects = serialization.read_all(IDN_MODEL_CDP)
+        objects = serialization.read_all(ID_MODEL_CDP)
 
-    elif lang == LANG_ENG and tag == "nnp":
+    elif lang == LANG_EN and tag == "nnp":
         objects = serialization.read_all(EN_MODEL_NNP)
-    elif lang == LANG_ENG and tag == "jj":
+    elif lang == LANG_EN and tag == "jj":
         objects = serialization.read_all(EN_MODEL_JJ)
-    elif lang == LANG_ENG and tag == "nn":
+    elif lang == LANG_EN and tag == "nn":
         objects = serialization.read_all(EN_MODEL_NN)
-    elif lang == LANG_ENG and tag == "vbp":
+    elif lang == LANG_EN and tag == "vbp":
         objects = serialization.read_all(EN_MODEL_VBP)
-    elif lang == LANG_ENG and tag == "cd":
+    elif lang == LANG_EN and tag == "cd":
         objects = serialization.read_all(EN_MODEL_CD)
-    elif lang == LANG_ENG and tag == "vb":
+    elif lang == LANG_EN and tag == "vb":
         objects = serialization.read_all(EN_MODEL_VB)
 
     classifier['classifier'] = Classifier(jobject=objects[0])
@@ -128,10 +126,10 @@ def create_attributes(lang, tag):
     tag_feature = ""
 
     if lang == LANG_ID:
-        n_feature = IDN_N_FEATURE
-        tag_list = IDN_TAG
-        tag_feature = IDN_TAG_FEATURE
-    elif lang == LANG_ENG:
+        n_feature = ID_N_FEATURE
+        tag_list = ID_TAG
+        tag_feature = ID_TAG_FEATURE
+    elif lang == LANG_EN:
         n_feature = EN_N_FEATURE
         tag_list = EN_TAG
         tag_feature = EN_TAG_FEATURE
@@ -155,10 +153,10 @@ def classify_json_object(lang, tag, json_data):
     tag_feature = ""
 
     if lang == LANG_ID:
-        n_feature = IDN_N_FEATURE
-        tag_list = IDN_TAG
-        tag_feature = IDN_TAG_FEATURE
-    elif lang == LANG_ENG:
+        n_feature = ID_N_FEATURE
+        tag_list = ID_TAG
+        tag_feature = ID_TAG_FEATURE
+    elif lang == LANG_EN:
         n_feature = EN_N_FEATURE
         tag_list = EN_TAG
         tag_feature = EN_TAG_FEATURE
@@ -183,12 +181,12 @@ def classify_json_object(lang, tag, json_data):
 
 def main():
     # Create Model
-    print_title("IDN_MODEL_NNP")
-    create_model(IDN_ARFF_NNP, IDN_MODEL_NNP)
-    print_title("IDN_MODEL_NN")
-    create_model(IDN_ARFF_NN, IDN_MODEL_NN)
-    print_title("IDN_MODEL_CDP")
-    create_model(IDN_ARFF_CDP, IDN_MODEL_CDP)
+    print_title("ID_MODEL_NNP")
+    create_model(ID_ARFF_NNP, ID_MODEL_NNP)
+    print_title("ID_MODEL_NN")
+    create_model(ID_ARFF_NN, ID_MODEL_NN)
+    print_title("ID_MODEL_CDP")
+    create_model(ID_ARFF_CDP, ID_MODEL_CDP)
 
     print_title("EN_MODEL_NNP")
     create_model(EN_ARFF_NNP, EN_MODEL_NNP)
