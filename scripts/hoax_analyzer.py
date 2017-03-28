@@ -109,7 +109,7 @@ def build_query(text):
             result += line.decode("ascii", "replace") + " "
 
         json_res = json.loads(result)
-        print(result)
+        
         try:
             jvm.start()
             query = generate_query(LANG_ID, json_res)
