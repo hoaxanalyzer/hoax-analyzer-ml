@@ -15,12 +15,13 @@ from feature_extractor import acceptible_tags as en_acceptible_tags
 from preprocessor import preprocess as en_preprocess
 from ms_text_analytics import detect_language, LANG_ID, LANG_EN, LANG_UNKNOWN
 from subprocess import Popen, PIPE, STDOUT
-from weka_classifier import classify_json_object
+from sklearn_classifier import classify_json_object
 import weka.core.jvm as jvm
 import json
 import re
 import string
 import sys
+import time
 
 
 query_len = 14
@@ -90,14 +91,8 @@ def build_query(text):
 
     # English Text
     elif not is_query(text) and lang == LANG_EN:
-        try:
-            jvm.start()
-            json_data = generate_json(text)
-            query = generate_query(LANG_EN, json_data)
-        except Exception as e:
-            print(traceback.format_exc())
-        finally:
-            jvm.stop()
+        json_data = generate_json(text)
+        query = generate_query(LANG_EN, json_data)
 
     # Indonesian Text
     elif not is_query(text) and lang == LANG_ID:
@@ -129,11 +124,15 @@ def build_query(text):
     return json.dumps(data)
 
 def main():
+    start = time.time()
     filename = sys.argv[1]
     with open(filename, 'r') as myfile:
         text = myfile.read().replace('\n', '')
         query = build_query(text)
         print(query)
+    end = time.time()
+    elapsed = end - start
+    # print("[Scikit] Time elapsed:", elapsed, "s")
 
 if __name__ == "__main__":
     main()

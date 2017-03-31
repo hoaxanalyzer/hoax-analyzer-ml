@@ -6,3 +6,4 @@ python3 -m nltk.downloader stopwords
 python3 -m nltk.downloader wordnet
 python3 -m nltk.downloader averaged_perceptron_tagger
 sudo -H pip3 install python-weka-wrapper3
+sudo -H pip3 install python-weka-wrapper3
