@@ -72,7 +72,6 @@ def generate_json(text):
 
 def build_query(text):
     lang = detect_language(text)
-    query = LANG_UNKNOWN
     print(lang)
 
     # English Query
@@ -117,6 +116,11 @@ def build_query(text):
             print(traceback.format_exc())
         finally:
             jvm.stop()
+    elif not is_query(text):
+        query = text.split(" ")[:14]
+    else:
+        query = text
+
 
     # Not supported
     data = {}
