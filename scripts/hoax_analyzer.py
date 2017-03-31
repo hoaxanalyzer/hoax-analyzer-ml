@@ -72,7 +72,6 @@ def generate_json(text):
 
 def build_query(text):
     lang = detect_language(text)
-    print(lang)
 
     # English Query
     if is_query(text) and lang == LANG_EN:
@@ -117,7 +116,7 @@ def build_query(text):
         finally:
             jvm.stop()
     elif not is_query(text):
-        query = text.split(" ")[:14]
+        query = " ".join(text.split(" ")[:14])
     else:
         query = text
 
