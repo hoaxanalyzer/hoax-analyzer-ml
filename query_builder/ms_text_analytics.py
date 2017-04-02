@@ -7,7 +7,7 @@ Example:
 
 """
 
-from config import microsoft_text_analytics_account_key as account_key
+from query_builder.config import microsoft_text_analytics_account_key as account_key
 import base64
 import codecs
 import json

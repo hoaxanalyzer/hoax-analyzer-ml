@@ -7,9 +7,8 @@ Example:
 
 """
 
-from config import microsoft_computer_vision_account_key as account_key
+from query_builder..config import microsoft_computer_vision_account_key as account_key
 import http.client, urllib.request, urllib.parse, urllib.error, base64
-import hoax_analyzer
 import base64
 import json
 import sys
@@ -51,8 +50,8 @@ def main():
         b = bytearray(f)
     result = detect_text(b)
     print(result)
-    query = hoax_analyzer.build_query(result)
-    print("Query:", query)
+    # query = hoax_analyzer.build_query(result)
+    # print("Query:", query)
 
 if __name__ == "__main__":
     main()

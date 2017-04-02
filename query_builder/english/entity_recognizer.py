@@ -10,9 +10,10 @@ TW (2017)
 
 """
 
+from multiprocessing.pool import ThreadPool
 from nltk.tag.stanford import StanfordNERTagger
 from nltk.tree import Tree
-from preprocessor import *
+from query_builder.english.preprocessor import *
 import csv
 import nltk
 import os

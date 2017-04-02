@@ -1,6 +1,5 @@
 """
-HOAX ANALYZER
-
+QUERY BUILDER
 Hoax Analyzer
 Usage: -
 Example: -
@@ -10,30 +9,31 @@ TW (2017)
 
 """
 
-from feature_extractor import extract_tag
-from feature_extractor import acceptible_tags as en_acceptible_tags
-from preprocessor import preprocess as en_preprocess
-from ms_text_analytics import detect_language, LANG_ID, LANG_EN, LANG_UNKNOWN
+from multiprocessing.pool import ThreadPool
+from query_builder.english.feature_extractor import extract_tag, acceptible_tags as en_acceptible_tags
+from query_builder.english.preprocessor import preprocess as en_preprocess, remove_stopwords as en_remove_stopwords
+from query_builder.ms_text_analytics import detect_language, LANG_ID, LANG_EN, LANG_UNKNOWN
+from query_builder.sklearn_classifier import classify_json_object
 from subprocess import Popen, PIPE, STDOUT
-from sklearn_classifier import classify_json_object
-import weka.core.jvm as jvm
 import json
 import re
 import string
-import sys
 import time
-
+import unicodedata
 
 query_len = 14
 id_acceptible_tags = ["nnp", "nn", "cdp"]
 
 def is_query(text):
-    text = text.encode('utf-8').decode("ascii", "replace").replace(u"\ufffd", "_").replace("___", "'").replace("'s", " ").replace("``", " ").replace("''", " ").replace("_", " ").replace("'"," ").replace("`"," ")
+    text = unicodedata.normalize('NFKD', text).encode('ascii','ignore').decode("ascii", "ignore")
     text = re.sub('[^0-9a-zA-Z]+', ' ', text)
     if len(text.split(" ")) > 14:
         return False
     else:
         return True
+
+def callback_result(result):
+    async_results.append(result)
 
 def generate_query(lang, json_tag):
     query = []
@@ -76,11 +76,11 @@ def build_query(text):
 
     # English Query
     if is_query(text) and lang == LANG_EN:
-        query = en_preprocess(text)
+        query = " ".join(en_remove_stopwords(en_preprocess(text)))
 
     # Indonesian Query
     elif is_query(text) and lang == LANG_ID:
-        p = Popen(['java', '-jar', '../lib/HoaxAnalyzer.jar', 'preprocess', text], stdout=PIPE, stderr=STDOUT)
+        p = Popen(['java', '-jar', 'lib/HoaxAnalyzer.jar', 'preprocess', text], stdout=PIPE, stderr=STDOUT)
         result = []
         for line in p.stdout:
             arr_token = line.decode("ascii", "replace").split(" ")
@@ -96,20 +96,13 @@ def build_query(text):
 
     # Indonesian Text
     elif not is_query(text) and lang == LANG_ID:
-        p = Popen(['java', '-jar', '../lib/HoaxAnalyzer.jar', 'extract', text], stdout=PIPE, stderr=STDOUT)
+        p = Popen(['java', '-jar', 'lib/HoaxAnalyzer.jar', 'extract', text], stdout=PIPE, stderr=STDOUT)
         result = ""
         for line in p.stdout:
             result += line.decode("ascii", "replace") + " "
-
+        print (result)
         json_res = json.loads(result)
-
-        try:
-            jvm.start()
-            query = generate_query(LANG_ID, json_res)
-        except Exception as e:
-            print(traceback.format_exc())
-        finally:
-            jvm.stop()
+        query = generate_query(LANG_ID, json_res)
     elif not is_query(text):
         query = " ".join(text.split(" ")[:14])
     else:
@@ -122,17 +115,3 @@ def build_query(text):
     data["query"] = query
     
     return json.dumps(data)
-
-def main():
-    start = time.time()
-    filename = sys.argv[1]
-    with open(filename, 'r') as myfile:
-        text = myfile.read().replace('\n', '')
-        query = build_query(text)
-        print(query)
-    end = time.time()
-    elapsed = end - start
-    # print("[Scikit] Time elapsed:", elapsed, "s")
-
-if __name__ == "__main__":
-    main()

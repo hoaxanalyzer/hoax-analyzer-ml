@@ -9,7 +9,7 @@ TW (2017)
 
 """
 
-from ms_text_analytics import LANG_ID, LANG_EN
+from query_builder.ms_text_analytics import LANG_ID, LANG_EN
 from weka.classifiers import Classifier, Evaluation
 from weka.core.dataset import Attribute
 from weka.core.dataset import Instance

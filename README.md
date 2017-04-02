@@ -22,7 +22,7 @@ Machine Learning Section
 
 ### Java
 1.  First, you have to make sure that Java has already installed in your computer. For further information, you can visit http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html.
-2.  Copy `resource` folder contents to `scripts/resource` (if you want to execute the Python program) and `lib/resource` (if you want to execute in the lib folder). The folder contains resources to execute HoaxAnalyzer.jar. You can find the folder in `java/HoaxAnalyzer/`.
+2.  Copy `resource` folder contents to `resource` (if you want to execute the Python program) and `lib/resource` (if you want to execute in the lib folder). The folder contains resources to execute HoaxAnalyzer.jar. You can find the folder in `java/HoaxAnalyzer/`.
 3. You can try to execute the jar file by typing `java -jar HoazAnalyzer.jar [type] [filename]`in the `lib` folder. For example:
     ```sh
     $ java -jar HoaxAnalyzer.jar preprocess ../dataset/idn-hoax/1.txt

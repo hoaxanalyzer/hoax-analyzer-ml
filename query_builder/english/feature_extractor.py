@@ -10,15 +10,19 @@ TW (2017)
 
 """
 
-from ms_text_analytics import detect_key_phrases
+from multiprocessing.pool import ThreadPool
 from nltk import word_tokenize
-from tagger import tagging
-from word_feature import WordFeature
+from nltk.corpus import stopwords
+from query_builder.english.tagger import tagging
+from query_builder.english.preprocessor import all_stopwords
+from query_builder.english.word_feature import WordFeature
+from query_builder.ms_text_analytics import detect_key_phrases
 import csv
 import json
 import operator
 import os
 import sys
+import threading
 
 acceptible_tags = ["NNP", "JJ", "NN", "VBP", "CD", "VB"]
 n_word = 5
@@ -40,7 +44,12 @@ def extract_key_phrases(text):
         kp_result += " ".join(map(str,key['keyPhrases']))
     return kp_result
 
+
+
 def extract_tag(text):
+    pool = ThreadPool(processes=1)
+    async_result = pool.apply_async(extract_key_phrases, args = (text.encode('utf-8').decode("ascii", "replace"),)) # tuple of args for foo
+
     token_tag = tagging(text)
     tag_dict = {}
 
@@ -72,7 +81,7 @@ def extract_tag(text):
         w += 1
 
     # Count using Microsoft's Text Analytics
-    key_phrase = extract_key_phrases(text.encode('utf-8').decode("ascii", "replace"))
+    key_phrase = async_result.get()
     kp_tag = tagging(key_phrase)
     for kp in kp_tag:
         token = kp[0]
@@ -80,7 +89,7 @@ def extract_tag(text):
         if tag == "NNPS":
             token = token[:len(token)-1]
             tag = "NNP"
-        elif tag in acceptible_tags:
+        if tag in acceptible_tags and token not in all_stopwords:
             try:
                 tag_dict[tag][token].increment_key_phrase()
             except KeyError:

@@ -12,36 +12,36 @@ TW (2017)
 import csv
 import numpy as np
 from itertools import islice
-from ms_text_analytics import LANG_ID, LANG_EN
+from query_builder.ms_text_analytics import LANG_ID, LANG_EN
 from sklearn.externals import joblib
 from sklearn.neural_network import MLPClassifier
 
 
-ID_CSV_NNP = "../output/id-notoken-nnp-full.csv"
-ID_CSV_NN = "../output/id-notoken-nn-full.csv"
-ID_CSV_CDP = "../output/id-notoken-cdp-full.csv"
+ID_CSV_NNP = "output/id-notoken-nnp-full.csv"
+ID_CSV_NN = "output/id-notoken-nn-full.csv"
+ID_CSV_CDP = "output/id-notoken-cdp-full.csv"
 
-ID_MODEL_NNP = "../model/id-mlp.nnp.pkl"
-ID_MODEL_NN = "../model/id-mlp.nn.pkl"
-ID_MODEL_CDP ="../model/id-mlp.cdp.pkl"
+ID_MODEL_NNP = "models/id-mlp.nnp.pkl"
+ID_MODEL_NN = "models/id-mlp.nn.pkl"
+ID_MODEL_CDP ="models/id-mlp.cdp.pkl"
 
 ID_TAG = ['nnp', 'nn', 'cdp']
 ID_TAG_FEATURE = ['prob', 'wcount', 'wpos', 'spos']
 ID_N_FEATURE = 8
 
-EN_CSV_NNP = "../output/en-notoken-nnp-full.csv"
-EN_CSV_JJ = "../output/en-notoken-jj-full.csv"
-EN_CSV_NN = "../output/en-notoken-nn-full.csv"
-EN_CSV_VBP = "../output/en-notoken-vbp-full.csv"
-EN_CSV_CD = "../output/en-notoken-cd-full.csv"
-EN_CSV_VB = "../output/en-notoken-vb-full.csv"
+EN_CSV_NNP = "output/en-notoken-nnp-full.csv"
+EN_CSV_JJ = "output/en-notoken-jj-full.csv"
+EN_CSV_NN = "output/en-notoken-nn-full.csv"
+EN_CSV_VBP = "output/en-notoken-vbp-full.csv"
+EN_CSV_CD = "output/en-notoken-cd-full.csv"
+EN_CSV_VB = "output/en-notoken-vb-full.csv"
 
-EN_MODEL_NNP = "../model/en-mlp.nnp.pkl"
-EN_MODEL_JJ = "../model/en-mlp.jj.pkl"
-EN_MODEL_NN ="../model/en-mlp.nn.pkl"
-EN_MODEL_VBP = "../model/en-mlp.vbp.pkl"
-EN_MODEL_CD = "../model/en-mlp.cd.pkl"
-EN_MODEL_VB ="../model/en-mlp.vb.pkl"
+EN_MODEL_NNP = "models/en-mlp.nnp.pkl"
+EN_MODEL_JJ = "models/en-mlp.jj.pkl"
+EN_MODEL_NN ="models/en-mlp.nn.pkl"
+EN_MODEL_VBP = "models/en-mlp.vbp.pkl"
+EN_MODEL_CD = "models/en-mlp.cd.pkl"
+EN_MODEL_VB ="models/en-mlp.vb.pkl"
 
 EN_TAG = ['nnp', 'jj', 'nn', 'vbp', 'cd', 'vb']
 EN_TAG_FEATURE = ['prob', 'wcount', 'kpcount', 'wseq', 'sseq']

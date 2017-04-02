@@ -7,12 +7,12 @@ Example: python tagger.py jackie.txt
 
 """
 
-from preprocessor import preprocess, tokenize
+from query_builder.english.preprocessor import preprocess, tokenize
 from nltk import pos_tag
 import sys
 
 def tagging(text):
-	return pos_tag(tokenize(preprocess(text)))
+	return pos_tag(preprocess(text))
 
 def main():
     filename = sys.argv[1]
