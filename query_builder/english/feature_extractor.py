@@ -17,6 +17,7 @@ from query_builder.english.tagger import tagging
 from query_builder.english.preprocessor import all_stopwords
 from query_builder.english.word_feature import WordFeature
 from query_builder.ms_text_analytics import detect_key_phrases
+import concurrent.futures
 import csv
 import json
 import operator
@@ -44,12 +45,7 @@ def extract_key_phrases(text):
         kp_result += " ".join(map(str,key['keyPhrases']))
     return kp_result
 
-
-
-def extract_tag(text):
-    pool = ThreadPool(processes=1)
-    async_result = pool.apply_async(extract_key_phrases, args = (text.encode('utf-8').decode("ascii", "replace"),)) # tuple of args for foo
-
+def count_token_tag(text):
     token_tag = tagging(text)
     tag_dict = {}
 
@@ -79,9 +75,29 @@ def extract_tag(text):
                     tag_dict[tag] = {}
                     tag_dict[tag][token] = WordFeature(token, w, s, n)
         w += 1
+    return tag_dict
+
+def extract_tag(text):
+    key_phrase = 0
+    tag_dict = 0
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_result = []
+        future_to_result.append(executor.submit(extract_key_phrases, text.encode('utf-8').decode("ascii", "replace")))
+        future_to_result.append(executor.submit(count_token_tag, text))
+
+        for idx, future in enumerate(concurrent.futures.as_completed(future_to_result)):
+            try:
+                if idx == 0:
+                    key_phrase = future.result()
+                elif idx == 1:
+                    tag_dict = future.result()
+            except Exception as exc:
+                print(exc)
 
     # Count using Microsoft's Text Analytics
-    key_phrase = async_result.get()
+    w = 1 # word position
+    s = 1 # word position in sentence
     kp_tag = tagging(key_phrase)
     for kp in kp_tag:
         token = kp[0]
@@ -98,6 +114,7 @@ def extract_tag(text):
                 except KeyError:
                     tag_dict[tag] = {}
                     tag_dict[tag][token] = WordFeature(token, w, s, 1)
+        w += 1
 
     for key in acceptible_tags:
         if key in tag_dict:
