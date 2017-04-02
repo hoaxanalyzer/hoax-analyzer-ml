@@ -70,7 +70,7 @@ def create_model(input_file, output_file):
             y.append(label)
 
     # Create and Save Model
-    clf = MLPClassifier(solver='lbgfs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
+    clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
     clf.fit(X,y)
     print("Done! (believe it or not)")
     joblib.dump(clf, output_file) 

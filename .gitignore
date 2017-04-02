@@ -17,6 +17,6 @@
 /scripts/config.py
 
 # Cache #
-/scripts/__pycache__/
-/scripts/*.log
-/scripts/*.pyc
+/query_builder/__pycache__/
+/query_builder/*.log
+/query_builder/*.pyc
