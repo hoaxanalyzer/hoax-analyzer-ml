@@ -16,7 +16,7 @@ import string
 import sys
 import time
 import unicodedata
-from multiprocessing.pool import Pool
+from multiprocessing.pool import ThreadPool
 from nltk.corpus import stopwords
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -53,7 +53,7 @@ def preprocess(text):
     tokens = tokenize(text)
     try:
         # Create new threads
-        pool = Pool(CORE_NUM)
+        pool = ThreadPool(CORE_NUM)
         results = pool.starmap(process_tokens_worker, zip(tokens))
         for idx, token in enumerate(results):
             if dictionary.check(token.lower()):
