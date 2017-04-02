@@ -37,11 +37,11 @@ def extract_text():
 def extract_image():
 	try:
 		image = request.json['image']
-        f = image ## TO-DO: kirim image melalui HTTP
-        b = bytearray(f)
-        result1 = query_builder.image_to_text(b)
-        text = json.loads(result1)["text"]
-        result = query_builder.build_query_from_image(text)
+		f = image ## TO-DO: kirim image melalui HTTP
+		b = bytearray(f)
+		result1 = query_builder.image_to_text(b)
+		text = json.loads(result1)["text"]
+		result = query_builder.build_query_from_image(text)
 	except Exception as e:
 		result = json.dumps({"status": "Failed", "message": "Incorrect parameters", "details": str(e)})
 	return result
