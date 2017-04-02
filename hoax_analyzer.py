@@ -32,7 +32,7 @@ def main():
             result1 = query_builder.image_to_text(b)
             print(result1)
             text = json.loads(result1)["text"]
-            result2 = query_builder.build_query_from_image(result1)
+            result2 = query_builder.build_query_from_image(text)
             print(result2)
 
     end = time.time()
