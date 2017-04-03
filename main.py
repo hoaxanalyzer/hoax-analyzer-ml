@@ -36,8 +36,7 @@ def extract_text():
 @application.route("/extract/image", methods=['POST'])
 def extract_image():
 	try:
-		image = request.json['image']
-		f = image ## TO-DO: kirim image melalui HTTP
+		f = request.get_data()
 		b = bytearray(f)
 		result1 = query_builder.image_to_text(b)
 		text = json.loads(result1)["text"]
@@ -54,4 +53,4 @@ def after_request(response):
 	return response
 
 if __name__ == "__main__":
-	application.run(host="0.0.0.0", port=8080)
+	application.run(host="0.0.0.0", port=8085)
