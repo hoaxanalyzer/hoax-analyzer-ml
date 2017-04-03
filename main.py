@@ -28,7 +28,7 @@ def extract_text():
 	try:
 		text = request.json['text']
 		query = query_builder.build_query_from_text(text)
-		result = json.dumps(query)
+		result = query
 	except Exception as e:
 		result = json.dumps({"status": "Failed", "message": "Incorrect parameters", "details": str(e)})
 	return result
