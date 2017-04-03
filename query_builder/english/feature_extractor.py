@@ -78,8 +78,8 @@ def count_token_tag(text):
     return tag_dict
 
 def extract_tag(text):
-    key_phrase = 0
-    tag_dict = 0
+    key_phrase = ""
+    tag_dict = []
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         future_to_result = []
@@ -92,40 +92,40 @@ def extract_tag(text):
                     key_phrase = future.result()
                 elif idx == 1:
                     tag_dict = future.result()
+                # Count using Microsoft's Text Analytics
+                w = 1 # word position
+                s = 1 # word position in sentence
+                kp_tag = tagging(key_phrase)
+                for kp in kp_tag:
+                    token = kp[0]
+                    tag = kp[1]
+                    if tag == "NNPS":
+                        token = token[:len(token)-1]
+                        tag = "NNP"
+                    if tag in acceptible_tags and token not in all_stopwords:
+                        try:
+                            tag_dict[tag][token].increment_key_phrase()
+                        except KeyError:
+                            try:
+                                tag_dict[tag][token] = WordFeature(token, w, s, 1)
+                            except KeyError:
+                                tag_dict[tag] = {}
+                                tag_dict[tag][token] = WordFeature(token, w, s, 1)
+                    w += 1
+
+                for key in acceptible_tags:
+                    if key in tag_dict:
+                        tag_dict[key] = sorted(tag_dict[key].values(),key=operator.attrgetter('prob', 'kp_count', 'word_pos'), reverse=True)
+                        tag_dict[key] = tag_dict[key][:5]
+                        
+                    else:
+                        tag_dict[key] = []
+                    while len(tag_dict[key]) < n_word:
+                            tag_dict[key].append(WordFeature(WordFeature.null, 0, 0, 0))
+                return tag_dict
             except Exception as exc:
                 print(exc)
-
-    # Count using Microsoft's Text Analytics
-    w = 1 # word position
-    s = 1 # word position in sentence
-    kp_tag = tagging(key_phrase)
-    for kp in kp_tag:
-        token = kp[0]
-        tag = kp[1]
-        if tag == "NNPS":
-            token = token[:len(token)-1]
-            tag = "NNP"
-        if tag in acceptible_tags and token not in all_stopwords:
-            try:
-                tag_dict[tag][token].increment_key_phrase()
-            except KeyError:
-                try:
-                    tag_dict[tag][token] = WordFeature(token, w, s, 1)
-                except KeyError:
-                    tag_dict[tag] = {}
-                    tag_dict[tag][token] = WordFeature(token, w, s, 1)
-        w += 1
-
-    for key in acceptible_tags:
-        if key in tag_dict:
-            tag_dict[key] = sorted(tag_dict[key].values(),key=operator.attrgetter('prob', 'kp_count', 'word_pos'), reverse=True)
-            tag_dict[key] = tag_dict[key][:5]
-            
-        else:
-            tag_dict[key] = []
-        while len(tag_dict[key]) < n_word:
-                tag_dict[key].append(WordFeature(WordFeature.null, 0, 0, 0))
-    return tag_dict
+                return tag_dict
 
 def extract_tag_to_csv(directory, file_output):
     csvfile = open(file_output, 'a')
