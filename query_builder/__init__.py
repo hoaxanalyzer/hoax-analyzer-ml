@@ -128,7 +128,7 @@ def build_query_from_image(text):
     if is_query(text):
         query = text
     elif lang == LANG_EN:
-        query = query_builder(text)
+        query = json.loads(build_query_from_text(text))["query"]
     else:
         text = re.sub("[^0-9a-zA-Z .]+", " ", text)
 

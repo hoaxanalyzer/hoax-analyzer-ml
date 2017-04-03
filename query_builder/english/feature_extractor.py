@@ -126,24 +126,6 @@ def extract_tag(text):
         while len(tag_dict[key]) < n_word:
                 tag_dict[key].append(WordFeature(WordFeature.null, 0, 0, 0))
     return tag_dict
-    # with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-    #     future_to_result = []
-    #     future_to_result.append(executor.submit(extract_key_phrases, text.encode('utf-8').decode("ascii", "replace")))
-    #     future_to_result.append(executor.submit(count_token_tag, text))
-
-    #     for idx, future in enumerate(concurrent.futures.as_completed(future_to_result)):
-    #         try:
-    #             if idx == 0:
-    #                 key_phrase = future.result()
-    #             elif idx == 1:
-    #                 tag_dict = future.result()
-    #             # Count using Microsoft's Text Analytics
-    #             w = 1 # word position
-    #             s = 1 # word position in sentence
-                
-    #         except Exception as exc:
-    #             print(exc)
-    #             return tag_dict
 
 def extract_tag_to_csv(directory, file_output):
     csvfile = open(file_output, 'a')
