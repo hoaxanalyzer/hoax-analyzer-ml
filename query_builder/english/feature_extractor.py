@@ -37,13 +37,16 @@ def extract_key_phrases(text, kp_result):
     json_text = {}
     json_text["id"] = "1"
     json_text["text"] = text
+    json_text["language"] = "en"
     json_doc.append(json_text)
     json_data["documents"] = json_doc
     json_data = json.dumps(json_data)
     result = ""
     key_phrase_analysis = detect_key_phrases(json_data)
     for key in key_phrase_analysis:
-        result += " ".join(map(str,key['keyPhrases']))
+        for val in key['keyPhrases']:
+            if val not in ["text", "id", "language", "documents"]:
+                result += val + " "
     kp_result.append(result)
     return result
 
