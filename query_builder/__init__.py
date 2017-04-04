@@ -123,6 +123,7 @@ def image_to_text(image):
 def build_query_from_image(text):
     lang = detect_language(text)
     data = {}
+    data["text"] = text
     data["language"] = lang
 
     if is_query(text):
