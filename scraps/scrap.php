@@ -18,7 +18,7 @@ function strip_tags_content($text) {
 
   for ($page = $argv[1]; $page <= $argv[2]; $page++) {
     fwrite(STDERR, "NOW PAGES ".$page."\n");
-    $url = "curl -L http://www.snopes.com/category/facts";
+    $url = "curl -L --proxy http://167.205.22.102:8080 http://www.snopes.com/category/facts";
     if ($page != 1) {
       $url = $url."/page/".$page;
     }
@@ -100,7 +100,7 @@ function strip_tags_content($text) {
     for ($i = 0; $i < sizeof($links); $i++) {
       fwrite(STDERR, $links[$i]."\n");
 
-      $buffer = shell_exec("curl -L ".$links[$i]);
+      $buffer = shell_exec("curl -L --proxy http://167.205.22.102:8080 ".$links[$i]);
       $claim = extractString($buffer, "<p itemprop=\"claimReviewed\">", "</p>");
       $rating = trim(extractString($buffer, "<span itemProp=\"alternateName\">", "</span>"));
 
