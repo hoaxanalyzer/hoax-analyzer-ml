@@ -77,10 +77,21 @@ def generate_json(text):
 
 def build_query_from_text(text):
     lang = detect_language(text)
+    is_negation = False
 
     # English Query
     if is_query(text) and lang == LANG_EN:
         query = text
+        
+        if "n't" in text:
+            is_negation = True
+            query = text.replace("n't", "")
+
+        query_split = text.split(" ")
+        if "not" in query_split:
+            is_negation = True
+            query_split.remove("not")
+            query = " ".join(query_split)
 
     # Indonesian Query
     elif is_query(text) and lang == LANG_ID:
@@ -110,6 +121,7 @@ def build_query_from_text(text):
     data = {}
     data["language"] = lang
     data["query"] = query
+    data["is_negation"] = is_negation
     
     return json.dumps(data)
 
