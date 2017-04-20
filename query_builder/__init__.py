@@ -27,6 +27,7 @@ MAX_QUERY_LEN = 10
 AVG_QUERY_LEN = 9
 
 id_acceptible_tags = ["nnp", "nn", "cdp"]
+negation_clue_word = ["n't", "not", "is false", "are false", "is hoax", "are hoax", "is fake", "are fake"]
 
 def is_query(text):
     text = unicodedata.normalize('NFKD', text).encode('ascii','ignore').decode("ascii", "ignore")
@@ -83,15 +84,10 @@ def build_query_from_text(text):
     if is_query(text) and lang == LANG_EN:
         query = text
         
-        if "n't" in text:
-            is_negation = True
-            query = text.replace("n't", "")
-
-        query_split = text.split(" ")
-        if "not" in query_split:
-            is_negation = True
-            query_split.remove("not")
-            query = " ".join(query_split)
+        for clue_word in negation_clue_word:
+            if clue_word in text:
+                is_negation = True
+                query = text.replace(clue_word, "")
 
     # Indonesian Query
     elif is_query(text) and lang == LANG_ID:
@@ -137,12 +133,19 @@ def build_query_from_image(text):
     data = {}
     data["text"] = text
     data["language"] = lang
+    is_negation = False
 
-    if is_query(text):
+    if is_query(text) and lang == LANG_EN:
         query = text
-    elif lang == LANG_EN:
+        for clue_word in negation_clue_word:
+            if clue_word in text:
+                is_negation = True
+                query = text.replace(clue_word, "")
+    elif is_query(text) and lang == LANG_ID:
+        query = text
+    elif not is_query(text) and lang == LANG_EN:
         query = json.loads(build_query_from_text(text))["query"]
-    else:
+    elif not is_query(text) and lang == LANG_ID:
         text = re.sub("[^0-9a-zA-Z .]+", " ", text)
 
         p = Popen(['java', '-jar', 'lib/HoaxAnalyzer.jar', 'preprocess', text], stdout=PIPE, stderr=STDOUT)
@@ -180,6 +183,9 @@ def build_query_from_image(text):
         query = ""
         for key, val in enumerate(tf):
             query += val[0] + " "
+    else:
+        query = text
 
     data["query"] = query
+    data["is_negation"] = is_negation
     return json.dumps(data)
