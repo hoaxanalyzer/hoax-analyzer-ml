@@ -10,6 +10,8 @@ TW (2017)
 """
 
 from multiprocessing.pool import ThreadPool
+from newspaper import Article
+from newspaper.configuration import Configuration
 from query_builder.english.feature_extractor import extract_tag, acceptible_tags as en_acceptible_tags, n_sen, avg_word
 from query_builder.english.preprocessor import preprocess as en_preprocess, remove_stopwords as en_remove_stopwords
 from query_builder.ms_ocr import detect_text
@@ -22,9 +24,24 @@ import re
 import string
 import time
 import unicodedata
+import urllib.request, urllib.parse, urllib.error
+import validators
 
 MAX_QUERY_LEN = 10
 AVG_QUERY_LEN = 9
+
+# json constant
+DATA_TYPE = "type"
+DATA_TEXT = "text"
+DATA_URL = "url"
+DATA_LANGUAGE = "language"
+DATA_QUERY = "query"
+DATA_IS_NEGATION = "is_negation"
+
+# input type
+TEXT = "text"
+IMAGE = "image"
+URL = "url"
 
 id_acceptible_tags = ["nnp", "nn", "cdp"]
 negation_clue_word = ["n't", "not", "is false", "are false", "is hoax", "are hoax", "is fake", "are fake"]
@@ -36,6 +53,9 @@ def is_query(text):
         return False
     else:
         return True
+
+def is_url(text):
+    return validators.url(text)
 
 def callback_result(result):
     async_results.append(result)
@@ -77,9 +97,26 @@ def generate_json(text):
     return json_tag
 
 def build_query_from_text(text):
-    lang = detect_language(text)
+    data = {}
     is_negation = False
 
+    # Handle if input is a url
+    if is_url(text):
+        data[DATA_TYPE] = URL
+        data[DATA_URL] = text
+        text = retrieve_article(data[DATA_URL])
+        if text is False:
+            data[DATA_LANGUAGE] = LANG_UNKNOWN
+            data[DATA_QUERY] = text
+            data[DATA_IS_NEGATION] = False
+            
+            return json.dumps(data)
+        else:
+            data[DATA_TEXT] = text
+    else:
+        data[DATA_TYPE] = TEXT
+ 
+    lang = detect_language(text)
     # English Query
     if is_query(text) and lang == LANG_EN:
         query = text
@@ -104,7 +141,6 @@ def build_query_from_text(text):
         result = ""
         for line in p.stdout:
             result += line.decode("ascii", "replace") + " "
-        print (result)
         json_res = json.loads(result)
         query = generate_query(LANG_ID, json_res)
     elif not is_query(text):
@@ -114,10 +150,9 @@ def build_query_from_text(text):
 
 
     # Not supported
-    data = {}
-    data["language"] = lang
-    data["query"] = query
-    data["is_negation"] = is_negation
+    data[DATA_LANGUAGE] = lang
+    data[DATA_QUERY] = query
+    data[DATA_IS_NEGATION] = is_negation
     
     return json.dumps(data)
 
@@ -125,14 +160,15 @@ def image_to_text(image):
     text = detect_text(image)
     data = {}
     text = text.replace(u"\u015f", "s")
-    data["text"] = text
+    data[DATA_TEXT] = text
     return json.dumps(data)
 
 def build_query_from_image(text):
     lang = detect_language(text)
     data = {}
-    data["text"] = text
-    data["language"] = lang
+    data[DATA_TYPE] = IMAGE
+    data[DATA_TEXT] = text
+    data[DATA_LANGUAGE] = lang
     is_negation = False
 
     if is_query(text) and lang == LANG_EN:
@@ -186,6 +222,32 @@ def build_query_from_image(text):
     else:
         query = text
 
-    data["query"] = query
-    data["is_negation"] = is_negation
+    data[DATA_QUERY] = query
+    data[DATA_IS_NEGATION] = is_negation
     return json.dumps(data)
+
+def retrieve_article(url):
+    try:
+        config = Configuration()
+        config.fetch_images = False
+
+        req = urllib.request.Request(url, headers={'User-Agent' : "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.0.1) Gecko/20020919"}) 
+        con = urllib.request.urlopen(req, timeout=10)
+        html = ''.join([x for x in map(chr, con.read()) if ord(x) < 128])
+
+        article = Article(url='', config=config)
+        article.set_html(html)
+        article.parse()
+        text = ''.join([i if ord(i) < 128 else ' ' for i in str(article.text)])
+
+        if len(text) < 300:
+            article = Article(url='', config=config, language="id")
+            article.set_html(html)
+            article.parse()
+            text = ''.join([i if ord(i) < 128 else ' ' for i in str(article.text)])
+
+        text = text.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+        return text
+    except Exception as e:
+        print(e)
+        return False
