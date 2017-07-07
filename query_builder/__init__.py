@@ -16,6 +16,7 @@ from query_builder.english.feature_extractor import extract_tag, acceptible_tags
 from query_builder.english.preprocessor import preprocess as en_preprocess, remove_stopwords as en_remove_stopwords
 from query_builder.ms_ocr import detect_text
 from query_builder.ms_text_analytics import detect_language, LANG_ID, LANG_EN, LANG_UNKNOWN
+from query_builder.ms_entity_linking import get_entity_list
 from query_builder.sklearn_classifier import classify_json_object
 from subprocess import Popen, PIPE, STDOUT
 import json
@@ -36,6 +37,7 @@ DATA_TEXT = "text"
 DATA_URL = "url"
 DATA_LANGUAGE = "language"
 DATA_QUERY = "query"
+DATA_ENTITY = "entity"
 DATA_IS_NEGATION = "is_negation"
 
 # input type
@@ -153,11 +155,11 @@ def build_query_from_text(text):
     else:
         query = text
 
-
     # Not supported
     data[DATA_LANGUAGE] = lang
     data[DATA_QUERY] = query
     data[DATA_IS_NEGATION] = is_negation
+    data[DATA_ENTITY] = get_entity_list(text)
     
     return json.dumps(data)
 
@@ -229,6 +231,7 @@ def build_query_from_image(text):
 
     data[DATA_QUERY] = query
     data[DATA_IS_NEGATION] = is_negation
+    data[DATA_ENTITY] = get_entity_list(text)
     return json.dumps(data)
 
 def retrieve_article(url):
