@@ -27,7 +27,7 @@ import unicodedata
 import urllib.request, urllib.parse, urllib.error
 import validators
 
-MAX_QUERY_LEN = 10
+MAX_QUERY_LEN = 15
 AVG_QUERY_LEN = 9
 
 # json constant
@@ -49,13 +49,18 @@ negation_clue_word = ["n't", "not", "is false", "are false", "is hoax", "are hoa
 def is_query(text):
     text = unicodedata.normalize('NFKD', text).encode('ascii','ignore').decode("ascii", "ignore")
     text = re.sub('[^0-9a-zA-Z]+', ' ', text)
-    if len(text.split(" ")) > 14:
+    if len([x for x in text.split(" ") if x]) > MAX_QUERY_LEN:
         return False
     else:
         return True
 
 def is_url(text):
     return validators.url(text)
+
+def process_bad_words(text):
+    patt = open('wordfilter/id.re.txt', 'r').read()
+    regex = '\\b((?:' + patt + ')+)\\b'
+    result = re.sub(regex, '*****', text, flags=re.IGNORECASE)
 
 def callback_result(result):
     async_results.append(result)
