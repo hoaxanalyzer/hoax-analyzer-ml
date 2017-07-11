@@ -21,3 +21,6 @@
 */*/__pycache__/
 */*.log
 */*.pyc
+
+# Model #
+/models/word2vec
