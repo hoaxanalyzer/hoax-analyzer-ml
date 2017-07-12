@@ -19,6 +19,7 @@ en_model_path = "../models/word2vec/word2vec_en.model"
 # print("model loaded")
 # en_model = gensim.models.Word2Vec.load_word2vec_format(en_model_path, binary=True)
 # python3 word2vec-api/word2vec-api.py --model ../models/word2vec/word2vec_id.model --path /word2vec --host 0.0.0.0 --port 5000
+# python3 word2vec-api/word2vec-api.py --model_en ../models/word2vec/word2vec_en.bin.gz --binary BINARY --model_id ../models/word2vec/word2vec_id.model --path /word2vec --host 0.0.0.0 --port 5000
 
 def get_word_vector(lang, word):
     url = "http://127.0.0.1:5000/word2vec/model?word=" + word + "&lang=" + lang
