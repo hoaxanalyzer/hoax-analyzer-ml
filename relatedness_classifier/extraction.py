@@ -1,3 +1,4 @@
+import csv
 import hashlib
 import numpy as np
 import pandas as pd
@@ -6,6 +7,7 @@ import regex
 import sys
 import time
 from lsa import LSA, all_stopwords
+from word2vec import old_calculate_similarity
 
 COL_DESC = "desc"
 COL_QUERY_TEXT = "query_text"
@@ -68,49 +70,65 @@ def liwc(text1, text2):
 def clear_content(text):
     return re.sub(r"[^\w\s]|_+", ' ', text)
 
-def extract_file_features(filename):
-    header = ["id", "input_sim_article", "query_sim_article", "input_qcount", "input_qpercentage", "input_qonesen", "query_qcount", "query_qpercentage", "query_qonesen"]
+def extract_file_features(filename, output_file):
+    csvfile = open(output_file, 'w')
+    wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL, lineterminator='\n')
+
+    header = ["id", "input_sim_article", "query_sim_article", "input_qcount", "input_qpercentage", "input_qonesen", "query_qcount", "query_qpercentage", "query_qonesen", "input_sim_word2vec", "query_sim_word2vec"]
+    wr.writerow(header)
+
     data = pd.read_csv(filename, sep=';', encoding="utf-8", error_bad_lines=False)
     query_list = data[COL_QUERY_TEXT].unique()
 
     for index, row in data.iterrows():
         features = []
-        query_text = row[COL_QUERY_TEXT]
-        query_search = row[COL_QUERY_SEARCH]
-        article = row[COL_ARTICLE_CONTENT]
-        col_article = data[data[COL_QUERY_TEXT] == query_text][COL_ARTICLE_CONTENT]
-        documents = []
-        for idx, art in enumerate(col_article):
-            documents.append(art)
-            if art == article:
-                cur_idx = idx
+        try:
+            query_text = row[COL_QUERY_TEXT]
+            query_search = row[COL_QUERY_SEARCH]
+            article = row[COL_ARTICLE_CONTENT]
+            col_article = data[data[COL_QUERY_TEXT] == query_text][COL_ARTICLE_CONTENT]
+            documents = []
+            for idx, art in enumerate(col_article):
+                documents.append(art)
+                if art == article:
+                    cur_idx = idx
 
-        # id
-        # features.append(hashlib.sha1(article.rstrip().encode()).hexdigest())
-        features.append(index)
-        # similarity (input - article)
-        similar = LSA(query_text, documents)
-        features.append(similar.rank[cur_idx][1])
-        # similarity (query - article)
-        similar = LSA(query_search, documents)
-        features.append(similar.rank[cur_idx][1])
-        # word count
-        query_count, query_percentage, query_onesen = word_count_features(query_text, article)
-        features.append(query_count)
-        features.append(query_percentage)
-        features.append(query_onesen)
-        query_count, query_percentage, query_onesen = word_count_features(query_search, article)
-        features.append(query_count)
-        features.append(query_percentage)
-        features.append(query_onesen)
+            # id
+            # features.append(hashlib.sha1(article.rstrip().encode()).hexdigest())
+            features.append(index)
+            # similarity (input - article)
+            similar = LSA(query_text, documents)
+            features.append(similar.rank[cur_idx][1])
+            # similarity (query - article)
+            similar = LSA(query_search, documents)
+            features.append(similar.rank[cur_idx][1])
+            # word count
+            query_count, query_percentage, query_onesen = word_count_features(query_text, article)
+            features.append(query_count)
+            features.append(query_percentage)
+            features.append(query_onesen)
+            query_count, query_percentage, query_onesen = word_count_features(query_search, article)
+            features.append(query_count)
+            features.append(query_percentage)
+            features.append(query_onesen)
+            # word2vec sim (input - article)
+            features.append(old_calculate_similarity(query_text, article))
+            # word2vec sim (query - article)
+            features.append(old_calculate_similarity(query_search, article))
+        except:
+            while len(features) < len(header):
+                features.append(-1)
         print(features)
-        print("=============== \n")
+        wr.writerow(features)
+    print("=============== \n")
+    csvfile.close()
 
 
 def main():
     input_file = "input.txt"
     article_file = "article.txt"
     data_file = "dataset_small.csv"
+    output_file = "relatedness_features.csv"
 
     query = "google buys spotify"
     with open(input_file, 'r', encoding='utf-8', errors='ignore') as myfile:
@@ -120,7 +138,7 @@ def main():
         article = myfile.read().replace('\n', '')
 
     # print(language_detection("aku suka sama kucing suka sekali"))
-    extract_file_features(data_file)
+    extract_file_features(data_file, output_file)
     
 
 if __name__ == "__main__":

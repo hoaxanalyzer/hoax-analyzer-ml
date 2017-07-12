@@ -12,9 +12,10 @@ from gensim.models import KeyedVectors as w
 from gensim import utils, matutils
 from numpy import exp, dot, zeros, outer, random, dtype, get_include, float32 as REAL,\
      uint32, seterr, array, uint8, vstack, argsort, fromstring, sqrt, newaxis, ndarray, empty, sum as np_sum
-import _pickle as cPickle
 import argparse
 import base64
+import json
+import _pickle as cPickle
 import sys
 
 
@@ -88,11 +89,11 @@ class Model(Resource):
             res = model[args['word']]
             print("Type:", type(res))
             print("4")
-            print(res)
+            # print(res)
             res = base64.b64encode(res)
             print("Type:", type(res))
             print("5")
-            print(res)
+            # print(res)
             return res.decode()
         except Exception as e:
             print(e)
@@ -114,14 +115,14 @@ class Index2Word(Resource):
 
         print("3")
         try:
-            res = set(model.index2word)
-            print(res)
+            res = model.index2word
+            # print(res)
             print(type(res))
             print("4")
-            res = base64.b64encode(res)
-            print(res)
+            # res = repr(res)
+            # print(res)
             print("Type:", type(res))
-            return res.decode()
+            return json.dumps(res)
         except Exception as e:
             print(e)
             return
@@ -175,9 +176,9 @@ if __name__ == '__main__':
         print("Usage: word2vec-apy.py --model path/to/the/model [--host host --port 1234]")
     print("Loading model")
     # model = w.load_word2vec_format(model_path, binary=binary)
-    # model_en = w.load_word2vec_format(model_en_path, binary=binary_en)
+    model_en = w.load_word2vec_format(model_en_path, binary=binary_en)
     model_id = w.load_word2vec_format(model_id_path, binary=binary_id)
-    model_en = model_id
+    # model_en = model_id
     print("Model loaded")
     api.add_resource(N_Similarity, path+'/n_similarity')
     api.add_resource(Similarity, path+'/similarity')
