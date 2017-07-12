@@ -164,7 +164,7 @@ if __name__ == '__main__':
     args = p.parse_args()
 
     model_path = args.model if args.model else "./model.bin.gz"
-    # model_en_path = args.model_en if args.model else "./model_en.bin.gz"
+    model_en_path = args.model_en if args.model else "./model_en.bin.gz"
     model_id_path = args.model_id if args.model_id else "./model_id.bin.gz"
     binary = True if args.binary else False
     binary_en = True if args.binary_en else False
