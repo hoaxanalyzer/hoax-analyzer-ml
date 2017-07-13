@@ -111,13 +111,16 @@ def extract_file_features(filename, output_file):
             features.append(query_count)
             features.append(query_percentage)
             features.append(query_onesen)
-            # word2vec sim (input - article)
-            features.append(old_calculate_similarity(query_text, article))
-            # word2vec sim (query - article)
-            features.append(old_calculate_similarity(query_search, article))
+            # # word2vec sim (input - article)
+            # features.append(old_calculate_similarity(query_text, article))
+            # # word2vec sim (query - article)
+            # features.append(old_calculate_similarity(query_search, article))
+            # label
+            features.append(row[COL_LABEL])
         except:
             while len(features) < len(header):
                 features.append(-1)
+            features[len(features-1)] = row[COL_LABEL]
         print(features)
         wr.writerow(features)
     print("=============== \n")
