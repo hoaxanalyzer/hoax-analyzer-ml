@@ -1,0 +1,17 @@
+PyEnchant
+nltk
+nltk.downloader punkt
+nltk.downloader stopwords
+nltk.downloader wordnet
+nltk.downloader averaged_perceptron_tagger
+scikit-learn
+numpy
+pandas
+validators
+newspaper3k
+https://cntk.ai/PythonWheel/CPU-Only/cntk-2.0-cp35-cp35m-linux_x86_64.whl
+regex
+langdetect
+Flask
+flask-restful
+gensim
