@@ -13,6 +13,10 @@ Machine Learning Section
     ```sh
     $ bash setup.sh
     ```
+    and (create virtualenv first):
+    ```sh
+    $ pip install -r requirements.txt
+    ```
 2. Move to folder `scripts`. Rename `config.py-ex` into `config.py` and fill every variables with the corresponding and correct values.
 3. You can test the program by typing `python3 hoax_analyzer.py [filename]`. For example:
     ```sh
